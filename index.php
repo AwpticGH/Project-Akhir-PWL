@@ -5,99 +5,69 @@
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="asset/img/logoler.svg">
     
-    <title>Registration</title>
+    <title>Login</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="asset/css/register.css">
+    <link rel="stylesheet" href="asset/css/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     
 </head>
 <body>
     <div class="container">
         <div class="form-image">
-            <img src="asset/img/img4.svg" alt="gambar login">
+            <img src="asset/img/img5.svg" alt="gambar login">
         </div>
         <div class="form">
             <div class="form-header">
-                <div class="title">Registration</div>
+                <h1>
+                    Login
+                </h1>
             </div>
+            
             <form method="post">
-                <div class="input-group">
-                    <div class="input-box">
-                        <label for="firstname">First Name</label>
-                        <input id="firstname" type="text" name="firstname" placeholder="Enter your first name" required>
-                    </div>
+                <!-- <?php if($error !=  ''){ ?>
+                    <div class="alert  alert-danger" role="alert"><?= $error;?></div>
+                <?php } ?> -->
 
-                    <div class="input-box">
-                        <label for="lastname">Last Name</label>
-                        <input id="lastname" type="text" name="lastname" placeholder="Enter your last name" required>
-                    </div>
-                    <!-- position -->
-                    <div class="input-box">
-                        <label for="position">Position</label>
-                        <input id="position" type="text" name="password" placeholder="Digite sua senha" required>
-                    </div>
-
-                    <div class="input-box">
-                        <label for="division">Division</label>
-                        <input id="division" type="text" name="confirmPassword" placeholder="Digite sua senha novamente" required>
-                    </div>
-                    <!-- end -->
-
-                    <div class="input-box">
-                        <label for="address">Address</label>
-                        <input id="address" type="text" name="email" placeholder="Enter your email" required>
-                    </div>
-
-                    <div class="input-box">
-                        <label for="number">DOB</label>
-                        <input id="number" type="date" name="date" placeholder="enter your dob" required>
-                    </div>
-
-                    <div class="input-box">
-                        <label for="password">Password</label>
-                        <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
-                    </div>
-
-
-                    <div class="input-box">
-                        <label for="confirmPassword">Confirm Password</label>
-                        <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Digite sua senha novamente" required>
-                    </div>
-
+                <div class="txt_field">
+                    <input type="text" name="username" id="username" required>
+                    <span></span>
+                    <label for="username">Username</label>
                 </div>
-
-                <div class="gender-details">
-                        <input type="radio" name="jenis_kelamin" value="Laki-Laki" id="dot-1">
-                        <input type="radio" name="jenis_kelamin" value="Perempuan" id="dot-2">
-                        <input type="radio" name="jenis_kelamin" value="null" id="dot-3">
-                        <span class="gender-title">Gender</span>
-                        <div class="category">
-                            <label for="dot-1">
-                                <span class="dot one"></span>
-                                <span class="gender">Male</span>
-                            </label>
-                            <label for="dot-2">
-                                <span class="dot two"></span>
-                                <span class="gender">Female</span>
-                            </label>
-                            <label for="dot-3">
-                                <span class="dot three"></span>
-                                <span class="gender">Prefer not to say</span>
-                            </label>
-                        </div>
-                    </div>
-                
-                <div class="button">
-                    <input type="submit" name="submit" value="submit">
+                <div class="txt_field">
+                    <input type="password" name="password" id="password" required>
+                    <span></span>
+                    <label for="password">Password</label>
+                </div>
+                <div class="txt_field">
+                    <input type="text" name="confirmcaptcha" id="captcha"  required data_parsley_trigger="keyup" value="" required>
+                    <input type="hidden" name="captcha-rand" value="<?php echo $rand; ?>">
+                    <span></span>
+                    <label for="captcha">Enter Captcha!</label>
+                </div>
+                <label for="captcha-code" style="text-align: left;">Captcha code</label>
+                <div class="txt-field" style="margin-bottom: 20px;">
+                    <!-- <input type="text" name="captcha" id="captcha" placeholder="Enter Captcha!" required> -->
+                    <!-- <span class="fas fa-lock"></span> -->
+                    <input type="text" class="captcha" name="captcha" style="pointer-events: none;" value="<?php echo substr(uniqid(), 5);?>"></input>
+                    <input type="button" class="ReloadBtn" onclick="CreateCaptcha()">
                 </div>
                 
-                <p class="sign-up" style="font-size:16px;">
-                    Have already an account ?
-                    <a href="index.php" style="color: #6c5ce7;">Login here</a>
+                <div style="margin-bottom: 20px;">
+                    <input type="checkbox" name="remember" id="remember">
+                    <label for="remember">Remember Me</label>
+                </div>
+                <button type="submit" name="login" id="login" class="btn">Sign in</button>
+                <p class="signup_link">
+                don't have account? <a href="register.php" style="color: #6c5ce7;">Sign Up</a>
                 </p>
             </form>
+            </div>
         </div>
     </div>
+
+    <script src="asset/js/captcha.js"></script>
+    <script src="asset/js/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 </body>
 </html>
