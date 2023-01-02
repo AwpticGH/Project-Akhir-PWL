@@ -12,12 +12,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #0c0ce94d;
+    background: #b9c7b8;
 }
 
 .container {
     width: 80%;
-    height: 80vh;
+    height: 92vh;
     display: flex;
     border-radius: 0px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.212);
@@ -29,7 +29,7 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 13px 0px 0 13px;
-    background-color: #fde3a7d7;
+    background-color: #d7e8d6;
     padding: 1rem;
 }
 
@@ -100,9 +100,10 @@ form .button input:hover{
 }
 
 .input-box {
+    width: calc(100% / 2 - 20px);
     display: flex;
     flex-direction: column;
-    margin-bottom: 1.1rem;
+    margin-bottom: 1rem;
 }
 
 .input-box input {
@@ -124,7 +125,7 @@ form .button input:hover{
 
 .input-box label,
 .gender-title h6 {
-    font-size: 0.75rem;
+    font-size: 0.9rem;
     font-weight: 600;
     color: #000000c0;
 }
@@ -136,17 +137,12 @@ form .button input:hover{
 .gender-group {
     display: flex;
     justify-content: space-between;
-    margin-top: 0.62rem;
+    margin-top: 0rem;
     padding: 0 .5rem;
 }
 
-.gender-input {
-    display: flex;
-    align-items: center;
-}
-
 .gender-input input {
-    margin-right: 0.35rem;
+    margin-right: 0.38rem;
 }
 
 .gender-input label {
@@ -155,26 +151,10 @@ form .button input:hover{
     color: #000000c0;
 }
 
-.continue-button button {
-    width: 100%;
-    margin-top: 2.5rem;
-    border: none;
-    background-color: #6c63ff;
-    padding: 0.62rem;
-    border-radius: 5px;
-    cursor: pointer;
+.gender-title {
+    margin-bottom: 20px;
 }
 
-.continue-button button:hover {
-    background-color: #6b63fff1;
-}
-
-.continue-button button a {
-    text-decoration: none;
-    font-size: 0.93rem;
-    font-weight: 500;
-    color: #fff;
-}
 
 @media screen and (max-width: 1330px) {
     .form-image {

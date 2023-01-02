@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="asset/img/logoler.svg">
     
-    <title>Login</title>
+    <title>Registration</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="asset/css/register.css">
@@ -16,7 +15,7 @@
 <body>
     <div class="container">
         <div class="form-image">
-            <img src="asset/img/img1.svg" alt="gambar login">
+            <img src="asset/img/img4.svg" alt="gambar login">
         </div>
         <div class="form">
             <div class="form-header">
@@ -25,32 +24,44 @@
             <form method="post">
                 <div class="input-group">
                     <div class="input-box">
-                        <label for="firstname">Primeiro Nome</label>
-                        <input id="firstname" type="text" name="firstname" placeholder="Digite seu primeiro nome" required>
+                        <label for="firstname">First Name</label>
+                        <input id="firstname" type="text" name="firstname" placeholder="Enter your first name" required>
                     </div>
 
                     <div class="input-box">
-                        <label for="lastname">Sobrenome</label>
-                        <input id="lastname" type="text" name="lastname" placeholder="Digite seu sobrenome" required>
+                        <label for="lastname">Last Name</label>
+                        <input id="lastname" type="text" name="lastname" placeholder="Enter your last name" required>
                     </div>
+                    <!-- position -->
                     <div class="input-box">
-                        <label for="email">E-mail</label>
-                        <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required>
-                    </div>
-
-                    <div class="input-box">
-                        <label for="number">Celular</label>
-                        <input id="number" type="tel" name="number" placeholder="(xx) xxxx-xxxx" required>
+                        <label for="position">Position</label>
+                        <input id="position" type="text" name="password" placeholder="Digite sua senha" required>
                     </div>
 
                     <div class="input-box">
-                        <label for="password">Senha</label>
+                        <label for="division">Division</label>
+                        <input id="division" type="text" name="confirmPassword" placeholder="Digite sua senha novamente" required>
+                    </div>
+                    <!-- end -->
+
+                    <div class="input-box">
+                        <label for="address">Address</label>
+                        <input id="address" type="text" name="email" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="number">DOB</label>
+                        <input id="number" type="date" name="date" placeholder="enter your dob" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="password">Password</label>
                         <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
                     </div>
 
 
                     <div class="input-box">
-                        <label for="confirmPassword">Confirme sua Senha</label>
+                        <label for="confirmPassword">Confirm Password</label>
                         <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Digite sua senha novamente" required>
                     </div>
 
@@ -58,35 +69,31 @@
 
                 <div class="gender-inputs">
                     <div class="gender-title">
-                        <h6>Gênero</h6>
+                        <h6>Gender</h6>
                     </div>
 
                     <div class="gender-group">
                         <div class="gender-input">
                             <input id="female" type="radio" name="gender">
-                            <label for="female">Feminino</label>
+                            <label for="female">Female</label>
                         </div>
 
                         <div class="gender-input">
                             <input id="male" type="radio" name="gender">
-                            <label for="male">Masculino</label>
+                            <label for="male">Male</label>
                         </div>
 
                         <div class="gender-input">
                             <input id="others" type="radio" name="gender">
-                            <label for="others">Outros</label>
-                        </div>
-
-                        <div class="gender-input">
-                            <input id="none" type="radio" name="gender">
-                            <label for="none">Prefiro não dizer</label>
+                            <label for="others">Prefer not to say</label>
                         </div>
                     </div>
                 </div>
                 
                 <div class="button">
-                <input type="submit" name="submit" value="submit">
+                    <input type="submit" name="submit" value="submit">
                 </div>
+                
                 <p class="sign-up" style="font-size:16px;">
                     Have already an account ?
                     <a href="index.php" style="color: #6c5ce7;">Login here</a>
