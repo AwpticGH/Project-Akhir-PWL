@@ -8,6 +8,16 @@ Kelompok 4 :
 Aplikasi : Monitoring Kinerja
 DB Design : https://drawsql.app/teams/rafi-fajar-sulaiman/diagrams/project-akhir-pwl
 
+foldering :
+1. controller : tempat menyimpan file controller
+2. model : tempat menyimpan file model
+3. middleware : tempat menyimpan file middleware
+4. database/users : tempat menyimpan image user, pathnya akan tersimpan di database table users
+5. web : tempat menyimpan file web
+6. asset/css : tempat menyimpan file css
+7. asset/img : tempat menyimpan file img untuk website
+8. asset/js : tempat menyimpan file js
+
 frontend :
 1. register (first name, last name, password, picture, address, dob, position, division)
 2. login (username, password)
