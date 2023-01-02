@@ -19,7 +19,6 @@ frontend :
 - [ ] halaman pencarian laporan buat head division
 - [ ] halaman profile user (cuma bisa ganti picture, address dan password)
 
-
 backend :
 - [ ] UsersController -> create, update, readById, login/readByUsername
 - [ ] NotificationsController -> create, update, readAllByUserId
@@ -31,9 +30,6 @@ backend :
 - [ ] database creation
 - [ ] database seeding
 
-# Database Design
-[![DBDesign](https://kuliah.fauzanmhr.my.id/0:/ASSET/drawSQL-export-2023-01-02_12_49.png "DBDesign")](https://kuliah.fauzanmhr.my.id/0:/ASSET/drawSQL-export-2023-01-02_12_49.png "DBDesign")
-
 ## Folder Structure :
 1. controller : tempat menyimpan file controller
 2. model : tempat menyimpan file model
@@ -43,3 +39,6 @@ backend :
 6. asset/css : tempat menyimpan file css
 7. asset/img : tempat menyimpan file img untuk website
 8. asset/js : tempat menyimpan file js
+
+## Database Design
+[![DBDesign](https://kuliah.fauzanmhr.my.id/0:/ASSET/drawSQL-export-2023-01-02_12_49.png "DBDesign")](https://kuliah.fauzanmhr.my.id/0:/ASSET/drawSQL-export-2023-01-02_12_49.png "DBDesign")
