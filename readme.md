@@ -1,15 +1,15 @@
-###Project Status : WIP
+### Project Status : WIP
 
 ------------
-#Monitoring Kinerja
-###Kelompok 4
+# Monitoring Kinerja
+### Kelompok 4
 - Alfian Fakhrudin (Frontend)
 - Benaya Adi Sahat (Backend)
 - Dava Alif (Backend)
 - Muhammad Fauzan M (Frontend)
 - Rafi Fajar S (Backend)
 
-##Task List
+## Task List
 frontend :
 - [ ] register (first name, last name, password, picture, address, dob, position, division)
 - [x] login (username, password)
@@ -31,10 +31,10 @@ backend :
 - [ ] database creation
 - [ ] database seeding
 
-#Database Design
+# Database Design
 [![DBDesign](https://kuliah.fauzanmhr.my.id/0:/ASSET/drawSQL-export-2023-01-02_12_49.png "DBDesign")](https://kuliah.fauzanmhr.my.id/0:/ASSET/drawSQL-export-2023-01-02_12_49.png "DBDesign")
 
-##Folder Structure :
+## Folder Structure :
 1. controller : tempat menyimpan file controller
 2. model : tempat menyimpan file model
 3. middleware : tempat menyimpan file middleware
