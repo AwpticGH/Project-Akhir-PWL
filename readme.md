@@ -1,7 +1,7 @@
 ### Project Status : WIP
 
 ------------
-# Monitoring Kinerja
+# Aplikasi Monitoring Kinerja
 ### Kelompok 4
 - Alfian Fakhrudin (Frontend)
 - Benaya Adi Sahat (Backend)
