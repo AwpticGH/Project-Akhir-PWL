@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <!-- favicon -->
-    <link rel="icon" type="image/x-icon" href="asset/img/logoler.svg">
+    <link rel="icon" type="image/x-icon" href="../asset/img/logoler.svg">
     
     <title>Login</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="asset/css/login.css">
+    <link rel="stylesheet" href="../asset/css/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
     
 </head>
 <body>
     <div class="container">
         <div class="form-image">
-            <img src="asset/img/img5.svg" alt="gambar login">
+            <img src="../asset/img/img5.svg" alt="gambar login">
         </div>
         <div class="form">
             <div class="form-header">
@@ -66,8 +66,8 @@
         </div>
     </div>
 
-    <script src="asset/js/captcha.js"></script>
-    <script src="asset/js/jquery.js"></script>
+    <script src="../asset/js/captcha.js"></script>
+    <script src="../asset/js/jquery.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 </body>
 </html>
