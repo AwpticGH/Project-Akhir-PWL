@@ -10,7 +10,7 @@
 - Rafi Fajar S (Backend)
 
 ## Task List
-ui :
+### ui :
 - [x] admin/dashboard.php
 - [x] employee/dashboard.php
 - [] report/create.php
@@ -19,7 +19,7 @@ ui :
 - [] presence/confirmation.php
 - [] notification/index.php
 
-frontend :
+### frontend :
 - [x] auth/create.php (register) (first name, last name, password, picture, address, dob, position, division)
 - [x] auth/index.php (login) (username, password)
 - [] auth/show.php halaman profile user (cuma bisa ganti picture, address dan password)
@@ -31,7 +31,7 @@ frontend :
 - [] presence/confirmation.php halaman konfirmasi absen pekerja buat admin
 - [] notification/index.php halaman untuk melihat notifikasi
 
-backend :
+### backend :
 - [] UsersController -> create, update, readById, login/readByUsername
 - [] NotificationsController -> create, update, readAllByUserId
 - [] PresencesController -> create, readAllByUserId
