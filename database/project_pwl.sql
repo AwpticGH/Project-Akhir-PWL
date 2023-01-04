@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 04, 2023 at 06:37 PM
+-- Generation Time: Jan 04, 2023 at 06:53 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -63,8 +63,9 @@ CREATE TABLE `evaluations` (
 
 CREATE TABLE `notifications` (
   `id` bigint(20) NOT NULL,
-  `type` varchar(64) NOT NULL,
+  `title` varchar(64) NOT NULL,
   `notification_text` text DEFAULT NULL,
+  `datetime` timestamp NOT NULL DEFAULT current_timestamp(),
   `is_read` tinyint(1) NOT NULL DEFAULT 0,
   `user_id` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
