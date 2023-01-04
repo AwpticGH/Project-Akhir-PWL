@@ -56,10 +56,10 @@ backend :
 WebsMiddleware : Mengarahkan user ke halaman tertentu berdasarkan validasi jabatan
 GuardsMiddleware : Mengizinkan user untuk mengakses halaman tertentu berdasarkan validasi2 tertentu
 
-# WebsMiddleware :
+### WebsMiddleware :
 1. dashboard($jabatan) : return path dashboard berdasarkan $jabatan, kalo $jabatan = "Karyawan" return employee/dashboard.php, else return admin/dashboard.php
 
-# GuardsMiddleware :
+### GuardsMiddleware :
 1. auth($user) : DIGUNAKAN PADA SETIAP HALAMAN KECUALI LOGIN DAN REGISTER, GUNAKAN INI DULU SEBELUM GUARD YANG LAIN
     $user = $_SESSION['user']. if null header("location:auth/index.php"), else return null
 2. head($user) : DIGUNAKAN PADA HALAMAN admin/dashboard.php, report/show.php, presence/confirmation.php
