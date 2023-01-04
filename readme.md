@@ -11,7 +11,7 @@
 
 ## Task List
 frontend :
-- [ ] register (first name, last name, password, picture, address, dob, position, division)
+- [x] register (first name, last name, password, picture, address, dob, position, division)
 - [x] login (username, password)
 - [ ] dashboard pekerja- [ ] dashboard head division & superadmin
 - [ ] halaman create laporan buat pekerja
