@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 04, 2023 at 06:21 PM
+-- Generation Time: Jan 04, 2023 at 06:37 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -101,6 +101,7 @@ INSERT INTO `positions` (`id`, `name`, `create_priv`, `read_priv`, `update_priv`
 CREATE TABLE `presences` (
   `id` bigint(20) NOT NULL,
   `date_of_presence` datetime NOT NULL,
+  `is_confirmed` tinyint(1) NOT NULL DEFAULT 0,
   `user_id` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
