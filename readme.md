@@ -11,6 +11,8 @@
 
 ## Task List
 ### ui :
+- [x] layout/sidebar.php
+- [x] layout/navbar.php
 - [x] auth/show.php
 - [x] admin/dashboard.php
 - [x] employee/dashboard.php
@@ -21,6 +23,8 @@
 - [] notification/index.php
 
 ### frontend :
+- [] layout/sidebar.php
+- [] layout/navbar.php
 - [x] auth/create.php (register) (first name, last name, password, picture, address, dob, position, division)
 - [x] auth/index.php (login) (username, password)
 - [] auth/show.php halaman profile user (cuma bisa ganti picture, address dan password)
