@@ -11,12 +11,13 @@
 
 ## Task List
 ### ui :
+- [x] auth/show.php
 - [x] admin/dashboard.php
 - [x] employee/dashboard.php
 - [] report/create.php
 - [] report/show.php
-- [] presence/create.php
-- [] presence/confirmation.php
+- [x] presence/create.php
+- [x] presence/confirmation.php
 - [] notification/index.php
 
 ### frontend :
