@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 04, 2023 at 01:37 PM
+-- Generation Time: Jan 04, 2023 at 06:21 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -107,6 +107,19 @@ CREATE TABLE `presences` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `reports`
+--
+
+CREATE TABLE `reports` (
+  `id` bigint(20) NOT NULL,
+  `file` text NOT NULL,
+  `date_of_submission` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `user_id` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -163,6 +176,13 @@ ALTER TABLE `presences`
   ADD KEY `CNSTRNT_presences_users` (`user_id`);
 
 --
+-- Indexes for table `reports`
+--
+ALTER TABLE `reports`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `CNSTRNT_reports_users` (`user_id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -205,6 +225,12 @@ ALTER TABLE `presences`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `reports`
+--
+ALTER TABLE `reports`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
@@ -232,6 +258,12 @@ ALTER TABLE `notifications`
 --
 ALTER TABLE `presences`
   ADD CONSTRAINT `CNSTRNT_presences_users` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+
+--
+-- Constraints for table `reports`
+--
+ALTER TABLE `reports`
+  ADD CONSTRAINT `CNSTRNT_reports_users` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 --
 -- Constraints for table `users`
