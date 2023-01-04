@@ -17,14 +17,14 @@
 - [x] admin/dashboard.php
 - [x] employee/dashboard.php
 - [] report/create.php
-- [] report/show.php
+- [x] report/show.php
 - [x] presence/create.php
 - [x] presence/confirmation.php
-- [] notification/index.php
+- [x] notification/index.php
 
 ### frontend :
-- [] layout/sidebar.php
-- [] layout/navbar.php
+- [] layout/sidebar.php (application title, list of pages, darkmode theme toggle button)
+- [] layout/navbar.php (icon sidebar, page title, icon notification, profile btn with dropdown)
 - [x] auth/create.php (register) (first name, last name, password, picture, address, dob, position, division)
 - [x] auth/index.php (login) (username, password)
 - [] auth/show.php halaman profile user (cuma bisa ganti picture, address dan password)
