@@ -6,17 +6,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
             <img src="../../asset/img/moon.png" alt="iconcoy" id="icon">
-                <li class="nav-link">
-                    <i class='bx bx-bell'></i>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div style="float: left;">
-                            <div class="profile">
-                                <span class="name">People</span>
-                            </div>
-                        </div>
-                    </a>
+            <li class="nav-link"> <box-icon name='bell' color="white" size="30px"></box-icon> </li>
+                                <li class="divider"></li>
+                                <li class=" btn btn-rounded nav-item dropdown" style="background-color: #ADEFD1">
+                                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                     <div style="float: left;">
+                                     <div class="profile">
+                                     <box-icon size="20px" name='user-circle'></box-icon>
+                                          <span class="name">People</span>
+                                        </div>
+                                    </div>
                     <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#!">Edit Profile</a>
                         <hr>
