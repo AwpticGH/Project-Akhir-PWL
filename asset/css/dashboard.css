@@ -119,3 +119,11 @@ nav img{
 .form-image img {
     width: 21rem;
 }
+
+.profile {
+    color: #000;
+   }
+   
+   .btn-rounded {
+     border-radius: 25px;
+   }
