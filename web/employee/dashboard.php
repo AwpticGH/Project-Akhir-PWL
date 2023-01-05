@@ -4,17 +4,17 @@
         <?php 
             $title = "Dashboard";
             $css_file = "dashboard.css";
-            include("layout/header.php");
+            include("../layout/header.php");
         ?>
     </head>
     <body>
         <div class="d-flex" id="wrapper">
             <!-- Sidebar-->
-            <?php include("layout/sidebar.php")?>
+            <?php include("../layout/sidebar.php")?>
             <!-- Page content wrapper-->
             <div id="page-content-wrapper">
                 <!-- Top navigation-->
-                <?php include("layout/navbar.php")?>
+                <?php include("../layout/navbar.php")?>
                 
                 <!-- Page content-->
                 <div class="container" style="background-color: toska;">
@@ -75,6 +75,6 @@
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="../asset/js/dashboard.js"></script>
+        <script src="../../asset/js/dashboard.js"></script>
     </body>
 </html>
