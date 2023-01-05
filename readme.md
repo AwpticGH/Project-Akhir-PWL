@@ -16,7 +16,7 @@
 - [x] auth/show.php
 - [x] admin/dashboard.php
 - [x] employee/dashboard.php
-- [] report/create.php
+- [x] report/create.php
 - [x] report/show.php
 - [x] presence/create.php
 - [x] presence/confirmation.php
