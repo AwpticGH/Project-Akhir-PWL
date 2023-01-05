@@ -31,16 +31,16 @@
 
 .card3{
     max-width: 12rem;
-    height: 217px;
-    padding: 30px;
+    height: 180px;
+    padding: 50px;
     width: 300px;
+    font-size: 20px;
     box-shadow: 0 5px 14px rgba(0, 0, 0, .3);
     background-color: grey;
     border-radius: 11px;
     /* margin-left: 40px; */
     /* margin-top: 1.5rem; */
     margin-bottom: 1rem;
-
     text-align: left;
 }
 
@@ -62,7 +62,7 @@
 .card5{
     max-width: 16rem;
     height: 117px;
-    padding: 30px;
+    padding: 0px;
     width: 300px;
     box-shadow: 0 5px 14px rgba(0, 0, 0, .3);
     background-color: green;
@@ -76,7 +76,7 @@
 .card6{
     max-width: 16rem;
     height: 117px;
-    padding: 30px;
+    padding: 0px;
     width: 300px;
     box-shadow: 0 5px 14px rgba(0, 0, 0, .3);
     background-color: red;
@@ -90,7 +90,7 @@
 .card7{
     max-width: 16rem;
     height: 117px;
-    padding: 30px;
+    padding: 0px;
     width: 300px;
     box-shadow: 0 5px 14px rgba(0, 0, 0, .3);
     background-color: yellow;
@@ -98,6 +98,21 @@
     /* margin-left: 40px; */
     /* margin-top: 1.5rem; */
     margin-bottom: 1rem;
+    text-align: left;
+}
+
+.card8{
+    max-width: 57rem;
+    height: 617px;
+    padding: 20px;
+    width: auto;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, .3);
+    background-color: #ADEFD1;
+    border-radius: 11px;
+    margin-left: 40px;
+    margin-top: 7rem;
+    margin-bottom: 1rem;
+    margin-right: 36px;
     text-align: left;
 }
 
@@ -119,4 +134,12 @@ nav img{
 
 .form-image img {
     width: 21rem;
+}
+
+.profile {
+    color: #000;
+}
+
+.btn-rounded {
+    border-radius: 25px;
 }
