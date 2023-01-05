@@ -1,20 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Dashboard</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="../asset/img/favicon.icon" />
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="../asset/css/bootstrap.css" rel="stylesheet" />
-        <!-- cssdashboard -->
-        <link rel="stylesheet" href="../asset/css/dashboard.css">
-        <!-- css main -->
-        <link rel="stylesheet" href="../asset/css/main.css">
+        <?php 
+            $title = "Dashboard";
+            $css_file = "dashboard.css";
+            include("layout/header.php");
+        ?>
     </head>
     <body>
         <div class="d-flex" id="wrapper">
