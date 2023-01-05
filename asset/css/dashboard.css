@@ -4033,6 +4033,7 @@ textarea.form-control-lg {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   background-color: #00203F;
+  height: 100px;
 }
 .navbar > .container,
 .navbar > .container-fluid,
@@ -11299,6 +11300,7 @@ textarea.form-control-lg {
   padding: 0.875rem 1.25rem;
   font-size: 1.2rem;
   color: white;
+  height: 100px;
 }
 
 #sidebar-wrapper .list-group {
@@ -11326,4 +11328,16 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
   body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
     margin-left: -15rem;
   }
+}
+
+/*!
+OUR CUSTOM CSS
+ */
+
+.profile {
+ color: #000;
+}
+
+.btn-rounded {
+  border-radius: 25px;
 }

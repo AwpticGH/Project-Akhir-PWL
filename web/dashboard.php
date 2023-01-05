@@ -8,7 +8,6 @@
         <title>Dashboard</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="../asset/img/favicon.icon" />
-        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="../asset/css/dashboard.css" rel="stylesheet" />
     </head>
@@ -16,7 +15,7 @@
         <div class="d-flex" id="wrapper">
             <!-- Sidebar-->
             <div class="border-end " id="sidebar-wrapper">
-                <div class="sidebar-heading border-bottom"><i class='bx bxs-pencil'></i>&nbsp; E-Kinerja</div>
+                <div class="sidebar-heading border-bottom"><box-icon name='edit-alt' color="white"></box-icon>&nbsp; E-Kinerja</div>
                 <div class="list-group list-group-flush">
                     <a class="list-group-item list-group-item-action list-group-item-light p-3 active" style="background-color: #000;" href="#!">Dashboard</a>
                     <a class="list-group-item list-group-item-action list-group-item-light p-3" style="background-color: #00203F;" href="#!">Shortcuts</a>
@@ -36,11 +35,13 @@
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"></button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
-                                <li class="nav-link"><i class='bx bx-bell'></i></li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <li class="nav-link"> <box-icon name='bell' color="white" size="30px"></box-icon> </li>
+                                <li class="divider"></li>
+                                <li class=" btn btn-rounded nav-item dropdown" style="background-color: #ADEFD1">
+                                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                      <div style="float: left;">
                                      <div class="profile">
+                                     <box-icon size="20px" name='user-circle'></box-icon>
                                           <span class="name">People</span>
                                         </div>
                                     </div>
@@ -70,6 +71,7 @@
         </div>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
         <!-- Core theme JS-->
         <script src="../asset/js/dashboard.js"></script>
     </body>
