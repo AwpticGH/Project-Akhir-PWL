@@ -1,9 +1,17 @@
-let sidebar = document.querySelector(".sidebar");
-let sidebarBtn = document.querySelector(".sidebarBtn");
-sidebarBtn.onclick = function() {
-  sidebar.classList.toggle("active");
-  if(sidebar.classList.contains("active")){
-  sidebarBtn.classList.replace("bx-menu" ,"bx-menu-alt-right");
-}else
-  sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
-}
+window.addEventListener('DOMContentLoaded', event => {
+
+  // Toggle the side navigation
+  const sidebarToggle = document.body.querySelector('#sidebarToggle');
+  if (sidebarToggle) {
+      // persist sidebar toggle between refreshes
+      if (localStorage.getItem('sb|sidebar-toggle') === 'true') {
+        document.body.classList.toggle('sb-sidenav-toggled');
+      }
+      sidebarToggle.addEventListener('click', event => {
+          event.preventDefault();
+          document.body.classList.toggle('sb-sidenav-toggled');
+          localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains('sb-sidenav-toggled'));
+      });
+  }
+
+});
