@@ -15,7 +15,7 @@
     <body>
         <div class="container">
             <div class="form-image">
-                <img src="../asset/img/img5.svg" alt="gambar login">
+                <img src="../../asset/img/img5.svg" alt="gambar login">
             </div>
             <div class="form">
                 <div class="form-header">

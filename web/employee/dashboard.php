@@ -39,7 +39,7 @@
                 <?php include("../layout/navbar.php")?>
                 
                 <!-- Page content-->
-                <div class="container" style="background-color: toska;">
+                <div class="container">
                     <div class="row">
                         <div class="col-9">
                             <h1 class="mt-4">Dashboard Pegawai</h1>

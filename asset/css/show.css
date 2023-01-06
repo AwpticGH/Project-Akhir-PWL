@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Crete+Round:ital@1&display=swap');
+.porum{
+    margin-left: 20px;
+}
+nav img{
+    margin-right: 5px;
+    margin-top: 9px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+.dopdown{
+    background-color: #ADEFD1
+}
+.btn-rounded {
+    border-radius: 25px;
+}
+
+.form-title{
+    font-family: 'Crete Round', serif;
+    color: #2C3639;
+    margin-bottom: 10px;
+}
+
+.form-group{
+    margin-top: 15px;
+}
+
+.form-control{
+    height: 38.5px;
+}
+
+.boton{
+    margin-top: 23px; 
+    font-size: 20px; 
+    color: #2C3639; 
+    background: #ADEFD1;
+    margin-left: 50px;
+    width: 90%; 
+    border-radius: 15px;
+}
