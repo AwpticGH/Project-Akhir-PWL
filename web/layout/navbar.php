@@ -8,7 +8,7 @@
             <img src="../../asset/img/moon.png" alt="iconcoy" id="icon">
                 <li class="nav-link"> <box-icon name='bell' color="white" size="30px"></box-icon> </li>
                 <li class="divider"></li>
-                <li class="btn btn-rounded nav-item dropdown" style="background-color: #ADEFD1">
+                <li class="btn btn-rounded nav-item dropdown dopdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div style="float: left;">
                             <div class="profile">

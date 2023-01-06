@@ -73,7 +73,32 @@
                                 </div>
                             </div>
                             <div class="card4">
-                                Table
+                            <table class="table table-bordered table-striped table-hover table-light" style="border-radius: 20px;">
+                                <thead class="table-dark">
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Laporan</th>
+                                        <th scope="col">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Jems</td>
+                                        <td>emdo</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Lorem.</td>
+                                        <td>Lorem, ipsum dolor.</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Lorem.</td>
+                                        <td>Lorem, ipsum dolor.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
                             </div>
                         </div>
                         <!-- <div class="col-1"> -->

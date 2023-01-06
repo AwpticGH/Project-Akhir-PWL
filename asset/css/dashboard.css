@@ -16,7 +16,7 @@
 
 .card2{
     max-width: 57rem;
-    height: 617px;
+    height: 680px;
     padding: 20px;
     width: auto;
     box-shadow: 0 5px 14px rgba(0, 0, 0, .3);
@@ -31,7 +31,7 @@
 
 .card3{
     max-width: 12rem;
-    height: 180px;
+    height: 190px;
     padding: 50px;
     width: 300px;
     font-size: 20px;
@@ -117,9 +117,10 @@
 }
 
 nav img{
-    margin-top: 8px;
-    width: 25px;
-    height: 25px;
+    margin-right: 5px;
+    margin-top: 9px;
+    width: 30px;
+    height: 30px;
     cursor: pointer;
 }
 
@@ -142,4 +143,8 @@ nav img{
 
 .btn-rounded {
     border-radius: 25px;
+}
+/* DROPDOWN PADA NAVBAR */
+.dopdown{
+    background-color: #ADEFD1
 }
