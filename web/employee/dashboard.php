@@ -6,6 +6,28 @@
             $css_file = "dashboard.css";
             include("../layout/header.php");
         ?>
+        <style>
+            /* width */
+            ::-webkit-scrollbar {
+            width: 10px;
+            }
+            /* Track */
+            ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey; 
+            background: #0000; 
+            border-radius: 21px;
+            }
+            
+            /* Handle */
+            ::-webkit-scrollbar-thumb {
+            background: -webkit-linear-gradient(90deg, hsla(221, 45%, 73%, 1) 0%, hsla(220, 78%, 29%, 1) 100%);
+            border-radius: 21px;
+            }
+            /* Handle on hover */
+            ::-webkit-scrollbar-thumb:hover {
+            background: -webkit-linear-gradient(90deg, hsla(221, 45%, 73%, 1) 0%, hsla(220, 78%, 29%, 1) 100%); 
+            }
+        </style>
     </head>
     <body>
         <div class="d-flex" id="wrapper">
