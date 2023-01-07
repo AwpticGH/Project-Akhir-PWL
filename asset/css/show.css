@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Crete+Round:ital@1&display=swap');
+:root{
+    --primary: #ADEFD1;
+}
+
 .porum{
     margin-left: 20px;
 }
+
 nav img{
     margin-right: 5px;
     margin-top: 9px;
@@ -9,9 +14,11 @@ nav img{
     height: 30px;
     cursor: pointer;
 }
+
 .dopdown{
-    background-color: #ADEFD1
+    background-color: var(--primary);
 }
+
 .btn-rounded {
     border-radius: 25px;
 }
