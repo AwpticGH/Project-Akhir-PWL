@@ -20,7 +20,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-11">
-                            <h1 class="mt-4">Edit Profile</h1>
+                            <h1 class="mt-4 fonku">Edit Profile</h1>
                             <form method="post" enctype="multipart/form-data" class="porum">
                                 <div class="form-group" style="color:whitesmoke;">
                                     <label class="form-title">Username</label>
@@ -34,7 +34,7 @@
                                     <label class="form-title">Picture</label>
                                     <input type="file" class="form-control form-control-lg" name="File">
                                 </div>
-                                <input type="submit" class="btn boton" name="Save Changes" value="Submit">
+                                <input type="submit" class="btn boton" name="Submit" value="Save Changes">
                             </form>
                         </div>
                         <!-- <div class="col-1"> -->
@@ -46,6 +46,7 @@
                 </div> -->
             </div>
         </div>
+        <script src="../../asset/js/darkmode.js"></script>
         <?php include("../layout/script.php");?>
     </body>
 </html>

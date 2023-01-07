@@ -1,3 +1,10 @@
+:root{
+    --fonts: #212529;
+}
+.modegelap{
+    --fonts:#ffff;
+}
+
 
 .card1{
     max-width: 57rem;
@@ -116,6 +123,7 @@
     text-align: left;
 }
 
+/* NAVBAR */
 nav img{
     margin-right: 5px;
     margin-top: 9px;
@@ -123,7 +131,7 @@ nav img{
     height: 30px;
     cursor: pointer;
 }
-
+/* untuk gambar welcome kucing */
 .form-image {
     width: 100%;
     display: flex;
@@ -132,7 +140,7 @@ nav img{
     border-radius: 13px 0px 0 13px;
     padding: 0rem;
 }
-
+/* ini juga buat atur besar/kecil pada gmbr kucing */
 .form-image img {
     width: 19rem;
 }
@@ -140,11 +148,15 @@ nav img{
 .profile {
     color: #000;
 }
-
+/* ini untuk rounded shape profile pada navbar */
 .btn-rounded {
     border-radius: 25px;
 }
 /* DROPDOWN PADA NAVBAR */
 .dopdown{
     background-color: #ADEFD1
+}
+/* untuk color fonts pada halaman dashboard */
+.fonku{
+    color: var(--fonts);
 }
