@@ -31,9 +31,9 @@
 - [x] admin/dashboard.php dashboard head division & superadmin
 - [x] employee/dashboard.php dashboard karyawan
 - [] report/create.php halaman create laporan buat pekerja
-- [x] report/show.php halaman pencarian laporan buat head division
-- [] presence/create.php halaman create absen buat pekerja
-- [x] presence/confirmation.php halaman konfirmasi absen pekerja buat admin
+- [] report/show.php halaman pencarian laporan buat head division
+- [x] presence/create.php halaman create absen buat pekerja
+- [] presence/confirmation.php halaman konfirmasi absen pekerja buat admin
 - [] notification/index.php halaman untuk melihat notifikasi
 
 ### backend :
