@@ -1,0 +1,162 @@
+:root{
+    --fonts: #212529;
+}
+.modegelap{
+    --fonts:#ffff;
+}
+
+
+.card1{
+    max-width: 57rem;
+    height: 217px;
+    padding: 30px;
+    width: auto;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, .3);
+    background-color: #ADEFD1;
+    border-radius: 11px;
+    margin-left: 40px;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    margin-right: 36px;
+    text-align: left;
+}
+
+.card2{
+    max-width: 57rem;
+    height: 680px;
+    padding: 20px;
+    width: auto;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, .3);
+    background-color: #ADEFD1;
+    border-radius: 11px;
+    margin-left: 40px;
+    margin-top: 7rem;
+    margin-bottom: 1rem;
+    margin-right: 36px;
+    text-align: left;
+}
+
+.card3{
+    max-width: 12rem;
+    height: 190px;
+    padding: 50px;
+    width: 300px;
+    font-size: 20px;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, .3);
+    background-color: grey;
+    border-radius: 11px;
+    /* margin-left: 40px; */
+    /* margin-top: 1.5rem; */
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.card4{
+    max-width: 57rem;
+    height: 217px;
+    padding: 30px;
+    width: auto;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, .3);
+    background-color: #ADEFD1;
+    border-radius: 11px;
+    margin-left: 40px;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    margin-right: 36px;
+    text-align: left;
+}
+
+.card5{
+    max-width: 16rem;
+    height: 117px;
+    padding: 0px;
+    width: 300px;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, .3);
+    background-color: green;
+    border-radius: 11px;
+    /* margin-left: 40px; */
+    /* margin-top: 1.5rem; */
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.card6{
+    max-width: 16rem;
+    height: 117px;
+    padding: 0px;
+    width: 300px;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, .3);
+    background-color: red;
+    border-radius: 11px;
+    /* margin-left: 40px; */
+    /* margin-top: 1.5rem; */
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.card7{
+    max-width: 16rem;
+    height: 117px;
+    padding: 0px;
+    width: 300px;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, .3);
+    background-color: yellow;
+    border-radius: 11px;
+    /* margin-left: 40px; */
+    /* margin-top: 1.5rem; */
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.card8{
+    max-width: 57rem;
+    height: 617px;
+    padding: 20px;
+    width: auto;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, .3);
+    background-color: #ADEFD1;
+    border-radius: 11px;
+    margin-left: 40px;
+    margin-top: 7rem;
+    margin-bottom: 1rem;
+    margin-right: 36px;
+    text-align: left;
+}
+
+/* NAVBAR */
+nav img{
+    margin-right: 5px;
+    margin-top: 9px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+/* untuk gambar welcome kucing */
+.form-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 13px 0px 0 13px;
+    padding: 0rem;
+}
+/* ini juga buat atur besar/kecil pada gmbr kucing */
+.form-image img {
+    width: 19rem;
+}
+
+.profile {
+    color: #000;
+}
+/* ini untuk rounded shape profile pada navbar */
+.btn-rounded {
+    border-radius: 25px;
+}
+/* DROPDOWN PADA NAVBAR */
+.dopdown{
+    background-color: #ADEFD1
+}
+/* untuk color fonts pada halaman dashboard */
+.fonku{
+    color: var(--fonts);
+}

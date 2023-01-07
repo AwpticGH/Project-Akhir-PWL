@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Crete+Round:ital@1&display=swap');
+:root{
+    --primary: #EAEAEA;
+    --fonts: #212529;
+}
+.modegelap{
+    --primary: #282a36;
+    --fonts:#ffff;
+}
+
+.porum{
+    margin-left: 20px;
+}
+
+nav img{
+    margin-right: 5px;
+    margin-top: 9px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.dopdown{
+    background-color: var(--primary);
+}
+
+.btn-rounded {
+    border-radius: 25px;
+}
+
+.form-title{
+    font-family: 'Crete Round', serif;
+    color: var(--fonts);
+    margin-bottom: 10px;
+}
+
+.form-group{
+    margin-top: 20px;
+}
+
+.form-control{
+    height: 39px;
+}
+
+.boton{
+    margin-top: 23px; 
+    font-size: 20px; 
+    color: #2C3639; 
+    background: #ADEFD1;
+    margin-left: 50px;
+    width: 90%; 
+    border-radius: 15px;
+}
+
+.fonku{
+    color: var(--fonts);
+}
