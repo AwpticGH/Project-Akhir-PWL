@@ -50,7 +50,7 @@ nav img{
 }
 
  /* width */
- ::-webkit-scrollbar {
+::-webkit-scrollbar {
     width: 10px;
     }
     /* Track */
@@ -75,8 +75,8 @@ nav img{
         margin: 0;
         padding: 0;
         overflow: hidden;
-      }
-      
-      li {
+    }
+    
+    li {
         float: left;
-      }
+        }
