@@ -83,24 +83,27 @@
                            </tbody>
                         </table>
                      </div>
-                     <br>
-                     <nav aria-label="Page-navigation">
-  <ul class="pagination justify-content-center ">
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-      </a>
-    </li>
-    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-    <li class="page-item"><a class="page-link" href="#">2</a></li>
-    <li class="page-item"><a class="page-link" href="#">3</a></li>
-    <li class="page-item">
-      <a class="page-link" href="#" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-      </a>
-    </li>
-  </ul>
-</nav>
+                     <center>
+                     <div class="card-pagination">
+                     <nav aria-label="Page-navigation ">
+                        <ul class="pagination  ">
+                           <li class="page-item disabled">
+                              <a class="page-link" href="#" aria-label="Previous">
+                              <span aria-hidden="true">&laquo;</span>
+                              </a>
+                           </li>
+                           <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                           <li class="page-item"><a class="page-link" href="#">2</a></li>
+                           <li class="page-item"><a class="page-link" href="#">3</a></li>
+                           <li class="page-item">
+                              <a class="page-link" href="#" aria-label="Next">
+                              <span aria-hidden="true">&raquo;</span>
+                              </a>
+                           </li>
+                        </ul>
+                     </nav>
+                     </div>
+                     </center>
                   </div>
                   <div class="card2">
                      <div class="card3">
@@ -117,7 +120,7 @@
                            Jabatan
                         </center>
                      </div>
-                        <center>
+                     <center>
                         <table class="table table-bordered table-striped table-hover table-light" style="border-radius: 20px;">
                            <thead class="table-dark">
                               <tr>
@@ -138,15 +141,14 @@
                                  <th scope="row">3</th>
                                  <td>Rafi Fajar</td>
                               </tr>
-
                            </tbody>
                         </table>
-                        </center>
-                     </div>
+                     </center>
                   </div>
                </div>
             </div>
          </div>
+      </div>
       </div>
       <script src="../../asset/js/darkmode.js"></script>
       <!-- Bootstrap core JS-->

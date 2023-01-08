@@ -37,12 +37,10 @@
             <div id="page-content-wrapper">
                 <!-- Top navigation-->
                 <?php include("../layout/navbar.php")?>
-                
                 <!-- Page content-->
                 <div class="container">
                     <div class="row">
                         <div class="col-9">
-                            <h1 class="mt-4 fonku">Dashboard Pegawai</h1>
                             <div class="card1">
                                 <div class="form-image">
                                 <img src="../../asset/img/img5.svg" alt="">

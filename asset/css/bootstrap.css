@@ -4807,10 +4807,10 @@ textarea.form-control-lg {
 .page-link {
   position: relative;
   display: block;
-  color: #0d6efd;
+  color: #000;
   text-decoration: none;
   background-color: #fff;
-  border: 1px solid #000;
+  border: 1px solid #00203F;
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
@@ -4820,14 +4820,14 @@ textarea.form-control-lg {
 }
 .page-link:hover {
   z-index: 2;
-  color: #000;
-  background-color: #ADEFD1;;
-  border-color: #000;
+  color: white;
+  background-color: #00203F;
+  border-color: #00203F;
 }
 .page-link:focus {
   z-index: 3;
-  color: #000;
-  background-color: #ADEFD1;
+  color: white;
+  background-color: #00203F;
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
@@ -4837,15 +4837,15 @@ textarea.form-control-lg {
 }
 .page-item.active .page-link {
   z-index: 3;
-  color: #000;
-  background-color: #ADEFD1;
-  border-color: #000;
+  color: white;
+  background-color: #00203F;
+  border-color: #00203F;
 }
 .page-item.disabled .page-link {
   color: #6c757d;
   pointer-events: none;
   background-color: #fff;
-  border-color: #dee2e6;
+  border-color: #00203F;
 }
 
 .page-link {
