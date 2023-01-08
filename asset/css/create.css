@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
 
 :root{
-    --primary: #EAEAEA;
+    --primary: #9AB8BA;
 }
 
 .modegelap{
@@ -13,7 +13,7 @@
     height: 320px;
     width: auto;
     box-shadow: 0 5px 14px rgba(0, 0, 0, .3);
-    background-color: whitesmoke;
+    background-color: #EAEAEA;
     border-radius: 11px;
     margin-left: 40px;
     margin-top: 1.5rem;
