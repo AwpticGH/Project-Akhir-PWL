@@ -30,7 +30,7 @@
 - [x] auth/show.php halaman profile user (cuma bisa ganti picture, address dan password)
 - [] admin/dashboard.php dashboard head division & superadmin
 - [x] employee/dashboard.php dashboard karyawan
-- [] report/create.php halaman create laporan buat pekerja
+- [x] report/create.php halaman create laporan buat pekerja
 - [] report/show.php halaman pencarian laporan buat head division
 - [] presence/create.php halaman create absen buat pekerja
 - [] presence/confirmation.php halaman konfirmasi absen pekerja buat admin
