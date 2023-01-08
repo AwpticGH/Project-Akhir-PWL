@@ -23,15 +23,14 @@
 
 .card2{
     max-width: 57rem;
-    height: 680px;
+    height: 670px;
     padding: 20px;
     width: auto;
     box-shadow: 0 5px 14px rgba(0, 0, 0, .3);
     background-color: #ADEFD1;
     border-radius: 11px;
     margin-left: 40px;
-    margin-top: 7rem;
-    margin-bottom: 1rem;
+    margin-top: 3.5rem;
     margin-right: 36px;
     text-align: left;
 }
