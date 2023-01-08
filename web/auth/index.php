@@ -28,7 +28,6 @@
                     <!-- <?php if($error !=  ''){ ?>
                         <div class="alert  alert-danger" role="alert"><?= $error;?></div>
                     <?php } ?> -->
-
                     <div class="txt_field">
                         <input type="text" name="username" id="username" required>
                         <span></span>
