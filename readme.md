@@ -31,10 +31,10 @@
 - [x] admin/dashboard.php dashboard head division & superadmin
 - [x] employee/dashboard.php dashboard karyawan
 - [x] report/create.php halaman create laporan buat pekerja
-- [] report/show.php halaman pencarian laporan buat head division
+- [x] report/show.php halaman pencarian laporan buat head division
 - [x] presence/create.php halaman create absen buat pekerja
-- [] presence/confirmation.php halaman konfirmasi absen pekerja buat admin
-- [] notification/index.php halaman untuk melihat notifikasi
+- [x] presence/confirmation.php halaman konfirmasi absen pekerja buat admin
+- [x] notification/index.php halaman untuk melihat notifikasi
 
 ### backend :
 - [] UsersController -> create, update, readById, login/readByUsername
