@@ -3,7 +3,7 @@
     <head>
         <?php 
             $title = "Presensi";
-            $css_file = "presence.css";
+            $css_file = "presence/create.css";
             include("../layout/header.php");
         ?>
     </head>

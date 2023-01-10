@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <!-- favicon -->
-    <link rel="icon" type="image/x-icon" href="../asset/img/logoler.svg">
-    
-    <title>Registration</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../asset/css/register.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <?php
+        $title = "Register";
+        $css_file = "auth/register.css";
+        include("../layout/header.php");
+    ?>
 </head>
 <body>
     <div class="container">

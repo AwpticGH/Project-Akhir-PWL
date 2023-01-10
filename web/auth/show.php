@@ -3,7 +3,7 @@
     <head>
         <?php 
             $title = "Profile";
-            $css_file = "show.css";
+            $css_file = "auth/profile.css";
             include("../layout/header.php");
         ?>
     </head>

@@ -4,7 +4,7 @@
 <meta name="author" content="" />
 <title><?= $title ?></title>
 <!-- Favicon-->
-<link rel="icon" type="image/x-icon" href="../asset/img/favicon.icon" />
+<!-- <link rel="icon" type="image/x-icon" href="../../asset/img/favicon.icon" /> -->
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
 <!-- Core theme CSS (includes Bootstrap)-->
