@@ -15,7 +15,7 @@
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Edit Profile</a></li>
                         <hr>
-                        <li><a class="dropdown-item" style="color: red; font-size: 18px;" href="#"><i class='bx bx-log-out-circle'></i>Logout</a></li>
+                        <li><a class="dropdown-item" style="color: red; font-size: 16px;" href="#"><i class='bx bx-log-out-circle'></i>Logout</a></li>
                     </ul>
                     </div>
                 </li>
