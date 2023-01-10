@@ -14,4 +14,8 @@ window.addEventListener('DOMContentLoaded', event => {
       });
   }
 
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> project_pwl/alfian

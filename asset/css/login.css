@@ -12,7 +12,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #D2DAFF;
+    background: #415A80;
 }
 
 .container {
@@ -125,7 +125,7 @@ form .btn{
     height: 45px;
     text-align: center;
     border: none;
-    background: #a29bfe;
+    background: #415A80;
     outline: none;
     border-radius: 30px;
     font-size: 1.2rem;
@@ -164,6 +164,7 @@ form .btn:hover{
     font-weight: 700px;
     border-radius: 12px;
 }
+
 .ReloadBtn{
 background: url('asset/img/refresh.png') left top no-repeat;
 background-size: 100%;
