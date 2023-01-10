@@ -93,12 +93,7 @@
                                 </div>
                             </div>
                             <div class="card4">
-<<<<<<< HEAD
-<<<<<<< HEAD
                                 Table
-=======
-=======
->>>>>>> project_pwl/fauzan
                             <table class="table table-bordered table-striped table-hover table-light" style="border-radius: 20px;">
                                 <thead class="table-dark">
                                     <tr>
@@ -125,10 +120,6 @@
                                     </tr>
                                 </tbody>
                             </table>
-<<<<<<< HEAD
->>>>>>> project_pwl/alfian
-=======
->>>>>>> project_pwl/fauzan
                             </div>
                         </div>
                         <!-- <div class="col-1"> -->
@@ -157,19 +148,7 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> project_pwl/fauzan
-        <script src="../../asset/js/darkmode.js"></script>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-<<<<<<< HEAD
->>>>>>> project_pwl/alfian
-=======
->>>>>>> project_pwl/fauzan
+        <!-- JS-->
         <?php include("../layout/script.php");?>
     </body>
 </html>

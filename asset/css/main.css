@@ -61,4 +61,49 @@
     width: 100%;
 }
 
-/* SIDEBAR */
+/* Navbar */
+/* NAVBAR */
+nav img{
+    margin-right: 5px;
+    margin-top: 9px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+/* untuk gambar welcome kucing */
+.form-image {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 13px 0px 0 13px;
+    padding: 0rem;
+}
+/* ini juga buat atur besar/kecil pada gmbr kucing */
+.form-image img {
+    width: 19rem;
+}
+
+.profile {
+    color: #000;
+}
+/* ini untuk rounded shape profile pada navbar */
+.btn-rounded {
+    border-radius: 25px;
+}
+/* DROPDOWN PADA NAVBAR */
+.dopdown{
+    background-color: #ADEFD1
+}
+/* untuk color fonts pada halaman dashboard */
+.fonku{
+    color: var(--fonts);
+}
+
+/* untuk shape profile */
+.btn-rounded {
+    border-radius: 25px;
+}
+.name {
+    color: black;
+}
