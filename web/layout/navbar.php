@@ -7,6 +7,7 @@
             <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
             <img src="../../asset/img/moon.png" alt="iconcoy" id="icon">
 <<<<<<< HEAD
+<<<<<<< HEAD
                 <li class="nav-link"> <box-icon name='bell' color="white" size="30px"></box-icon> </li>
                 <li class="divider"></li>
                 <li class="btn btn-rounded nav-item dropdown" style="background-color: #ADEFD1">
@@ -34,6 +35,19 @@
                         <a class="dropdown-item" style="color: red; font-size: 18px;" href="#"><i class='bx bx-log-out-circle'></i>Logout</a>
                     </div>
                 </li>
+=======
+            <li class="nav-link"> <box-icon name='bell' color="white" size="30px"></box-icon> </li>
+            <li class="dropdown nav-link">
+                <button class="btn btn-primary btn-rounded dropdown-toggle" style="background-color: #ADEFD1; color: black;"type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span> <box-icon size="xs" name='user-circle'></box-icon> Profile </span>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+>>>>>>> project_pwl/fauzan
             </ul>
         </div>
     </div>
