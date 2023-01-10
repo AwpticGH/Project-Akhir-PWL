@@ -3,7 +3,7 @@
     <head>
         <?php 
             $title = "Report";
-            $css_file = "create.css";
+            $css_file = "report/create.css";
             include("../layout/header.php");
         ?>
         <style>
