@@ -1,3 +1,11 @@
+:root{
+    --fonts: #212529;
+}
+.modegelap{
+    --fonts:#ffff;
+}
+
+
 .card1{
     max-width: 57rem;
     height: 217px;
@@ -15,31 +23,30 @@
 
 .card2{
     max-width: 57rem;
-    height: 617px;
+    height: 670px;
     padding: 20px;
     width: auto;
     box-shadow: 0 5px 14px rgba(0, 0, 0, .3);
     background-color: #ADEFD1;
     border-radius: 11px;
     margin-left: 40px;
-    margin-top: 7rem;
-    margin-bottom: 1rem;
+    margin-top: 3.5rem;
     margin-right: 36px;
     text-align: left;
 }
 
 .card3{
     max-width: 12rem;
-    height: 217px;
-    padding: 30px;
+    height: 190px;
+    padding: 50px;
     width: 300px;
+    font-size: 20px;
     box-shadow: 0 5px 14px rgba(0, 0, 0, .3);
     background-color: grey;
     border-radius: 11px;
     /* margin-left: 40px; */
     /* margin-top: 1.5rem; */
     margin-bottom: 1rem;
-
     text-align: left;
 }
 
@@ -61,7 +68,7 @@
 .card5{
     max-width: 16rem;
     height: 117px;
-    padding: 30px;
+    padding: 0px;
     width: 300px;
     box-shadow: 0 5px 14px rgba(0, 0, 0, .3);
     background-color: green;
@@ -75,7 +82,7 @@
 .card6{
     max-width: 16rem;
     height: 117px;
-    padding: 30px;
+    padding: 0px;
     width: 300px;
     box-shadow: 0 5px 14px rgba(0, 0, 0, .3);
     background-color: red;
@@ -89,7 +96,7 @@
 .card7{
     max-width: 16rem;
     height: 117px;
-    padding: 30px;
+    padding: 0px;
     width: 300px;
     box-shadow: 0 5px 14px rgba(0, 0, 0, .3);
     background-color: yellow;
@@ -100,13 +107,40 @@
     text-align: left;
 }
 
-nav img{
-    margin-top: 8px;
-    width: 25px;
-    height: 25px;
-    cursor: pointer;
+.card8{
+    max-width: 57rem;
+    height: 617px;
+    padding: 20px;
+    width: auto;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, .3);
+    background-color: #ADEFD1;
+    border-radius: 11px;
+    margin-left: 40px;
+    margin-top: 7rem;
+    margin-bottom: 1rem;
+    margin-right: 36px;
+    text-align: left;
 }
 
+.card-pagination {
+    height: 80px; 
+    width:210px;
+    padding: 20px;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, .3);
+    background-color: #ADEFD1;
+    border-radius: 11px;
+    justify-content: center;
+}
+
+/* NAVBAR */
+nav img{
+    margin-right: 5px;
+    margin-top: 9px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+/* untuk gambar welcome kucing */
 .form-image {
     width: 100%;
     display: flex;
@@ -115,7 +149,52 @@ nav img{
     border-radius: 13px 0px 0 13px;
     padding: 0rem;
 }
-
+/* ini juga buat atur besar/kecil pada gmbr kucing */
 .form-image img {
-    width: 21rem;
+    width: 19rem;
 }
+
+.profile {
+    color: #000;
+}
+/* ini untuk rounded shape profile pada navbar */
+.btn-rounded {
+    border-radius: 25px;
+}
+/* DROPDOWN PADA NAVBAR */
+.dopdown{
+    background-color: #ADEFD1
+}
+/* untuk color fonts pada halaman dashboard */
+.fonku{
+    color: var(--fonts);
+}
+
+/* untuk shape profile */
+.btn-rounded {
+    border-radius: 25px;
+}
+.name {
+    color: black;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    }
+    /* Track */
+    ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    background: #0000; 
+    border-radius: 21px;
+    }
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+    background: -webkit-linear-gradient(90deg, hsla(221, 45%, 73%, 1) 0%, hsla(220, 78%, 29%, 1) 100%);
+    border-radius: 21px;
+    }
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+    background: -webkit-linear-gradient(90deg, hsla(221, 45%, 73%, 1) 0%, hsla(220, 78%, 29%, 1) 100%); 
+    }

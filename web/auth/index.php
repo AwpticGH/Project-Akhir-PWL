@@ -15,7 +15,7 @@
     <body>
         <div class="container">
             <div class="form-image">
-                <img src="../asset/img/img5.svg" alt="gambar login">
+                <img src="../../asset/img/img5.svg" alt="gambar login">
             </div>
             <div class="form">
                 <div class="form-header">
@@ -28,7 +28,6 @@
                     <!-- <?php if($error !=  ''){ ?>
                         <div class="alert  alert-danger" role="alert"><?= $error;?></div>
                     <?php } ?> -->
-
                     <div class="txt_field">
                         <input type="text" name="username" id="username" required>
                         <span></span>

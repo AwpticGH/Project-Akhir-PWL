@@ -23,18 +23,18 @@
 - [x] notification/index.php
 
 ### frontend :
-- [x] layout/sidebar.php (application title, list of pages,)
-- [] layout/navbar.php (icon sidebar, page title, icon notification, profile btn with dropdown, darkmode theme toggle button)
+- [x] layout/sidebar.php (application title, list of pages, darkmode theme toggle button)
+- [x] layout/navbar.php (icon sidebar, page title, icon notification, profile btn with dropdown)
 - [x] auth/create.php (register) (first name, last name, password, picture, address, dob, position, division)
 - [x] auth/index.php (login) (username, password)
 - [x] auth/show.php halaman profile user (cuma bisa ganti picture, address dan password)
 - [x] admin/dashboard.php dashboard head division & superadmin
 - [x] employee/dashboard.php dashboard karyawan
 - [x] report/create.php halaman create laporan buat pekerja
-- [] report/show.php halaman pencarian laporan buat head division
+- [x] report/show.php halaman pencarian laporan buat head division
 - [x] presence/create.php halaman create absen buat pekerja
-- [] presence/confirmation.php halaman konfirmasi absen pekerja buat admin
-- [] notification/index.php halaman untuk melihat notifikasi
+- [x] presence/confirmation.php halaman konfirmasi absen pekerja buat admin
+- [x] notification/index.php halaman untuk melihat notifikasi
 
 ### backend :
 - [] UsersController -> create, update, readById, login/readByUsername
