@@ -93,9 +93,8 @@
                                 </div>
                             </div>
                             <div class="card4">
-                                Table
-                            <table class="table table-bordered table-striped table-hover table-light" style="border-radius: 20px;">
-                                <thead class="table-dark">
+                            <table class="table table-bordered table-striped table-hover table-light">
+                                <thead class="table-dark" style="background-color: #00203F; color:white;">
                                     <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">Laporan</th>
