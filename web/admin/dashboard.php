@@ -21,9 +21,13 @@
                   <div class="col-9">
                      <br>
                      <br>
-                     <div class="card4" style="height: 515px;">
-                        <table class="table table-bordered table-striped table-hover table-light" style="border-radius: 20px;">
-                           <thead class="table-dark">
+                     <div class="card4" style="height: 575px;">
+                     <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn" type="submit" style="background-color: #00203F; color:white;">Search</button>
+                     </form>
+                        <table class="table table-bordered table-striped table-hover table-light" style="border-radius: 20px; margin-top: 10px;">
+                           <thead class="table" style="background-color: #00203F; color:white;">
                               <tr>
                                  <th scope="col">#</th>
                                  <th scope="col">Laporan</th>
@@ -122,7 +126,7 @@
                      </div>
                      <center>
                         <table class="table table-bordered table-striped table-hover table-light" style="border-radius: 20px;">
-                           <thead class="table-dark">
+                           <thead class="table" style="background-color: #00203F; color:white;">
                               <tr>
                                  <th scope="col">#</th>
                                  <th scope="col">Karyawan Terbaik</th>
