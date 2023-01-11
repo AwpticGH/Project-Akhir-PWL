@@ -3558,7 +3558,7 @@ textarea.form-control-lg {
 
 .dropdown-menu {
   position: absolute;
-  z-index: 1000;
+  z-index: 10000;
   display: none;
   min-width: 10rem;
   padding: 0.5rem 0;

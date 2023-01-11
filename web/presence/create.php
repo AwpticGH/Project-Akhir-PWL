@@ -46,7 +46,6 @@
                 </div>
             </div>
         </div>
-        <script src="../../asset/js/darkmode.js"></script>
         <?php include("../layout/script.php");?>
     </body>
 </html>
