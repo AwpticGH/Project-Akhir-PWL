@@ -75,7 +75,7 @@
                                 </div>
                             </div>
                             <input type="submit" style="margin-top: 16px; font-size: 15px; color: whitesmoke; background: green; margin-left: 490px;  width: 100px; border-radius: 11px; font-size: 20px;" class="btn" name="submit" value="Submit">
-                            <a href="index.php" style="margin-top: 16px; background: red; width: 100px; margin-left: 12px; color: whitesmoke; border-radius: 11px; font-size: 20px;" type="submit" class="btn">Cancel</a>
+                            <a href="#" style="margin-top: 16px; background: red; width: 100px; margin-left: 12px; color: whitesmoke; border-radius: 11px; font-size: 20px;" type="submit" class="btn">Cancel</a>
                         </div>
                         <!-- <div class="col-1"> -->
                         
