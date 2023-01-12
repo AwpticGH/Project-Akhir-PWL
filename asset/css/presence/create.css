@@ -5,7 +5,7 @@
 }
 
 .modegelap{
-    --primary: #2A2A2D;
+    --primary: #282a36;
 }
 
 .card1{
@@ -70,13 +70,13 @@ nav img{
     background: -webkit-linear-gradient(90deg, hsla(221, 45%, 73%, 1) 0%, hsla(220, 78%, 29%, 1) 100%); 
     }
 
-    ul {
+    .container ul {
         list-style-type: none;
         margin: 0;
         padding: 0;
         overflow: hidden;
     }
     
-    li {
+    .container li {
         float: left;
-        }
+    }

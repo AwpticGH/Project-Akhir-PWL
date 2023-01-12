@@ -37,12 +37,10 @@
             <div id="page-content-wrapper">
                 <!-- Top navigation-->
                 <?php include("../layout/navbar.php")?>
-                
                 <!-- Page content-->
                 <div class="container">
                     <div class="row">
                         <div class="col-9">
-                            <h1 class="mt-4 fonku">Dashboard Pegawai</h1>
                             <div class="card1">
                                 <div class="form-image">
                                 <img src="../../asset/img/img5.svg" alt="">
@@ -95,8 +93,8 @@
                                 </div>
                             </div>
                             <div class="card4">
-                            <table class="table table-bordered table-striped table-hover table-light" style="border-radius: 20px;">
-                                <thead class="table-dark">
+                            <table class="table table-bordered table-striped table-hover table-light">
+                                <thead class="table-dark" style="background-color: #00203F; color:white;">
                                     <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">Laporan</th>
@@ -149,10 +147,7 @@
                 </div>
             </div>
         </div>
-        <script src="../../asset/js/darkmode.js"></script>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
+        <!-- JS-->
         <?php include("../layout/script.php");?>
     </body>
 </html>

@@ -3,3 +3,5 @@
 <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 <!-- Core theme JS-->
 <script src="../../asset/js/sidebar.js"></script>
+<!-- Dark Mode JS -->
+<script src="../../asset/js/darkmode.js"></script>
