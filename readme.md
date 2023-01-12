@@ -28,13 +28,13 @@
 - [x] auth/create.php (register) (first name, last name, password, picture, address, dob, position, division)
 - [x] auth/index.php (login) (username, password)
 - [x] auth/show.php halaman profile user (cuma bisa ganti picture, address dan password)
-- [] admin/dashboard.php dashboard head division & superadmin
+- [x] admin/dashboard.php dashboard head division & superadmin
 - [x] employee/dashboard.php dashboard karyawan
 - [x] report/create.php halaman create laporan buat pekerja
-- [] report/show.php halaman pencarian laporan buat head division
-- [] presence/create.php halaman create absen buat pekerja
-- [] presence/confirmation.php halaman konfirmasi absen pekerja buat admin
-- [] notification/index.php halaman untuk melihat notifikasi
+- [x] report/show.php halaman pencarian laporan buat head division
+- [x] presence/create.php halaman create absen buat pekerja
+- [x] presence/confirmation.php halaman konfirmasi absen pekerja buat admin
+- [x] notification/index.php halaman untuk melihat notifikasi
 
 ### backend :
 - [] UsersController -> create, update, readById, login/readByUsername
