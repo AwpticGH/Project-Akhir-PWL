@@ -9,14 +9,14 @@
                 <li class="nav-link"> <box-icon name='bell' color="white" size="30px"></box-icon></li>
                 <li class="dropdown nav-link">
                     <div class="dropdown">
-                    <a class="btn dropdown-toggle" style="background-color: #ADEFD1; color: black; border-radius: 12px;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <span> <box-icon size="15px" name='user-circle'></box-icon> <?= $user['username'] ?> </span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="../auth/show.php?id=<?= $user['id'] ?>">Edit Profile</a></li>
-                        <hr>
-                        <li><a class="dropdown-item" style="color: red; font-size: 18px;" href="../auth/index.php?logout=true"><i class='bx bx-log-out-circle'></i>Logout</a></li>
-                    </ul>
+                        <a class="btn dropdown-toggle" style="background-color: #ADEFD1; color: black; border-radius: 12px;" href="../notification/index.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <span> <box-icon size="15px" name='user-circle'></box-icon> Profile </span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../auth/show.php?id=<?= $user['id'] ?>">Edit Profile</a></li>
+                            <hr>
+                            <li><a class="dropdown-item" style="color: red; font-size: 18px;" href="../auth/index.php?logout=true"><i class='bx bx-log-out-circle'></i>Logout</a></li>
+                        </ul>
                     </div>
                 </li>
             </ul>
