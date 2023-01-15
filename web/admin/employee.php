@@ -3,8 +3,8 @@
 
 <head>
     <?php
-            $title = "Employes";
-            $css_file = "employee.css";
+            $title = "Employees";
+            $css_file = "admin/employee.css";
             include("../layout/header.php");
         ?>
 </head>
