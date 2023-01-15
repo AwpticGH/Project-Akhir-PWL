@@ -1,3 +1,7 @@
+<?php
+    $page_for = "admin";
+    include("../layout/starter.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
