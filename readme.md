@@ -37,6 +37,7 @@
 - [x] notification/index.php halaman untuk melihat notifikasi
 
 ### backend :
+- [x] DBConfig -> connect
 - [x] UsersController -> create, update, readById, login/readByUsername
 - [] NotificationsController -> create, update, readAllByUserId
 - [] PresencesController -> create, readAllByUserId
