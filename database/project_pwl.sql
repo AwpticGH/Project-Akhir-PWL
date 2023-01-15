@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 14 Jan 2023 pada 08.38
--- Versi server: 10.4.25-MariaDB
--- Versi PHP: 8.0.23
+-- Generation Time: Jan 15, 2023 at 07:42 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `divisions`
+-- Table structure for table `divisions`
 --
 
 CREATE TABLE `divisions` (
@@ -33,7 +33,7 @@ CREATE TABLE `divisions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `divisions`
+-- Dumping data for table `divisions`
 --
 
 INSERT INTO `divisions` (`id`, `name`) VALUES
@@ -44,7 +44,7 @@ INSERT INTO `divisions` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `evaluations`
+-- Table structure for table `evaluations`
 --
 
 CREATE TABLE `evaluations` (
@@ -56,7 +56,7 @@ CREATE TABLE `evaluations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `evaluations`
+-- Dumping data for table `evaluations`
 --
 
 INSERT INTO `evaluations` (`id`, `evaluation`, `date_of_evaluation`, `evaluation_for`, `evaluation_by`) VALUES
@@ -75,7 +75,7 @@ INSERT INTO `evaluations` (`id`, `evaluation`, `date_of_evaluation`, `evaluation
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `notifications`
+-- Table structure for table `notifications`
 --
 
 CREATE TABLE `notifications` (
@@ -84,29 +84,30 @@ CREATE TABLE `notifications` (
   `notification_text` text DEFAULT NULL,
   `datetime` timestamp NOT NULL DEFAULT current_timestamp(),
   `is_read` tinyint(1) NOT NULL DEFAULT 0,
-  `user_id` bigint(20) NOT NULL
+  `notification_by` bigint(20) NOT NULL,
+  `notification_for` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `notifications`
+-- Dumping data for table `notifications`
 --
 
-INSERT INTO `notifications` (`id`, `title`, `notification_text`, `datetime`, `is_read`, `user_id`) VALUES
-(1, 'Evaluasi oleh Ambon', 'Anda telah menerima notifikasi dari Ambon!!', '2023-01-13 12:17:34', 0, 1),
-(2, 'Evaluasi Laporan Selesai', 'Laporan Anda Telah Dinilai', '2023-01-14 06:45:31', 1, 6),
-(3, 'Feedback Laporan', '\"Laporan Belum Selesai\"', '2023-01-14 06:51:26', 0, 10),
-(4, 'Laporan Diterima', 'Laporan Anda Diterima olhe Ardiyono', '2023-01-14 06:52:07', 0, 3),
-(5, 'Laporan Diterima', 'Laporan telah selesai', '2023-01-14 07:18:38', 1, 10),
-(6, 'Laporan Diterima', 'Laporan telah Selesai', '2023-01-14 07:26:39', 0, 5),
-(7, 'Laporan Belum diterima', 'Audit Diperlukan', '2023-01-14 07:31:29', 1, 8),
-(8, 'Laporan Diterima', 'Laporan Sangat Baik', '2023-01-14 07:32:20', 0, 5),
-(9, 'Laporan Diterima', 'Laporan Baik', '2023-01-14 07:32:52', 1, 3),
-(10, 'Laporan Belum Diterima', 'Laporan Belum Selesai', '2023-01-14 07:33:27', 0, 6);
+INSERT INTO `notifications` (`id`, `title`, `notification_text`, `datetime`, `is_read`, `notification_by`, `notification_for`) VALUES
+(1, 'Evaluasi oleh Ambon', 'Anda telah menerima notifikasi dari Ambon!!', '2023-01-13 12:17:34', 0, 1, 1),
+(2, 'Evaluasi Laporan Selesai', 'Laporan Anda Telah Dinilai', '2023-01-14 06:45:31', 1, 2, 6),
+(3, 'Feedback Laporan', '\"Laporan Belum Selesai\"', '2023-01-14 06:51:26', 0, 4, 10),
+(4, 'Laporan Diterima', 'Laporan Anda Diterima olhe Ardiyono', '2023-01-14 06:52:07', 0, 5, 3),
+(5, 'Laporan Diterima', 'Laporan telah selesai', '2023-01-14 07:18:38', 1, 3, 10),
+(6, 'Laporan Diterima', 'Laporan telah Selesai', '2023-01-14 07:26:39', 0, 3, 5),
+(7, 'Laporan Belum diterima', 'Audit Diperlukan', '2023-01-14 07:31:29', 1, 6, 8),
+(8, 'Laporan Diterima', 'Laporan Sangat Baik', '2023-01-14 07:32:20', 0, 7, 5),
+(9, 'Laporan Diterima', 'Laporan Baik', '2023-01-14 07:32:52', 1, 9, 3),
+(10, 'Laporan Belum Diterima', 'Laporan Belum Selesai', '2023-01-14 07:33:27', 0, 8, 6);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `positions`
+-- Table structure for table `positions`
 --
 
 CREATE TABLE `positions` (
@@ -119,7 +120,7 @@ CREATE TABLE `positions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `positions`
+-- Dumping data for table `positions`
 --
 
 INSERT INTO `positions` (`id`, `name`, `create_priv`, `read_priv`, `update_priv`, `delete_priv`) VALUES
@@ -129,7 +130,7 @@ INSERT INTO `positions` (`id`, `name`, `create_priv`, `read_priv`, `update_priv`
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `presences`
+-- Table structure for table `presences`
 --
 
 CREATE TABLE `presences` (
@@ -140,7 +141,7 @@ CREATE TABLE `presences` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `presences`
+-- Dumping data for table `presences`
 --
 
 INSERT INTO `presences` (`id`, `date_of_presence`, `is_confirmed`, `user_id`) VALUES
@@ -163,7 +164,7 @@ INSERT INTO `presences` (`id`, `date_of_presence`, `is_confirmed`, `user_id`) VA
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `reports`
+-- Table structure for table `reports`
 --
 
 CREATE TABLE `reports` (
@@ -174,7 +175,7 @@ CREATE TABLE `reports` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `reports`
+-- Dumping data for table `reports`
 --
 
 INSERT INTO `reports` (`id`, `file`, `date_of_submission`, `user_id`) VALUES
@@ -195,7 +196,7 @@ INSERT INTO `reports` (`id`, `file`, `date_of_submission`, `user_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `users`
+-- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
@@ -204,7 +205,7 @@ CREATE TABLE `users` (
   `password` varchar(64) NOT NULL,
   `first_name` varchar(64) NOT NULL,
   `last_name` varchar(64) NOT NULL,
-  `picture` text NOT NULL,
+  `picture` text DEFAULT NULL,
   `address` varchar(64) NOT NULL,
   `date_of_birth` date NOT NULL,
   `date_of_admission` datetime DEFAULT NULL,
@@ -213,7 +214,7 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data untuk tabel `users`
+-- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `first_name`, `last_name`, `picture`, `address`, `date_of_birth`, `date_of_admission`, `position_id`, `division_id`) VALUES
@@ -232,20 +233,21 @@ INSERT INTO `users` (`id`, `username`, `password`, `first_name`, `last_name`, `p
 (13, 'raditpwo', 'pworadit', 'Radit', 'Prabowo', 'user13.png', 'Jl Daan Mogot 6 AO RT 005/03, Dki Jakarta, Indonesia', '1993-08-17', '2023-01-08 03:31:54', 2, 2),
 (14, 'ianhaim', 'halimora1245', 'Ian ', 'Halim', 'user14.png', 'Jl Boulevard Brt Raya Kompl Plaza Pasifik Bl B-2/29, Dki Jakarta', '1992-03-18', '2023-01-07 06:22:11', 2, 3),
 (15, 'galuhodo', 'galuhorang145', 'Galuh ', 'Widodo', 'user15.png', 'Dk. Moch. Toha No. 978, Depok 42403, Jogjakarta, Indonesia', '1988-10-14', '2023-01-09 15:22:05', 2, 3),
-(16, 'Ardi', 'ahmadardiyono', 'Ardi', 'Yono', 'user16.png', 'Jl Tawangmangu, Dki Jakarta, Indonesia', '1984-10-10', '2023-01-01 11:09:53', 1, 2);
+(16, 'Ardi', 'ahmadardiyono', 'Ardi', 'Yono', 'user16.png', 'Jl Tawangmangu, Dki Jakarta, Indonesia', '1984-10-10', '2023-01-01 11:09:53', 1, 2),
+(17, 'Rafi', 'refresh', 'Rafi', 'Sulaiman', NULL, 'Vila Dago Blok H3/19 RT 002/RW 022 Benda Baru, Pamulang', '2001-01-01', NULL, 1, 3);
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `divisions`
+-- Indexes for table `divisions`
 --
 ALTER TABLE `divisions`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `evaluations`
+-- Indexes for table `evaluations`
 --
 ALTER TABLE `evaluations`
   ADD PRIMARY KEY (`id`),
@@ -253,34 +255,35 @@ ALTER TABLE `evaluations`
   ADD KEY `CNSTRNT_evaluations_users_by` (`evaluation_by`);
 
 --
--- Indeks untuk tabel `notifications`
+-- Indexes for table `notifications`
 --
 ALTER TABLE `notifications`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `CNSTRNT_notifications_users` (`user_id`);
+  ADD KEY `CNSTRNT_notifications_users` (`notification_for`),
+  ADD KEY `CNSTRNT_notifications_users_by` (`notification_by`);
 
 --
--- Indeks untuk tabel `positions`
+-- Indexes for table `positions`
 --
 ALTER TABLE `positions`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeks untuk tabel `presences`
+-- Indexes for table `presences`
 --
 ALTER TABLE `presences`
   ADD PRIMARY KEY (`id`),
   ADD KEY `CNSTRNT_presences_users` (`user_id`);
 
 --
--- Indeks untuk tabel `reports`
+-- Indexes for table `reports`
 --
 ALTER TABLE `reports`
   ADD PRIMARY KEY (`id`),
   ADD KEY `CNSTRNT_reports_users` (`user_id`);
 
 --
--- Indeks untuk tabel `users`
+-- Indexes for table `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
@@ -288,82 +291,83 @@ ALTER TABLE `users`
   ADD KEY `CNSTRNT_users_divisions` (`division_id`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `divisions`
+-- AUTO_INCREMENT for table `divisions`
 --
 ALTER TABLE `divisions`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT untuk tabel `evaluations`
+-- AUTO_INCREMENT for table `evaluations`
 --
 ALTER TABLE `evaluations`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT untuk tabel `notifications`
+-- AUTO_INCREMENT for table `notifications`
 --
 ALTER TABLE `notifications`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT untuk tabel `positions`
+-- AUTO_INCREMENT for table `positions`
 --
 ALTER TABLE `positions`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT untuk tabel `presences`
+-- AUTO_INCREMENT for table `presences`
 --
 ALTER TABLE `presences`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT untuk tabel `reports`
+-- AUTO_INCREMENT for table `reports`
 --
 ALTER TABLE `reports`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
--- AUTO_INCREMENT untuk tabel `users`
+-- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
+-- Constraints for dumped tables
 --
 
 --
--- Ketidakleluasaan untuk tabel `evaluations`
+-- Constraints for table `evaluations`
 --
 ALTER TABLE `evaluations`
   ADD CONSTRAINT `CNSTRNT_evaluations_users_by` FOREIGN KEY (`evaluation_by`) REFERENCES `users` (`id`),
   ADD CONSTRAINT `CNSTRNT_evaluations_users_for` FOREIGN KEY (`evaluation_for`) REFERENCES `users` (`id`);
 
 --
--- Ketidakleluasaan untuk tabel `notifications`
+-- Constraints for table `notifications`
 --
 ALTER TABLE `notifications`
-  ADD CONSTRAINT `CNSTRNT_notifications_users` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `CNSTRNT_notifications_users_by` FOREIGN KEY (`notification_by`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `CNSTRNT_notifications_users_for` FOREIGN KEY (`notification_for`) REFERENCES `users` (`id`);
 
 --
--- Ketidakleluasaan untuk tabel `presences`
+-- Constraints for table `presences`
 --
 ALTER TABLE `presences`
   ADD CONSTRAINT `CNSTRNT_presences_users` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 --
--- Ketidakleluasaan untuk tabel `reports`
+-- Constraints for table `reports`
 --
 ALTER TABLE `reports`
   ADD CONSTRAINT `CNSTRNT_reports_users` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 --
--- Ketidakleluasaan untuk tabel `users`
+-- Constraints for table `users`
 --
 ALTER TABLE `users`
   ADD CONSTRAINT `CNSTRNT_users_divisions` FOREIGN KEY (`division_id`) REFERENCES `divisions` (`id`),
