@@ -17,7 +17,7 @@
 } */
 .card4{
     max-width: 80rem;
-    height: 530px;
+    height: 540px;
     padding-top: 0px;
     width: auto;
     box-shadow: 0 5px 14px rgba(0, 0, 0, .3);
@@ -33,6 +33,6 @@
     text-align: center;
 }
 .hedbel{
-    background-color: #2C74B3;
+    background-color: #00203F;
     color: whitesmoke;
 }

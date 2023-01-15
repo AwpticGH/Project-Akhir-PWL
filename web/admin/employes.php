@@ -23,8 +23,8 @@
                             <tr>
                                 <th>No</th>
                                 <th>Nama Karyawan</th>
-                                <th>Laporan</th>
-                                <th>Tgl/Bln/Thn</th>
+                                <th>Divisi</th>
+                                <th>Jabatan</th>
                                 <th class="layout">
                                     Aksi
                                 </th>
@@ -33,8 +33,8 @@
                                 <tr class="table-body bg-table-body-odd">
                                     <td>1</td>
                                     <td>Rafi Fajar</td>
-                                    <td>Total Keuntungan Tahun 2022</td>
-                                    <td>21/12/2022</td>
+                                    <td>example</td>
+                                    <td>example</td>
                                     <td>
                                         <center>
                                             <a href="#" class="btn btn-success">View details</a>
@@ -43,9 +43,9 @@
                                 </tr>
                                 <tr class="table-body bg-table-body-even">
                                     <td>2</td>
-                                    <td>Reza ketoprak</td>
-                                    <td>Total Keuntungan Tahun 2022</td>
-                                    <td>21/12/2022</td>
+                                    <td>example</td>
+                                    <td>example</td>
+                                    <td>example</td>
                                     <td>
                                         <center>
                                             <a href="#" class="btn btn-success">View details</a>
@@ -55,8 +55,8 @@
                                 <tr class="table-body bg-table-body-odd">
                                     <td>3</td>
                                     <td>Fajar senja</td>
-                                    <td>Total Keuntungan Tahun 2022</td>
-                                    <td>21/12/2022</td>
+                                    <td>example</td>
+                                    <td>example</td>
                                     <td>
                                         <center>
                                             <a href="#" class="btn btn-success">View details</a>
@@ -66,8 +66,8 @@
                                 <tr class="table-body bg-table-body-even">
                                     <td>4</td>
                                     <td>Aldi</td>
-                                    <td>Total Keuntungan Tahun 2022</td>
-                                    <td>21/12/2022</td>
+                                    <td>example</td>
+                                    <td>example</td>
                                     <td>
                                         <center>
                                             <a href="#" class="btn btn-success">View details</a>
@@ -77,8 +77,8 @@
                                 <tr class="table-body bg-table-body-odd">
                                     <td>5</td>
                                     <td>Ibnu jamal</td>
-                                    <td>Total Keuntungan Tahun 2022</td>
-                                    <td>21/12/2022</td>
+                                    <td>example</td>
+                                    <td>example</td>
                                     <td>
                                         <center>
                                             <a href="#" class="btn btn-success">View details</a>
@@ -88,8 +88,8 @@
                                 <tr class="table-body bg-table-body-even">
                                     <td>6</td>
                                     <td>Roja energen</td>
-                                    <td>Total Keuntungan Tahun 2022</td>
-                                    <td>21/12/2022</td>
+                                    <td>example</td>
+                                    <td>example</td>
                                     <td>
                                         <center>
                                             <a href="#" class="btn btn-success">View details</a>
@@ -99,8 +99,8 @@
                                 <tr class="table-body bg-table-body-odd">
                                     <td>7</td>
                                     <td>Alex</td>
-                                    <td>Total Keuntungan Tahun 2022</td>
-                                    <td>21/12/2022</td>
+                                    <td>example</td>
+                                    <td>example</td>
                                     <td>
                                         <center>
                                             <a href="#" class="btn btn-success">View details</a>
@@ -110,8 +110,8 @@
                                 <tr class="table-body bg-table-body-even">
                                     <td>8</td>
                                     <td>Yusuf ahmad</td>
-                                    <td>Total Keuntungan Tahun 2022</td>
-                                    <td>21/12/2022</td>
+                                    <td>example</td>
+                                    <td>example</td>
                                     <td>
                                         <center>
                                             <a href="#" class="btn btn-success">View details</a>
@@ -121,8 +121,8 @@
                                 <tr class="table-body bg-table-body-odd">
                                     <td>9</td>
                                     <td>Yuli sulianti</td>
-                                    <td>Total Keuntungan Tahun 2022</td>
-                                    <td>21/12/2022</td>
+                                    <td>example</td>
+                                    <td>example</td>
                                     <td>
                                         <center>
                                             <a href="#" class="btn btn-success">View details</a>
