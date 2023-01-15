@@ -4038,6 +4038,7 @@ textarea.form-control-lg {
   justify-content: space-between;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  opacity: 1;
   background-color: #00203F;
 }
 .navbar > .container,
@@ -4801,6 +4802,7 @@ textarea.form-control-lg {
 .pagination {
   display: flex;
   padding-left: 0;
+  margin-left: 46px;
   list-style: none;
 }
 
