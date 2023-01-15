@@ -1,9 +1,9 @@
 <?php
     namespace controller;
 
-    require "../../config/DBConfig.php";
+    require_once("../../config/DBConfig.php");
     use config\DBConfig as DBConfig;
-    require "../../query/UsersQuery.php";
+    require_once("../../query/UsersQuery.php");
     use query\UsersQuery as UsersQuery;
 
     class UsersController {

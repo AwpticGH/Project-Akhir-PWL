@@ -1,12 +1,12 @@
 <?php
-    require("../../controller/UsersController.php");
+    require_once("../../controller/UsersController.php");
     use controller\UsersController;
 
     session_start();
     $user = $_SESSION['user'];
     $user_controller = $_SESSION['user_controller'];
 
-    require("../../middleware/GuardsMiddleware.php");
+    require_once("../../middleware/GuardsMiddleware.php");
     use middleware\GuardsMiddleware;
 
     $middleware = new GuardsMiddleware();
