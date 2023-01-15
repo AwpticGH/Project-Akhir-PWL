@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 15, 2023 at 07:42 AM
+-- Generation Time: Jan 15, 2023 at 08:12 AM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -171,6 +171,9 @@ CREATE TABLE `reports` (
   `id` bigint(20) NOT NULL,
   `file` text NOT NULL,
   `date_of_submission` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `is_approved` tinyint(1) NOT NULL DEFAULT 0,
+  `is_rejected` tinyint(1) NOT NULL DEFAULT 0,
+  `is_pending` tinyint(1) NOT NULL DEFAULT 1,
   `user_id` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -178,20 +181,20 @@ CREATE TABLE `reports` (
 -- Dumping data for table `reports`
 --
 
-INSERT INTO `reports` (`id`, `file`, `date_of_submission`, `user_id`) VALUES
-(1, 'Laporan Git2_Benaya Adi S.D', '2023-01-12 12:13:29', 1),
-(2, 'Laporan Kehadiran.pdf', '2023-01-14 03:54:34', 3),
-(3, 'Laporan Keuangan Sebulan.pdf', '2023-01-14 03:55:51', 6),
-(4, 'Laporan Operasional.docx', '2023-01-14 03:57:58', 5),
-(5, 'Catatan atas Laporan Keuangan.pdf', '2023-01-14 04:03:44', 12),
-(6, 'Laporan Proyek Baru.pdf', '2023-01-14 04:21:26', 14),
-(7, 'laporan Jadwal Kerja Shift', '2023-01-14 04:23:19', 11),
-(8, 'Laporan Reimbursement.pdf', '2023-01-14 04:24:06', 10),
-(9, 'Laporan Performa Karyawan Operasional.pdf', '2023-01-14 04:24:58', 7),
-(10, 'Laporan Hasil Kunjung Customer Baru.docx', '2023-01-14 04:25:49', 9),
-(11, 'Laporan Gaji dan Lembur.pdf', '2023-01-14 04:36:28', 2),
-(12, 'Laporan Kegiatan Workshop.pdf', '2023-01-14 04:37:28', 7),
-(13, 'laporan keuangan piutang perusahaan.docx', '2023-01-14 04:39:04', 13);
+INSERT INTO `reports` (`id`, `file`, `date_of_submission`, `is_approved`, `is_rejected`, `is_pending`, `user_id`) VALUES
+(1, 'Laporan Git2_Benaya Adi S.D', '2023-01-12 12:13:29', 0, 0, 1, 1),
+(2, 'Laporan Kehadiran.pdf', '2023-01-14 03:54:34', 0, 0, 1, 3),
+(3, 'Laporan Keuangan Sebulan.pdf', '2023-01-14 03:55:51', 0, 0, 1, 6),
+(4, 'Laporan Operasional.docx', '2023-01-14 03:57:58', 0, 0, 1, 5),
+(5, 'Catatan atas Laporan Keuangan.pdf', '2023-01-14 04:03:44', 0, 0, 1, 12),
+(6, 'Laporan Proyek Baru.pdf', '2023-01-14 04:21:26', 0, 0, 1, 14),
+(7, 'laporan Jadwal Kerja Shift', '2023-01-14 04:23:19', 0, 0, 1, 11),
+(8, 'Laporan Reimbursement.pdf', '2023-01-14 04:24:06', 0, 0, 1, 10),
+(9, 'Laporan Performa Karyawan Operasional.pdf', '2023-01-14 04:24:58', 0, 0, 1, 7),
+(10, 'Laporan Hasil Kunjung Customer Baru.docx', '2023-01-14 04:25:49', 0, 0, 1, 9),
+(11, 'Laporan Gaji dan Lembur.pdf', '2023-01-14 04:36:28', 0, 0, 1, 2),
+(12, 'Laporan Kegiatan Workshop.pdf', '2023-01-14 04:37:28', 0, 0, 1, 7),
+(13, 'laporan keuangan piutang perusahaan.docx', '2023-01-14 04:39:04', 0, 0, 1, 13);
 
 -- --------------------------------------------------------
 
