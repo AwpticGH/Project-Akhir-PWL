@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
--- https://www.phpmyadmin.net/
+-- version 4.4.14
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 15, 2023 at 08:12 AM
--- Server version: 10.4.24-MariaDB
--- PHP Version: 8.1.6
+-- Generation Time: Jan 15, 2023 at 12:31 PM
+-- Server version: 5.6.26
+-- PHP Version: 5.6.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -27,10 +26,10 @@ SET time_zone = "+00:00";
 -- Table structure for table `divisions`
 --
 
-CREATE TABLE `divisions` (
+CREATE TABLE IF NOT EXISTS `divisions` (
   `id` bigint(20) NOT NULL,
   `name` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `divisions`
@@ -47,13 +46,13 @@ INSERT INTO `divisions` (`id`, `name`) VALUES
 -- Table structure for table `evaluations`
 --
 
-CREATE TABLE `evaluations` (
+CREATE TABLE IF NOT EXISTS `evaluations` (
   `id` bigint(20) NOT NULL,
   `evaluation` text NOT NULL,
   `date_of_evaluation` date NOT NULL,
   `evaluation_for` bigint(20) NOT NULL,
   `evaluation_by` bigint(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `evaluations`
@@ -78,15 +77,15 @@ INSERT INTO `evaluations` (`id`, `evaluation`, `date_of_evaluation`, `evaluation
 -- Table structure for table `notifications`
 --
 
-CREATE TABLE `notifications` (
+CREATE TABLE IF NOT EXISTS `notifications` (
   `id` bigint(20) NOT NULL,
   `title` varchar(64) NOT NULL,
-  `notification_text` text DEFAULT NULL,
-  `datetime` timestamp NOT NULL DEFAULT current_timestamp(),
-  `is_read` tinyint(1) NOT NULL DEFAULT 0,
+  `notification_text` text,
+  `datetime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `is_read` tinyint(1) NOT NULL DEFAULT '0',
   `notification_by` bigint(20) NOT NULL,
   `notification_for` bigint(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `notifications`
@@ -95,14 +94,15 @@ CREATE TABLE `notifications` (
 INSERT INTO `notifications` (`id`, `title`, `notification_text`, `datetime`, `is_read`, `notification_by`, `notification_for`) VALUES
 (1, 'Evaluasi oleh Ambon', 'Anda telah menerima notifikasi dari Ambon!!', '2023-01-13 12:17:34', 0, 1, 1),
 (2, 'Evaluasi Laporan Selesai', 'Laporan Anda Telah Dinilai', '2023-01-14 06:45:31', 1, 2, 6),
-(3, 'Feedback Laporan', '\"Laporan Belum Selesai\"', '2023-01-14 06:51:26', 0, 4, 10),
+(3, 'Feedback Laporan', '"Laporan Belum Selesai"', '2023-01-14 06:51:26', 0, 4, 10),
 (4, 'Laporan Diterima', 'Laporan Anda Diterima olhe Ardiyono', '2023-01-14 06:52:07', 0, 5, 3),
 (5, 'Laporan Diterima', 'Laporan telah selesai', '2023-01-14 07:18:38', 1, 3, 10),
 (6, 'Laporan Diterima', 'Laporan telah Selesai', '2023-01-14 07:26:39', 0, 3, 5),
 (7, 'Laporan Belum diterima', 'Audit Diperlukan', '2023-01-14 07:31:29', 1, 6, 8),
 (8, 'Laporan Diterima', 'Laporan Sangat Baik', '2023-01-14 07:32:20', 0, 7, 5),
 (9, 'Laporan Diterima', 'Laporan Baik', '2023-01-14 07:32:52', 1, 9, 3),
-(10, 'Laporan Belum Diterima', 'Laporan Belum Selesai', '2023-01-14 07:33:27', 0, 8, 6);
+(10, 'Laporan Belum Diterima', 'Laporan Belum Selesai', '2023-01-14 07:33:27', 1, 8, 6),
+(11, 'test', 'test', '2023-01-15 11:16:56', 0, 15, 16);
 
 -- --------------------------------------------------------
 
@@ -110,14 +110,14 @@ INSERT INTO `notifications` (`id`, `title`, `notification_text`, `datetime`, `is
 -- Table structure for table `positions`
 --
 
-CREATE TABLE `positions` (
+CREATE TABLE IF NOT EXISTS `positions` (
   `id` bigint(20) NOT NULL,
   `name` varchar(64) NOT NULL,
   `create_priv` tinyint(1) NOT NULL,
   `read_priv` tinyint(1) NOT NULL,
   `update_priv` tinyint(1) NOT NULL,
   `delete_priv` tinyint(1) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `positions`
@@ -133,33 +133,35 @@ INSERT INTO `positions` (`id`, `name`, `create_priv`, `read_priv`, `update_priv`
 -- Table structure for table `presences`
 --
 
-CREATE TABLE `presences` (
+CREATE TABLE IF NOT EXISTS `presences` (
   `id` bigint(20) NOT NULL,
   `date_of_presence` datetime NOT NULL,
-  `is_confirmed` tinyint(1) NOT NULL DEFAULT 0,
+  `is_approved` tinyint(1) NOT NULL DEFAULT '0',
+  `is_rejected` tinyint(1) NOT NULL DEFAULT '0',
+  `is_pending` tinyint(1) NOT NULL DEFAULT '1',
   `user_id` bigint(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `presences`
 --
 
-INSERT INTO `presences` (`id`, `date_of_presence`, `is_confirmed`, `user_id`) VALUES
-(1, '2023-01-13 13:10:03', 0, 1),
-(2, '2023-01-02 07:44:18', 0, 2),
-(3, '2023-01-02 08:31:41', 0, 3),
-(4, '2023-01-02 06:40:20', 0, 4),
-(5, '2023-01-02 09:27:46', 0, 5),
-(6, '2023-01-02 07:41:43', 0, 6),
-(7, '2023-01-02 08:13:09', 0, 7),
-(8, '2023-01-02 08:22:27', 0, 8),
-(9, '2023-01-02 06:34:45', 0, 9),
-(10, '2023-01-14 08:04:27', 0, 10),
-(11, '2023-01-14 09:10:27', 0, 11),
-(12, '2023-01-14 08:20:13', 0, 12),
-(13, '2023-01-14 08:28:18', 0, 13),
-(14, '2023-01-14 09:12:12', 0, 14),
-(15, '2023-01-14 08:18:46', 0, 15);
+INSERT INTO `presences` (`id`, `date_of_presence`, `is_approved`, `is_rejected`, `is_pending`, `user_id`) VALUES
+(1, '2023-01-13 13:10:03', 1, 0, 0, 1),
+(2, '2023-01-02 07:44:18', 0, 0, 1, 2),
+(3, '2023-01-02 08:31:41', 0, 0, 1, 3),
+(4, '2023-01-02 06:40:20', 0, 0, 1, 4),
+(5, '2023-01-02 09:27:46', 0, 0, 1, 5),
+(6, '2023-01-02 07:41:43', 0, 0, 1, 6),
+(7, '2023-01-02 08:13:09', 0, 0, 1, 7),
+(8, '2023-01-02 08:22:27', 0, 0, 1, 8),
+(9, '2023-01-02 06:34:45', 0, 0, 1, 9),
+(10, '2023-01-14 08:04:27', 0, 0, 1, 10),
+(11, '2023-01-14 09:10:27', 0, 0, 1, 11),
+(12, '2023-01-14 08:20:13', 0, 0, 1, 12),
+(13, '2023-01-14 08:28:18', 0, 0, 1, 13),
+(14, '2023-01-14 09:12:12', 0, 0, 1, 14),
+(15, '2023-01-14 08:18:46', 0, 0, 1, 15);
 
 -- --------------------------------------------------------
 
@@ -167,34 +169,36 @@ INSERT INTO `presences` (`id`, `date_of_presence`, `is_confirmed`, `user_id`) VA
 -- Table structure for table `reports`
 --
 
-CREATE TABLE `reports` (
+CREATE TABLE IF NOT EXISTS `reports` (
   `id` bigint(20) NOT NULL,
   `file` text NOT NULL,
-  `date_of_submission` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `is_approved` tinyint(1) NOT NULL DEFAULT 0,
-  `is_rejected` tinyint(1) NOT NULL DEFAULT 0,
-  `is_pending` tinyint(1) NOT NULL DEFAULT 1,
+  `date_of_submission` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `is_approved` tinyint(1) NOT NULL DEFAULT '0',
+  `is_rejected` tinyint(1) NOT NULL DEFAULT '0',
+  `is_pending` tinyint(1) NOT NULL DEFAULT '1',
   `user_id` bigint(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `reports`
 --
 
 INSERT INTO `reports` (`id`, `file`, `date_of_submission`, `is_approved`, `is_rejected`, `is_pending`, `user_id`) VALUES
-(1, 'Laporan Git2_Benaya Adi S.D', '2023-01-12 12:13:29', 0, 0, 1, 1),
-(2, 'Laporan Kehadiran.pdf', '2023-01-14 03:54:34', 0, 0, 1, 3),
-(3, 'Laporan Keuangan Sebulan.pdf', '2023-01-14 03:55:51', 0, 0, 1, 6),
-(4, 'Laporan Operasional.docx', '2023-01-14 03:57:58', 0, 0, 1, 5),
-(5, 'Catatan atas Laporan Keuangan.pdf', '2023-01-14 04:03:44', 0, 0, 1, 12),
-(6, 'Laporan Proyek Baru.pdf', '2023-01-14 04:21:26', 0, 0, 1, 14),
-(7, 'laporan Jadwal Kerja Shift', '2023-01-14 04:23:19', 0, 0, 1, 11),
-(8, 'Laporan Reimbursement.pdf', '2023-01-14 04:24:06', 0, 0, 1, 10),
-(9, 'Laporan Performa Karyawan Operasional.pdf', '2023-01-14 04:24:58', 0, 0, 1, 7),
-(10, 'Laporan Hasil Kunjung Customer Baru.docx', '2023-01-14 04:25:49', 0, 0, 1, 9),
-(11, 'Laporan Gaji dan Lembur.pdf', '2023-01-14 04:36:28', 0, 0, 1, 2),
-(12, 'Laporan Kegiatan Workshop.pdf', '2023-01-14 04:37:28', 0, 0, 1, 7),
-(13, 'laporan keuangan piutang perusahaan.docx', '2023-01-14 04:39:04', 0, 0, 1, 13);
+(1, 'Laporan Git2_Benaya Adi S.D', '2023-01-15 09:40:39', 1, 0, 0, 1),
+(2, 'Laporan Kehadiran.pdf', '2023-01-15 09:42:46', 1, 0, 1, 3),
+(3, 'Laporan Keuangan Sebulan.pdf', '2023-01-15 08:26:05', 0, 0, 1, 6),
+(4, 'Laporan Operasional.docx', '2023-01-15 08:26:06', 0, 0, 1, 5),
+(5, 'Catatan atas Laporan Keuangan.pdf', '2023-01-15 08:26:08', 0, 0, 1, 12),
+(6, 'Laporan Proyek Baru.pdf', '2023-01-15 08:26:12', 0, 0, 1, 14),
+(7, 'laporan Jadwal Kerja Shift', '2023-01-15 08:26:14', 0, 0, 1, 11),
+(8, 'Laporan Reimbursement.pdf', '2023-01-15 08:26:16', 0, 0, 1, 10),
+(9, 'Laporan Performa Karyawan Operasional.pdf', '2023-01-15 08:26:18', 0, 0, 1, 7),
+(10, 'Laporan Hasil Kunjung Customer Baru.docx', '2023-01-15 08:26:20', 0, 0, 1, 9),
+(11, 'Laporan Gaji dan Lembur.pdf', '2023-01-15 08:26:23', 0, 0, 1, 2),
+(12, 'Laporan Kegiatan Workshop.pdf', '2023-01-15 08:26:26', 0, 0, 1, 7),
+(13, 'laporan keuangan piutang perusahaan.docx', '2023-01-15 08:26:29', 0, 0, 1, 13),
+(14, 'test', '2023-01-15 09:31:38', 0, 0, 1, 6),
+(15, 'asasdasd', '2023-01-15 09:35:15', 0, 0, 1, 5);
 
 -- --------------------------------------------------------
 
@@ -202,19 +206,19 @@ INSERT INTO `reports` (`id`, `file`, `date_of_submission`, `is_approved`, `is_re
 -- Table structure for table `users`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE IF NOT EXISTS `users` (
   `id` bigint(20) NOT NULL,
   `username` varchar(64) NOT NULL,
   `password` varchar(64) NOT NULL,
   `first_name` varchar(64) NOT NULL,
   `last_name` varchar(64) NOT NULL,
-  `picture` text DEFAULT NULL,
+  `picture` text,
   `address` varchar(64) NOT NULL,
   `date_of_birth` date NOT NULL,
   `date_of_admission` datetime DEFAULT NULL,
   `position_id` bigint(20) NOT NULL,
   `division_id` bigint(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
@@ -237,7 +241,8 @@ INSERT INTO `users` (`id`, `username`, `password`, `first_name`, `last_name`, `p
 (14, 'ianhaim', 'halimora1245', 'Ian ', 'Halim', 'user14.png', 'Jl Boulevard Brt Raya Kompl Plaza Pasifik Bl B-2/29, Dki Jakarta', '1992-03-18', '2023-01-07 06:22:11', 2, 3),
 (15, 'galuhodo', 'galuhorang145', 'Galuh ', 'Widodo', 'user15.png', 'Dk. Moch. Toha No. 978, Depok 42403, Jogjakarta, Indonesia', '1988-10-14', '2023-01-09 15:22:05', 2, 3),
 (16, 'Ardi', 'ahmadardiyono', 'Ardi', 'Yono', 'user16.png', 'Jl Tawangmangu, Dki Jakarta, Indonesia', '1984-10-10', '2023-01-01 11:09:53', 1, 2),
-(17, 'Rafi', 'refresh', 'Rafi', 'Sulaiman', NULL, 'Vila Dago Blok H3/19 RT 002/RW 022 Benda Baru, Pamulang', '2001-01-01', NULL, 1, 3);
+(17, 'Rafi', 'refresh', 'Rafi', 'Sulaiman', NULL, 'Vila Dago Blok H3/19 RT 002/RW 022 Benda Baru, Pamulang', '2001-01-01', NULL, 1, 3),
+(18, 'dava', 'asdfgh', 'dava', 'alif', NULL, 'asdsadsad', '2004-09-20', '2023-01-11 07:00:00', 1, 1);
 
 --
 -- Indexes for dumped tables
@@ -301,44 +306,37 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `divisions`
 --
 ALTER TABLE `divisions`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `evaluations`
 --
 ALTER TABLE `evaluations`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `notifications`
 --
 ALTER TABLE `notifications`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `positions`
 --
 ALTER TABLE `positions`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `presences`
 --
 ALTER TABLE `presences`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `reports`
 --
 ALTER TABLE `reports`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
-
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
-
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=19;
 --
 -- Constraints for dumped tables
 --
@@ -375,7 +373,6 @@ ALTER TABLE `reports`
 ALTER TABLE `users`
   ADD CONSTRAINT `CNSTRNT_users_divisions` FOREIGN KEY (`division_id`) REFERENCES `divisions` (`id`),
   ADD CONSTRAINT `CNSTRNT_users_positions` FOREIGN KEY (`position_id`) REFERENCES `positions` (`id`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
