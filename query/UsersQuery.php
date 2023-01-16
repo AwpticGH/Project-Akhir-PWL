@@ -23,5 +23,22 @@
                                     password = ?
                                     WHERE id = ?";
         public static $reload = "SELECT * FROM users WHERE id = ?";
+
+        // read employees by division id for admin/employees.php
+        public static $readEmployeesByDivisionId = "SELECT users.id as user_id,
+                                                            users.first_name, 
+                                                            users.last_name,
+                                                            divisions.name as division_name,
+                                                            positions.name as position_name
+                                                    FROM users
+                                                    INNER JOIN divisions ON users.division_id = divisions.id
+                                                    INNER JOIN positions ON users.position_id = positions.id
+                                                    WHERE users.division_id = ?
+                                                    AND users.position_id != '1'";
+
+        // read employee by user id
+        public static $readEmployeeByUserId = "SELECT *
+                                                FROM users
+                                                WHERE id = ?";
     }
 ?>

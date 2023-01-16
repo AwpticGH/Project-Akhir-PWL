@@ -28,18 +28,38 @@
             return $stmt -> execute();
         }
 
-        public function updateReject($id) {
+        public function updateReject($report_id) {
             $this -> conn = DBConfig::connect();
             $sql = ReportsQuery::$updateReject;
             $stmt = mysqli_prepare($this->conn, $sql);
-            $stmt -> bind_param("s", $id);
+            $stmt -> bind_param("s", $report_id);
 
             return $stmt -> execute();
         }
 
-        public function readByDivisionId($division_id) {
+        public function readApprovedReportsByDivisionId($division_id) {
             $this -> conn = DBConfig::connect();
-            $sql = ReportsQuery::$readByDivisionId;
+            $sql = ReportsQuery::$readApprovedReportsByDivisionId;
+            $stmt = mysqli_prepare($this->conn, $sql);
+            $stmt -> bind_param("s", $division_id);
+            $stmt -> execute(); 
+            
+            return $stmt -> get_result();
+        }
+
+        public function searchApprovedReportsByDivisionId($division_id, $search) {
+            $this -> conn = DBConfig::connect();
+            $sql = ReportsQuery::$searchApprovedReportsByDivisionId;
+            $stmt = mysqli_prepare($this->conn, $sql);
+            $stmt -> bind_param("ss", $division_id, $search);
+            $stmt -> execute(); 
+            
+            return $stmt -> get_result();
+        }
+
+        public function readPendingReportsByDivisionId($division_id) {
+            $this -> conn = DBConfig::connect();
+            $sql = ReportsQuery::$readPendingReportsByDivisionId;
             $stmt = mysqli_prepare($this->conn, $sql);
             $stmt -> bind_param("s", $division_id);
             $stmt -> execute(); 
@@ -49,11 +69,22 @@
 
         public function readAllByUserId($user_id) {
             $this -> conn = DBConfig::connect();
-            $sql = ReportsQuery::$readByDivisionId;
+            $sql = ReportsQuery::$readAllByUserId;
             $stmt = mysqli_prepare($this->conn, $sql);
             $stmt -> bind_param("s", $user_id);
+            $stmt -> execute();
 
-            return $stmt -> execute() -> get_result() -> fetch_array();
+            return $stmt -> get_result();
+        }
+
+        public function countScoreByUserId($user_id) {
+            $this -> conn = DBConfig::connect();
+            $sql = ReportsQuery::$countScoreByUserId;
+            $stmt = mysqli_prepare($this->conn, $sql);
+            $stmt -> bind_param("ss", $user_id, $user_id);
+            $stmt -> execute();
+
+            return $stmt -> get_result();
         }
 
     }

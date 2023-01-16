@@ -1,6 +1,15 @@
 <?php 
     $page_for = "employee";
     include("../layout/starter.php");
+
+    require_once("../../controller/ReportsController.php");
+    use controller\ReportsController;
+    require_once("../../controller/DivisionsController.php");
+    use controller\DivisionsController;
+    require_once("../../controller/PositionsController.php");
+    use controller\PositionsController;
+    require_once("../../controller/PresencesController.php");
+    use controller\PresencesController;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,8 +67,25 @@
                                                 <div class="col-6">
                                                     <img src="../../asset/img/terima.svg" alt="logo" style="margin-left: 20px;">
                                                 </div>
+                                                <?php
+                                                    $reports_controller = new ReportsController();
+
+                                                    $pstResult_reports = $reports_controller -> readAllByUserId($user['id']);
+                                                    $approved = 0;
+                                                    $rejected = 0;
+                                                    $pending = 0;
+                                                    $counter = 0;
+
+                                                    while ($data = $pstResult_reports -> fetch_array()) {
+                                                        if ($data['is_approved'] == "1") $approved++;
+                                                        if ($data['is_rejected'] == "1") $rejected++;
+                                                        if ($data['is_pending'] == "1") $pending++;
+                                                        $reports[$counter] = $data;
+                                                        $counter++;
+                                                    }
+                                                ?>
                                                 <div class="col-6">
-                                                    0
+                                                    <?= $approved ?>
                                                     <br>
                                                     Laporan Diterima
                                                 </div>
@@ -73,7 +99,7 @@
                                                     <img src="../../asset/img/tolak.svg" alt="logo" style="margin-left: 20px;">
                                                 </div>
                                                 <div class="col-6">
-                                                    0
+                                                    <?= $rejected ?>
                                                     <br>
                                                     Laporan Ditolak
                                                 </div>
@@ -87,7 +113,7 @@
                                                     <img src="../../asset/img/tunggu.svg" alt="logo" style="margin-left: 20px;">
                                                 </div>
                                                 <div class="col-6">
-                                                    0
+                                                    <?= $pending ?>
                                                     <br>
                                                     Laporan In Progress
                                                 </div>
@@ -106,12 +132,26 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php
+                                        $counter = 0; 
+                                        foreach ($reports as $report) { 
+                                            $counter++;
+                                    ?>
                                     <tr>
-                                        <th scope="row">1</th>
-                                        <td>Jems</td>
-                                        <td>emdo</td>
+                                        <th scope="row"><?= $counter ?></th>
+                                        <td><?= $report['file'] ?></td>
+                                        <td>
+                                            <?= 
+                                                (($report['is_approved'] == "1") 
+                                                ? "Approved" 
+                                                : ($report['is_rejected'] == "1")) 
+                                                ? "Rejected"
+                                                : "Pending"
+                                            ?>
+                                        </td>
                                     </tr>
-                                    <tr>
+                                    <?php } ?>
+                                    <!-- <tr>
                                         <th scope="row">2</th>
                                         <td>Lorem.</td>
                                         <td>Lorem, ipsum dolor.</td>
@@ -120,30 +160,45 @@
                                         <th scope="row">3</th>
                                         <td>Lorem.</td>
                                         <td>Lorem, ipsum dolor.</td>
-                                    </tr>
+                                    </tr> -->
                                 </tbody>
                             </table>
                             </div>
                         </div>
                         <!-- <div class="col-1"> -->
+                        <?php
+                            $divisions_controller = new DivisionsController();
+                            $division = $divisions_controller -> readById($user['division_id']);
+                            
+                            $positions_controller = new PositionsController();
+                            $position = $positions_controller -> readById($user['position_id']);
+                        ?>
                         <div class="card2">
                             <div class="card3">
                                 <center>
-                                    Zaki ketoprak
+                                    <?= $user['first_name'] . " " . $user['last_name'] ?>
                                     <br>
-                                    Username
+                                    <?= $user['username'] ?>
                                 </center>
                             </div>
                             <div class="card3">
                                 <center>
-                                    Divisi
+                                    <?= $division['name'] ?>
                                     <br>
-                                    Jabatan
+                                    <?= $position['name'] ?>
                                 </center>
                             </div>
                             <div class="card3">
                                 <center>
-                                    100%
+                                    <?php
+                                        $presences_controller = new PresencesController();
+                                        $pstResult_presence = $presences_controller -> countScoreByUserId($user['id']);
+                                        $presence = $pstResult_presence -> fetch_array();
+    
+                                        $pstResult_report = $reports_controller -> countScoreByUserId($user['id']);
+                                        $report = $pstResult_report -> fetch_array();
+                                    ?>
+                                    <?= (($presence['total_score'] + $report['total_score']) / 2) . "%" ?>
                                 </center>
                             </div>
                         </div>

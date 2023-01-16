@@ -1,12 +1,21 @@
 <?php
-   $page_for = "admin";
-   include("../layout/starter.php");
+    $page_for = "admin";
+    include("../layout/starter.php");
 
-   require_once("../../controller/ReportsController.php");
-   use controller\ReportsController;
+    require_once("../../controller/ReportsController.php");
+    use controller\ReportsController;
 
-   $report_controller = new ReportsController();
-   $pstResult = $report_controller -> readByDivisionId($user['division_id']);
+    $report_controller = new ReportsController();
+    if ($_SERVER['REQUEST_METHOD'] == "GET") {
+        if (isset($_GET['update'])) {
+            if ($_GET['update'] == "accept") 
+                $report_controller -> updateAccept($_GET['report_id']);
+            if ($_GET['update'] == "reject")
+                $report_controller -> updateReject($_GET['report_id']);
+        }
+    }
+
+    $pstResult = $report_controller -> readPendingReportsByDivisionId($user['division_id']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,8 +51,8 @@
                                 $page = (isset($_GET['page'])) 
                                         ? $_GET['page'] 
                                         : 1;
-                                $pagination = (mysqli_num_rows($pstResult) > 9) 
-                                            ? 9 
+                                $pagination = (mysqli_num_rows($pstResult) > 5) 
+                                            ? 5 
                                             : mysqli_num_rows($pstResult);
                                 $index = $pagination * ($page - 1);
 
@@ -57,32 +66,14 @@
                                 <td><?= $data['date_of_submission'] ?></td>
                                 <td>
                                     <a href="#" class="btn btn-secondary">Lihat</a>
-                                    <a href="#" class="btn btn-success">Terima</a>
-                                    <a href="#" class="btn btn-danger">Tolak</a>
+                                    <a href="<?= htmlspecialchars($_SERVER['PHP_SELF']) . "?update=accept&report_id=" . $data['id'] ?>" class="btn btn-success">Terima</a>
+                                    <a href="<?= htmlspecialchars($_SERVER['PHP_SELF']) . "?update=reject&report_id=" . $data['id'] ?>" class="btn btn-danger">Tolak</a>
                                 </td>
                             </tr>
                             <?php } ?>
                         </table>
                     </div>
-                    <div class="container-page-nav">
-                        <nav aria-label="Page-navigation ">
-                            <ul class="pagination  ">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&laquo;</span>
-                                    </a>
-                                </li>
-                                <li class="page-item active"><a class="page-link" href="<?= htmlspecialchars($_SERVER['PHP_SELF']) . "?page=1" ?>">1</a></li>
-                                <li class="page-item"><a class="page-link" href="<?= htmlspecialchars($_SERVER['PHP_SELF']) . "?page=2" ?>">2</a></li>
-                                <li class="page-item"><a class="page-link" href="<?= htmlspecialchars($_SERVER['PHP_SELF']) . "?page=3" ?>">3</a></li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#" aria-label="Next">
-                                    <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
+                    <?php include("../layout/pagination.php") ?>
                 </div>
             </div>
         </div>

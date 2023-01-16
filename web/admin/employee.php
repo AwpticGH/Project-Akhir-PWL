@@ -37,117 +37,34 @@
                                 </th>
                             </tr>
                         </thead>
+                        <?php
+                            $pstResult = $user_controller -> readEmployeesByDivisionId($user['division_id']);
+
+                            $page = (isset($_GET['page'])) 
+                                    ? $_GET['page'] 
+                                    : 1;
+                            $pagination = (mysqli_num_rows($pstResult) > 5) 
+                                        ? 5 
+                                        : mysqli_num_rows($pstResult);
+                            $index = $pagination * ($page - 1);
+                            $row = 0;
+
+                            for ($i = $index; $i < $pagination; $i++) {
+                                $row++;
+                                $data = $pstResult -> fetch_array();
+                        ?>
                         <tr class="table-body bg-table-body-odd">
-                            <td>1</td>
-                            <td>Rafi Fajar</td>
-                            <td>example</td>
-                            <td>example</td>
+                            <td><?= $row ?></td>
+                            <td><?= $data['first_name'] . " " . $data['last_name'] ?></td>
+                            <td><?= $data['division_name'] ?></td>
+                            <td><?= $data['position_name'] ?></td>
                             <td>
                                 <center>
-                                    <a href="employee_detail.php" class="btn btn-success">View details</a>
+                                    <a href="employee_detail.php?user_id=<?= $data['user_id'] ?>" class="btn btn-success">View details</a>
                                 </center>
                             </td>
                         </tr>
-                        <tr class="table-body bg-table-body-even">
-                            <td>2</td>
-                            <td>example</td>
-                            <td>example</td>
-                            <td>example</td>
-                            <td>
-                                <center>
-                                    <a href="#" class="btn btn-success">View details</a>
-                                </center>
-                            </td>
-                        </tr>
-                        <tr class="table-body bg-table-body-odd">
-                            <td>3</td>
-                            <td>Fajar senja</td>
-                            <td>example</td>
-                            <td>example</td>
-                            <td>
-                                <center>
-                                    <a href="#" class="btn btn-success">View details</a>
-                                </center>
-                            </td>
-                        </tr>
-                        <tr class="table-body bg-table-body-even">
-                            <td>4</td>
-                            <td>Aldi</td>
-                            <td>example</td>
-                            <td>example</td>
-                            <td>
-                                <center>
-                                    <a href="#" class="btn btn-success">View details</a>
-                                </center>
-                            </td>
-                        </tr>
-                        <tr class="table-body bg-table-body-odd">
-                            <td>5</td>
-                            <td>Ibnu jamal</td>
-                            <td>example</td>
-                            <td>example</td>
-                            <td>
-                                <center>
-                                    <a href="#" class="btn btn-success">View details</a>
-                                </center>
-                            </td>
-                        </tr>
-                        <tr class="table-body bg-table-body-even">
-                            <td>6</td>
-                            <td>Roja energen</td>
-                            <td>example</td>
-                            <td>example</td>
-                            <td>
-                                <center>
-                                    <a href="#" class="btn btn-success">View details</a>
-                                </center>
-                            </td>
-                        </tr>
-                        <tr class="table-body bg-table-body-odd">
-                            <td>7</td>
-                            <td>Alex</td>
-                            <td>example</td>
-                            <td>example</td>
-                            <td>
-                                <center>
-                                    <a href="#" class="btn btn-success">View details</a>
-                                </center>
-                            </td>
-                        </tr>
-                        <tr class="table-body bg-table-body-even">
-                            <td>8</td>
-                            <td>Yusuf ahmad</td>
-                            <td>example</td>
-                            <td>example</td>
-                            <td>
-                                <center>
-                                    <a href="#" class="btn btn-success">View details</a>
-                                </center>
-                            </td>
-                        </tr>
-                        <tr class="table-body bg-table-body-odd">
-                            <td>9</td>
-                            <td>Yuli sulianti</td>
-                            <td>example</td>
-                            <td>example</td>
-                            <td>
-                                <center>
-                                    <a href="#" class="btn btn-success">View details</a>
-                                </center>
-                            </td>
-                        </tr>
-                        </tr>
-                        <tr class="table-body bg-table-body-odd">
-                            <td>10</td>
-                            <td>Yuli sulianti</td>
-                            <td>example</td>
-                            <td>example</td>
-                            <td>
-                                <center>
-                                    <a href="#" class="btn btn-success">View details</a>
-                                </center>
-                            </td>
-                        </tr>
+                        <?php } ?>
                     </table>
                 </div>
                 <div class="card-pagination">

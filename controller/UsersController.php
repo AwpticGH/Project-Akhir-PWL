@@ -106,6 +106,26 @@
             $_SESSION['user'] = $user;
         }
 
+        public function readEmployeesByDivisionId($division_id) {
+            $this -> conn = DBConfig::connect();
+            $sql = UsersQuery::$readEmployeesByDivisionId;
+            $stmt = mysqli_prepare($this->conn, $sql);
+            $stmt -> bind_param("s", $division_id);
+            $stmt -> execute();
+
+            return $stmt -> get_result();
+        }
+        
+        public function readEmployeeByUserId($user_id) {
+            $this -> conn = DBConfig::connect();
+            $sql = UsersQuery::$readEmployeeByUserId;
+            $stmt = mysqli_prepare($this->conn, $sql);
+            $stmt -> bind_param("s", $user_id);
+            $stmt -> execute();
+    
+            return $stmt -> get_result();
+        }
+
     }
 
 ?>
