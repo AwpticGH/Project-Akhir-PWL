@@ -37,13 +37,14 @@
 - [x] notification/index.php halaman untuk melihat notifikasi
 
 ### backend :
-- [] UsersController -> create, update, readById, login/readByUsername
+- [x] DBConfig -> connect
+- [x] UsersController -> create, update, readById, login/readByUsername
 - [] NotificationsController -> create, update, readAllByUserId
-- [] PresencesController -> create, readAllByUserId
+- [] PresencesController -> create, updateAcc, updateDecline, readAllByUserId
 - [] EvaluationsController -> readByEvaluationForId, create
-- [] WebsMiddleware -> dashboard
-- [] GuardsMiddleware -> auth, head, employee
-- [] Model kalo bisa, kalo ga gausah
+- [] ReportsController -> create, updateAccept, updateDecline, readAll
+- [x] WebsMiddleware -> dashboard
+- [x] GuardsMiddleware -> auth, head, employee
 - [x] database creation
 - [x] database seeding
 
