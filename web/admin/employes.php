@@ -16,7 +16,6 @@
                 <?php include("../layout/navbar.php") ?>
                 <!-- Content -->
                 <div class="card4">
-                    
                         <!-- <div class="container-table"> -->
                             <table class="table table-striped table-hover" style="border-radius: 0px">
                             <thead class="table hedbel">
