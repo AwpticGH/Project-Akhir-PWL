@@ -60,6 +60,7 @@
                                             FROM reports
                                             WHERE user_id = ?
                                             AND is_pending = '0'
-                                        )";
+                                        )
+                                        AS score_reports";
     }
 ?>
