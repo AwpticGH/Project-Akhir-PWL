@@ -6,10 +6,12 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
                 <img src="../../asset/img/moon.png" alt="iconcoy" id="icon">
-                <li class="nav-link"> <box-icon name='bell' color="white" size="30px"></box-icon></li>
+                <li class="nav-link"> 
+                    <a href="../notification/index.php"><box-icon name='bell' color="white" size="30px"></box-icon></a>
+                </li>
                 <li class="dropdown nav-link">
                     <div class="dropdown">
-                        <a class="btn dropdown-toggle" style="background-color: #ADEFD1; color: black; border-radius: 12px;" href="../notification/index.php" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <a class="btn dropdown-toggle" style="background-color: #ADEFD1; color: black; border-radius: 12px;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             <span> <box-icon size="15px" name='user-circle'></box-icon> Profile </span>
                         </a>
                         <ul class="dropdown-menu">

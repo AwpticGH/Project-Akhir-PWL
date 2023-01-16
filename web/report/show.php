@@ -1,6 +1,12 @@
 <?php
    $page_for = "admin";
    include("../layout/starter.php");
+
+   require_once("../../controller/ReportsController.php");
+   use controller\ReportsController;
+
+   $report_controller = new ReportsController();
+   $pstResult = $report_controller -> readByDivisionId($user['division_id']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,105 +38,30 @@
                                 <th>Tgl/Bln/Thn</th>
                                 <th>Aksi</th>
                             </tr>
+                            <?php
+                                $page = (isset($_GET['page'])) 
+                                        ? $_GET['page'] 
+                                        : 1;
+                                $pagination = (mysqli_num_rows($pstResult) > 9) 
+                                            ? 9 
+                                            : mysqli_num_rows($pstResult);
+                                $index = $pagination * ($page - 1);
+                                
+                                for ($i = $index; $i < $pagination * $page; $i++) {
+                                    $data = $pstResult -> fetch_array(MYSQLI_BOTH);
+                            ?>
                             <tr class="table-body bg-table-body-odd">
-                                <td>1</td>
-                                <td>Rafi Fajar</td>
-                                <td>Total Keuntungan Tahun 2022</td>
-                                <td>21/12/2022</td>
+                                <td><?= ($i+1) ?></td>
+                                <td><?= $data['first_name'] . " " . $data['last_name'] ?></td>
+                                <td><?= $data['file'] ?></td>
+                                <td><?= $data['date_of_submission'] ?></td>
                                 <td>
                                     <a href="#" class="btn btn-secondary">Lihat</a>
                                     <a href="#" class="btn btn-success">Terima</a>
                                     <a href="#" class="btn btn-danger">Tolak</a>
                                 </td>
                             </tr>
-                            <tr class="table-body bg-table-body-even">
-                                <td>2</td>
-                                <td>Rafi Fajar</td>
-                                <td>Total Keuntungan Tahun 2022</td>
-                                <td>21/12/2022</td>
-                                <td>
-                                    <a href="#" class="btn btn-secondary">Lihat</a>
-                                    <a href="#" class="btn btn-success">Terima</a>
-                                    <a href="#" class="btn btn-danger">Tolak</a>
-                                </td>
-                            </tr>
-                            <tr class="table-body bg-table-body-odd">
-                                <td>3</td>
-                                <td>Rafi Fajar</td>
-                                <td>Total Keuntungan Tahun 2022</td>
-                                <td>21/12/2022</td>
-                                <td>
-                                    <a href="#" class="btn btn-secondary">Lihat</a>
-                                    <a href="#" class="btn btn-success">Terima</a>
-                                    <a href="#" class="btn btn-danger">Tolak</a>
-                                </td>
-                            </tr>
-                            <tr class="table-body bg-table-body-even">
-                                <td>4</td>
-                                <td>Rafi Fajar</td>
-                                <td>Total Keuntungan Tahun 2022</td>
-                                <td>21/12/2022</td>
-                                <td>
-                                    <a href="#" class="btn btn-secondary">Lihat</a>
-                                    <a href="#" class="btn btn-success">Terima</a>
-                                    <a href="#" class="btn btn-danger">Tolak</a>
-                                </td>
-                            </tr>
-                            <tr class="table-body bg-table-body-odd">
-                                <td>5</td>
-                                <td>Rafi Fajar</td>
-                                <td>Total Keuntungan Tahun 2022</td>
-                                <td>21/12/2022</td>
-                                <td>
-                                    <a href="#" class="btn btn-secondary">Lihat</a>
-                                    <a href="#" class="btn btn-success">Terima</a>
-                                    <a href="#" class="btn btn-danger">Tolak</a>
-                                </td>
-                            </tr>
-                            <tr class="table-body bg-table-body-even">
-                                <td>6</td>
-                                <td>Rafi Fajar</td>
-                                <td>Total Keuntungan Tahun 2022</td>
-                                <td>21/12/2022</td>
-                                <td>
-                                    <a href="#" class="btn btn-secondary">Lihat</a>
-                                    <a href="#" class="btn btn-success">Terima</a>
-                                    <a href="#" class="btn btn-danger">Tolak</a>
-                                </td>
-                            </tr>
-                            <tr class="table-body bg-table-body-odd">
-                                <td>7</td>
-                                <td>Rafi Fajar</td>
-                                <td>Total Keuntungan Tahun 2022</td>
-                                <td>21/12/2022</td>
-                                <td>
-                                    <a href="#" class="btn btn-secondary">Lihat</a>
-                                    <a href="#" class="btn btn-success">Terima</a>
-                                    <a href="#" class="btn btn-danger">Tolak</a>
-                                </td>
-                            </tr>
-                            <tr class="table-body bg-table-body-even">
-                                <td>8</td>
-                                <td>Rafi Fajar</td>
-                                <td>Total Keuntungan Tahun 2022</td>
-                                <td>21/12/2022</td>
-                                <td>
-                                    <a href="#" class="btn btn-secondary">Lihat</a>
-                                    <a href="#" class="btn btn-success">Terima</a>
-                                    <a href="#" class="btn btn-danger">Tolak</a>
-                                </td>
-                            </tr>
-                            <tr class="table-body bg-table-body-odd">
-                                <td>9</td>
-                                <td>Rafi Fajar</td>
-                                <td>Total Keuntungan Tahun 2022</td>
-                                <td>21/12/2022</td>
-                                <td>
-                                    <a href="#" class="btn btn-secondary">Lihat</a>
-                                    <a href="#" class="btn btn-success">Terima</a>
-                                    <a href="#" class="btn btn-danger">Tolak</a>
-                                </td>
-                            </tr>
+                            <?php } ?>
                         </table>
                     </div>
                     <div class="container-page-nav">
@@ -141,9 +72,9 @@
                                     <span aria-hidden="true">&laquo;</span>
                                     </a>
                                 </li>
-                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item active"><a class="page-link" href="<?= htmlspecialchars($_SERVER['PHP_SELF']) . "?page=1" ?>">1</a></li>
+                                <li class="page-item"><a class="page-link" href="<?= htmlspecialchars($_SERVER['PHP_SELF']) . "?page=2" ?>">2</a></li>
+                                <li class="page-item"><a class="page-link" href="<?= htmlspecialchars($_SERVER['PHP_SELF']) . "?page=3" ?>">3</a></li>
                                 <li class="page-item">
                                     <a class="page-link" href="#" aria-label="Next">
                                     <span aria-hidden="true">&raquo;</span>
