@@ -3,9 +3,9 @@
 
     class GuardsMiddleware {
 
-        public function auth(array $user) {
+        public function auth($user) {
             if ($user == null) {
-                header("location:index.php");
+                header("location:../auth/index.php");
                 exit;
             }
         }
