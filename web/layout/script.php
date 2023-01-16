@@ -5,3 +5,5 @@
 <script src="../../asset/js/sidebar.js"></script>
 <!-- Dark Mode JS -->
 <script src="../../asset/js/darkmode.js"></script>
+<!-- Apexchart -->
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>

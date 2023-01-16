@@ -13,5 +13,4 @@
 <link rel="stylesheet" href="../../asset/css/main.css">
 <!-- css page -->
 <link rel="stylesheet" href="../../asset/css/<?= $css_file ?>">
-<!-- chartjs -->
-<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
