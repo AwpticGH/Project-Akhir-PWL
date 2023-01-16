@@ -44,7 +44,7 @@
                             <td>example</td>
                             <td>
                                 <center>
-                                    <a href="#" class="btn btn-success">View details</a>
+                                    <a href="employee_detail.php" class="btn btn-success">View details</a>
                                 </center>
                             </td>
                         </tr>

@@ -46,7 +46,7 @@
                                             ? 9 
                                             : mysqli_num_rows($pstResult);
                                 $index = $pagination * ($page - 1);
-                                
+
                                 for ($i = $index; $i < $pagination * $page; $i++) {
                                     $data = $pstResult -> fetch_array(MYSQLI_BOTH);
                             ?>

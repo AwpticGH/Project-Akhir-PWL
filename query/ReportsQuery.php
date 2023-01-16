@@ -47,6 +47,19 @@
                                             FROM reports
                                             WHERE user_id = ?";
 
-
+        // count nilai laporan = n / m
+        // n = jumlah laporan yg diterima
+        // m = jumlah laporan yg sudah disubmit dan ga pending
+        public static $countScore = "SELECT (
+                                            SELECT COUNT(*)
+                                            FROM reports
+                                            WHERE user_id = ?
+                                            AND is_approved = '1'
+                                        ) / (
+                                            SELECT COUNT(*)
+                                            FROM reports
+                                            WHERE user_id = ?
+                                            AND is_pending = '0'
+                                        )";
     }
 ?>

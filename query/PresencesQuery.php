@@ -19,6 +19,13 @@
                                 is_pending = '0' 
                                 WHERE presences.id = ?";
         //read all absen by user_id
-        public static $readallabsenby_uid = "SELECT * FROM presence WHERE user_id = ?";                
+        public static $readallabsenby_uid = "SELECT * FROM presence WHERE user_id = ?";
+        
+        // count all absen
+        public static $countTotalPresences = "SELECT COUNT(*) AS total_presences
+                                                FROM `presences` 
+                                                WHERE user_id = ?
+                                                AND presences.date_of_presence < STR_TO_DATE(CONCAT(YEAR(CURRENT_DATE), '-', MONTH(CURRENT_DATE), '-25'), '%Y-%m-%e')
+                                                AND presences.date_of_presence > STR_TO_DATE(CONCAT(IF(MONTH(CURRENT_DATE) = 1, YEAR(DATE_ADD(CURRENT_DATE, INTERVAL -1 YEAR)), YEAR(CURRENT_DATE)), '-', MONTH(DATE_ADD(CURRENT_DATE, INTERVAL -1 MONTH)), '-25'), '%Y-%m-%e')";
     }
 ?>
