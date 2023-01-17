@@ -141,7 +141,7 @@
                                     <tr>
                                         <th scope="row"><?= $counter ?></th>
                                         <td><?= $report['title'] ?></td>
-                                        <td><?= $report['desc'] ?></td>
+                                        <td><?= $report['description'] ?></td>
                                         <td>
                                             <?= 
                                                 (($report['is_approved'] == "1") 
