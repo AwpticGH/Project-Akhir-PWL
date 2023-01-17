@@ -1,6 +1,28 @@
 <?php 
     $page_for = "employee";
-    include("../layout/starter.php") 
+    include("../layout/starter.php");
+
+    require_once("../../controller/ReportsController.php");
+    use controller\ReportsController;
+    $reports_controller = new ReportsController();
+
+    if ($_SERVER['REQUEST_METHOD'] == "POST") {
+        $file_tmp = $_FILES['report']['tmp_name'];
+        $file_uploaded = $_FILES['report']['name'];
+        $ext = pathinfo($file_uploaded, PATHINFO_EXTENSION);
+        $content = file_get_contents($file_tmp);
+        $file = 'data:application/' . $ext . ';base64,' . base64_encode($content);
+        $created = false;
+
+        if (!in_array($ext, ['pdf', 'docx', 'xlsx', 'csv'])) {
+            $reports_controller -> message = "File must be of type PDF, DOCX, XLSX, or CSV";
+        }
+        else {
+            $created = $reports_controller -> create($_POST['title'], $_POST['description'], $file, $user['id']);
+        }
+
+        $reports_controller -> message = ($created) ? "Berhasil Upload : $file" : "Gagal Upload : $file";
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,43 +65,54 @@
                 <?php include("../layout/navbar.php")?>
                 
                 <!-- Page content-->
+                <?php if ($reports_controller->message != "") { ?>
+                    <script>
+                        alert('<?= $reports_controller->message ?>')
+                    </script>
+                <?php } ?>
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
-                            <div class="card1">
-                                <div class="card2">
-                                    Submit Laporan
+                            <?php
+                                $time = date("H:i:s");
+                                $date = date("Y-m-d");
+                            ?>
+                            <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']) ?>" enctype="multipart/form-data" method="post">
+                                <div class="card1">
+                                    <div class="card2">
+                                        Submit Laporan
+                                    </div>
+                                    <div class="col-3">
+                                        Time
+                                        <br>
+                                        Date
+                                        <br>
+                                        Judul Laporan
+                                        <br>
+                                        <br>
+                                        Keterangan
+                                        <br>
+                                        <br>
+                                        <br>
+                                        File
+                                    </div>
+                                    <div class="col-6">
+                                        <?= $time ?>
+                                        <br>
+                                        <?= $date ?>
+                                        <br>
+                                        <input type="text" name="title" id="title" required>
+                                        <br>
+                                        <br>
+                                        <textarea name="description" id="keterangan" cols="30" rows="0"></textarea>
+                                        <br>
+                                        <br>
+                                        <input type="file" name="report" required>
+                                    </div>
                                 </div>
-                                <div class="col-3">
-                                    Time
-                                    <br>
-                                    Date
-                                    <br>
-                                    Judul Laporan
-                                    <br>
-                                    <br>
-                                    Keterangan
-                                    <br>
-                                    <br>
-                                    <br>
-                                    File
-                                </div>
-                                <div class="col-6">
-                                    08:13
-                                    <br>
-                                    5 Jan 2023
-                                    <br>
-                                    Pengembangan Front End
-                                    <br>
-                                    <br>
-                                    <textarea name="keterangan" id="keterangan" cols="30" rows="0"></textarea>
-                                    <br>
-                                    <br>
-                                    <input type="file">
-                                </div>
-                            </div>
-                            <input type="submit" style="margin-top: 16px; font-size: 15px; color: whitesmoke; background: green; margin-left: 490px;  width: 100px; border-radius: 11px; font-size: 20px;" class="btn" name="submit" value="Submit">
-                            <a href="#" style="margin-top: 16px; background: red; width: 100px; margin-left: 12px; color: whitesmoke; border-radius: 11px; font-size: 20px;" type="submit" class="btn">Cancel</a>
+                                <input type="submit" style="margin-top: 16px; font-size: 15px; color: whitesmoke; background: green; margin-left: 490px;  width: 100px; border-radius: 11px; font-size: 20px;" class="btn" name="submit" value="Submit">
+                                <a href="../employee/dashboard.php" style="margin-top: 16px; background: red; width: 100px; margin-left: 12px; color: whitesmoke; border-radius: 11px; font-size: 20px;" type="submit" class="btn">Cancel</a>
+                            </form>
                         </div>
                         <!-- <div class="col-1"> -->
                         

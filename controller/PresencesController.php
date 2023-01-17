@@ -59,14 +59,15 @@
         
         
         // count score absen
-        public static $countScoreByUserId = "SELECT (
-            SELECT COUNT(*) 
-            FROM `presences` 
-            WHERE user_id = ?
-            AND presences.date_of_presence < STR_TO_DATE(CONCAT(YEAR(CURRENT_DATE), '-', MONTH(CURRENT_DATE), '-25'), '%Y-%m-%e')
-            AND presences.date_of_presence > STR_TO_DATE(CONCAT(IF(MONTH(CURRENT_DATE) = 1, YEAR(DATE_ADD(CURRENT_DATE, INTERVAL -1 YEAR)), YEAR(CURRENT_DATE)), '-', MONTH(DATE_ADD(CURRENT_DATE, INTERVAL -1 MONTH)), '-25'), '%Y-%m-%e')
-            ) / 30 * 100
-            AS total_score";
-}
+        public function countScoreByUserId($user_id) {
+            $this -> conn = DBConfig::connect();
+            $sql = PresencesQuery::$countScoreByUserId;
+            $stmt = mysqli_prepare($this->conn, $sql);
+            $stmt -> bind_param("s", $user_id);
+            $stmt -> execute();
+
+            return $stmt -> get_result();
+        }
+    }
         
 ?>

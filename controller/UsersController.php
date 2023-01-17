@@ -73,7 +73,6 @@
 
             if ($success) {
                 $this -> reloadData($user);
-                header("location:show.php?id=" . $user['id']);
             }
             else {
                 $this -> error = "Failed updating account";
@@ -89,7 +88,6 @@
 
             if ($success) {
                 $this -> reloadData($user);
-                header("location:show.php?id=" . $user['id']);
             }
             else {
                 $this -> error = "Failed Updating Account";
