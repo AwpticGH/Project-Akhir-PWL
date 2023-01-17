@@ -7,21 +7,7 @@
     $reports_controller = new ReportsController();
 
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
-        $file_tmp = $_FILES['report']['tmp_name'];
-        $file_uploaded = $_FILES['report']['name'];
-        $ext = pathinfo($file_uploaded, PATHINFO_EXTENSION);
-        $type = $_FILES['report']['type'];
-        $content = file_get_contents($file_tmp);
-        $file = 'data:' . $type . ';base64,' . base64_encode($content);
-        $created = false;
-
-        if (!in_array($ext, ['pdf', 'docx', 'xlsx', 'csv'])) {
-            $reports_controller -> message = "File must be of type PDF, DOCX, XLSX, or CSV";
-        }
-        else {
-            $created = $reports_controller -> create($_POST['title'], $_POST['description'], $file, $user['id']);
-        }
-
+        $created = $reports_controller -> create($_POST['title'], $_POST['description'], $user['id']);
         $reports_controller -> message = ($created) ? "Berhasil Upload : $file_uploaded" : "Gagal Upload : $file_uploaded";
     }
 ?>
