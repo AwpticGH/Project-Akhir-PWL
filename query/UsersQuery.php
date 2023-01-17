@@ -49,5 +49,11 @@
                                                 FROM users
                                                 WHERE division_id = ?
                                                 AND position_id = '1'";
+
+        public static $updateAcceptNewEmployee = "UPDATE users
+                                                    SET date_of_admission = NOW()
+                                                    WHERE id = ?";
+
+        public static $updateRejectNewEmployee = "DELETE FROM users WHERE id = ?";
     }
 ?>

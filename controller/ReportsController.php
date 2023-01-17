@@ -87,6 +87,16 @@
 
             return $stmt -> get_result();
         }
+        
+        public function readPendingReportByTitle($title) {
+            $this -> conn = DBConfig::connect();
+            $sql = ReportsQuery::$readByTitle;
+            $stmt = mysqli_prepare($this->conn, $sql);
+            $stmt -> bind_param("s", $title);
+            $stmt -> execute();
+    
+            return $stmt -> get_result();
+        }
 
     }
 ?>

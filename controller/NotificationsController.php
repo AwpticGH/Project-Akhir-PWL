@@ -31,18 +31,10 @@
         }
 
         // function update($userId, $notificationId)
-
-         public function updateRejectNotif($id) {
+        
+        public function updateNotificationIsRead($id) {
             $this -> conn = DBConfig::connect();
-            $sql = NotificationsQuery::$notif_is_read;
-            $stmt = mysqli_prepare($this-> conn, $sql);
-            $stmt -> bind_param("s", $id);
-            
-            return $stmt -> execute();
-        }
-         public function updateAcceptNotif($id) {
-            $this -> conn = DBConfig::connect();
-            $sql = NotificationsQuery::$notif_is_read;
+            $sql = NotificationsQuery::$notif;
             $stmt = mysqli_prepare($this-> conn, $sql);
             $stmt -> bind_param("s", $id);
             

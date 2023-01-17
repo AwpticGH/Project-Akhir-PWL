@@ -4,10 +4,28 @@
 
     require_once("../../controller/ReportsController.php");
     use controller\ReportsController;
+    require_once("../../controller/NotificationsController.php");
+    use controller\NotificationsController;
+
     $reports_controller = new ReportsController();
 
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $created = $reports_controller -> create($_POST['title'], $_POST['description'], $user['id']);
+
+        if ($created) {
+            $pstResult_heads = $user_controller -> readHeadsByDivisionId($user['division_id']);
+
+            while ($head = $pstResult_heads -> fetch_array()) {
+                $notif_title = "Laporan Telah Diterima";
+                $notif_text = $_POST['title'];
+                $notif_by = $user['id'];
+
+                $notif_for = $head['id'];
+                
+                $notif_controller = new NotificationsController();
+                $notifResultSent = $notif_controller -> createnotifreport($notif_title, $notif_text, $notif_for, $notif_by);
+            }
+        }
         $reports_controller -> message = ($created) ? "Berhasil Upload" : "Gagal Upload";
     }
 ?>

@@ -106,5 +106,17 @@
                                             AND is_pending = '0'
                                         ) * 100
                                         AS total_score";
+
+        public static $readPendingReportByTitle = "SELECT reports.id,
+                                                reports.title,
+                                                reports.description,
+                                                users.first_name,
+                                                users.last_name,
+                                                CAST(reports.date_of_submission as DATE) as date_of_submission
+                                        FROM reports
+                                        INNER JOIN users ON reports.user_id = users.id
+                                        INNER JOIN divisions ON users.division_id = divisions.id
+                                        WHERE reports.title = ?
+                                        AND reports.is_pending = '1'";
     }
 ?>

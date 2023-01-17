@@ -6,6 +6,8 @@
     use controller\ReportsController;
 
     $report_controller = new ReportsController();
+    $pstResult = $report_controller -> readPendingReportsByDivisionId($user['division_id']);
+    
     if ($_SERVER['REQUEST_METHOD'] == "GET") {
         if (isset($_GET['update'])) {
             if ($_GET['update'] == "accept") 
@@ -13,9 +15,11 @@
             if ($_GET['update'] == "reject")
                 $report_controller -> updateReject($_GET['report_id']);
         }
+        if (isset($_GET['search'])) {
+            $pstResult = $report_controller -> readPendingReportByTitle($_GET['search']);
+        }
     }
 
-    $pstResult = $report_controller -> readPendingReportsByDivisionId($user['division_id']);
 ?>
 <!DOCTYPE html>
 <html lang="en">

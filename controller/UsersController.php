@@ -145,6 +145,24 @@
 
             return $stmt -> get_result();
         }
+        
+        public function updateAcceptNewEmployee($user_id) {
+            $this -> conn = DBConfig::connect();
+            $sql = UsersQuery::$updateAcceptNewEmployee;
+            $stmt = mysqli_prepare($this->conn, $sql);
+            $stmt -> bind_param("s", $user_id);
+            
+            return $stmt -> execute();
+        }
+        
+        public function updateRejectNewEmployee($user_id) {
+            $this -> conn = DBConfig::connect();
+            $sql = UsersQuery::$updateRejectNewEmployee;
+            $stmt = mysqli_prepare($this->conn, $sql);
+            $stmt -> bind_param("s", $user_id);
+            
+            return $stmt -> execute();
+        }
     }
 
 ?>

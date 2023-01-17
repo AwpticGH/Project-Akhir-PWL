@@ -7,6 +7,21 @@
 
     $notif_controller = new NotificationsController();
     $pstResult = $notif_controller -> readNotifAllByUserId($user['id']);
+
+    if ($_SERVER['REQUEST_METHOD'] == "GET") {
+        if (isset($_GET['delete'])) {
+            $notif_controller -> updateNotificationIsRead($_GET['notification_id']);
+        }
+        if (isset($_GET['update'])) {
+            if ($_GET['update'] == "accept") {
+                $user_controller -> updateAcceptNewEmployee($_GET['notification_by']);
+            }
+            else {
+                $user_controller -> updateRejectNewEmployee($_GET['notification_by']);
+            }
+            $notif_controller -> updateNotificationIsRead($_GET['notification_id']);
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +47,7 @@
 
                         <table>
                             <tr class="table-header bg-table-header">
-                                <th>Tanggal</th>
+                                <!-- <th>Tanggal</th> -->
                                 <th>Tipe</th>
                                 <th>Judul</th>
                                 <th>Pesan</th>
@@ -53,7 +68,7 @@
                                 
                             ?>
                             <tr class="table-body bg-table-body-odd">
-                                <td><?= $data['datetime'] ?></td>
+                                <!-- <td><?= $data['datetime'] ?></td> -->
                                 <td><?= $data['type'] ?></td>
                                 <td><?= $data['title'] ?></td>
                                 <td><?= $data['notification_text']?></td>
@@ -65,6 +80,7 @@
                                     <?php if ($data['type'] == "Report") { ?>
                                         <a href="../report/show.php?search=<?= $data['notification_text'] ?>" class="btn btn-secondary">Lihat</a>
                                     <?php } ?>
+                                    <a href="<?= htmlspecialchars($_SERVER['PHP_SELF']) . "?delete=true&notification_id=" . $data['id'] ?>" class="btn btn-warning">Delete</a>
                                 </td>
                             </tr>
                              <?php } ?>

@@ -11,7 +11,7 @@
             $user['last_name'] = $_POST['lastname'];
             $user['username'] = $_POST['firstname'];
             $user['password'] = $_POST['password'];
-            $user['position_id'] = "1";
+            $user['position_id'] = "2";
             $user['division_id'] = $_POST['division'];
             $user['address'] = $_POST['address'];
             $user['date_of_birth'] = $_POST['date'];
