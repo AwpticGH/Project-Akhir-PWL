@@ -62,7 +62,15 @@
             $stmt -> execute();
 
             return $stmt -> get_result();
-
+        }
+        
+        public function deleteNotificationById($id){
+            $this -> conn = DBConfig::connect();
+            $sql = NotificationsQuery::$deleteNotificationById;
+            $stmt = mysqli_prepare ($this -> conn, $sql);
+            $stmt -> bind_param ("s", $id);
+            
+            return $stmt -> execute();
         }
     }
 ?>

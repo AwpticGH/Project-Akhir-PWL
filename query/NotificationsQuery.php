@@ -32,5 +32,7 @@
         public static $readall ="SELECT * FROM notifications WHERE notification_for =?";
 
         public static $readatBell = "SELECT COUNT(*) AS jumlah FROM notifications WHERE is_read = '0' AND notification_for = ?";
+
+        public static $deleteNotificationById = "DELETE FROM notifications WHERE id = ?";
     }
 ?>

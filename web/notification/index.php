@@ -6,22 +6,22 @@
     use controller\NotificationsController;
 
     $notif_controller = new NotificationsController();
-    $pstResult = $notif_controller -> readNotifAllByUserId($user['id']);
-
+    
     if ($_SERVER['REQUEST_METHOD'] == "GET") {
         if (isset($_GET['delete'])) {
             $notif_controller -> updateNotificationIsRead($_GET['notification_id']);
         }
         if (isset($_GET['update'])) {
             if ($_GET['update'] == "accept") {
+                $notif_controller -> updateNotificationIsRead($_GET['notification_id']);
                 $user_controller -> updateAcceptNewEmployee($_GET['notification_by']);
             }
             else {
-                $user_controller -> updateRejectNewEmployee($_GET['notification_by']);
+                $notif_controller -> deleteNotificationById($_GET['notification_id']);
             }
-            $notif_controller -> updateNotificationIsRead($_GET['notification_id']);
         }
     }
+    $pstResult = $notif_controller -> readNotifAllByUserId($user['id']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -74,8 +74,8 @@
                                 <td><?= $data['notification_text']?></td>
                                 <td>
                                     <?php if ($data['type'] == "User") { ?>
-                                        <a href="<?= htmlspecialchars($_SERVER['PHP_SELF']) . "?notification_id=" . $data['id'] ."update=accept&notification_by=" . $data['notification_by'] ?>" class="btn btn-success">Terima</a>
-                                        <a href="<?= htmlspecialchars($_SERVER['PHP_SELF']) . "?notification_id=" . $data['id'] ."update=reject&notification_by=" . $data['notification_by'] ?>" class="btn btn-danger">Tolak</a>
+                                        <a href="<?= htmlspecialchars($_SERVER['PHP_SELF']) . "?notification_id=" . $data['id'] ."&update=accept&notification_by=" . $data['notification_by'] ?>" class="btn btn-success">Terima</a>
+                                        <a href="<?= htmlspecialchars($_SERVER['PHP_SELF']) . "?notification_id=" . $data['id'] ."&update=reject&notification_by=" . $data['notification_by'] ?>" class="btn btn-danger">Tolak</a>
                                     <?php } ?>
                                     <?php if ($data['type'] == "Report") { ?>
                                         <a href="../report/show.php?search=<?= $data['notification_text'] ?>" class="btn btn-secondary">Lihat</a>
