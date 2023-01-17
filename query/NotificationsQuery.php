@@ -24,17 +24,10 @@
                                         WHERE notifications.id = ?";
 
         //read all notification by notification_for
-        public static $readallnotifby_notiffor ="SELECT notifications.id as notif_id,
-                                                        users.id as user_id,
-                                                        reports.id as report_id,
-                                                        CAST(notifications.datetime as DATE) as datetime,
-                                                        notifications.type as type,
-                                                        notifications.title as title,
-                                                        notifications.notification_text as notification_text
-                                                FROM notifications
-                                                INNER JOIN users ON notifications.notification_by = users.id
-                                                INNER JOIN reports ON notifications.notification_by = reports.user_id
-                                                WHERE notification_for = ?";
+        public static $readallnotifby_notiffor ="SELECT * 
+                                                    FROM notifications
+                                                    WHERE notification_for = ?
+                                                    AND is_read = '0'";
 
         public static $readall ="SELECT * FROM notifications WHERE notification_for =?";
 

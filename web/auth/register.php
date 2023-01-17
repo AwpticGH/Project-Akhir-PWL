@@ -25,7 +25,7 @@
                     $notif_title = "Penerimaan Karyawan Baru";
                     $notif_text = $user['first_name'] . " " . $user['last_name'] . " telah mendaftar sebagai karyawan di divisi anda. Terima atau Tolak?";
     
-                    $newEmployee = $controller -> readRegisteredEmployee($user['first_name'], $user['last_name'], $user['username']) -> fetch_array();
+                    $newEmployee = $controller -> readRegisteredEmployee($user['first_name'], $user['last_name'], $user['division_id']) -> fetch_array();
                     $notif_by = $newEmployee['id'];
     
                     $notif_for = $head['id'];
@@ -33,7 +33,7 @@
                     $notif_controller = new NotificationsController();
                     $notifResultSent = $notif_controller -> createNotifUser($notif_title, $notif_text, $notif_for, $notif_by);
                 }
-                
+
                 $message = "Register Success, Please Contact Your Head Division For Approval";
                 echo "<script>";
                 echo "alert('$message')";

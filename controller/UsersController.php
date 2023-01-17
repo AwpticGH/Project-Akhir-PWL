@@ -126,11 +126,11 @@
             return $stmt -> get_result();
         }
 
-        public function readRegisteredEmployee($first_name, $last_name, $username) {
+        public function readRegisteredEmployee($first_name, $last_name, $division_id) {
             $this -> conn = DBConfig::connect();
             $sql = UsersQuery::$readRegisteredEmployee;
             $stmt = mysqli_prepare($this->conn, $sql);
-            $stmt -> bind_param("sss", $first_name, $last_name, $username);
+            $stmt -> bind_param("sss", $first_name, $last_name, $division_id);
             $stmt -> execute();
 
             return $stmt -> get_result();

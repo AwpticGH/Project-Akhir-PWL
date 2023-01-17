@@ -49,6 +49,7 @@
                                 
                                 for ($i = $index; $i < $pagination * $page; $i++) {
                                     $data = $pstResult -> fetch_array(MYSQLI_BOTH);
+
                                 
                             ?>
                             <tr class="table-body bg-table-body-odd">
@@ -57,8 +58,13 @@
                                 <td><?= $data['title'] ?></td>
                                 <td><?= $data['notification_text']?></td>
                                 <td>
-                                    <a href="<?= htmlspecialchars($_SERVER['PHP_SELF']) . "?update=accept&notif_id=" . $data['notif_id'] . ($data['type'] == "Report") ? "&report_id=" . $data['report_id'] : "&user_id=" . $data['user_id'] ?>" class="btn btn-success">Terima</a>
-                                    <a href="<?= htmlspecialchars($_SERVER['PHP_SELF']) . "?update=reject&notif_id=" . $data['notif_id'] . ($data['type'] == "Report") ? "&report_id=" . $data['report_id'] : "&user_id=" . $data['user_id'] ?>" class="btn btn-danger">Tolak</a>
+                                    <?php if ($data['type'] == "User") { ?>
+                                        <a href="<?= htmlspecialchars($_SERVER['PHP_SELF']) . "?notification_id=" . $data['id'] ."update=accept&notification_by=" . $data['notification_by'] ?>" class="btn btn-success">Terima</a>
+                                        <a href="<?= htmlspecialchars($_SERVER['PHP_SELF']) . "?notification_id=" . $data['id'] ."update=reject&notification_by=" . $data['notification_by'] ?>" class="btn btn-danger">Tolak</a>
+                                    <?php } ?>
+                                    <?php if ($data['type'] == "Report") { ?>
+                                        <a href="../report/show.php?search=<?= $data['notification_text'] ?>" class="btn btn-secondary">Lihat</a>
+                                    <?php } ?>
                                 </td>
                             </tr>
                              <?php } ?>

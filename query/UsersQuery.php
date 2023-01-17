@@ -42,7 +42,7 @@
                                                 WHERE id = ?";
 
         // read registered employee
-        public static $readRegisteredEmployee = "SELECT id FROM users WHERE first_name = ? AND last_name = ? AND username = ?";
+        public static $readRegisteredEmployee = "SELECT id FROM users WHERE first_name = ? AND last_name = ? AND division_id = ?";
 
         // read head by division id
         public static $readHeadsByDivisionId = "SELECT id
