@@ -11,17 +11,19 @@
                                 is_approved = '1', 
                                 is_rejected = '0',
                                 is_pending = '0' 
-                                WHERE presences.id = ?";
+                                WHERE id = ?";
         //update reject
         public static $rjcabsen = "UPDATE presences SET 
                                 is_approved = '0', 
                                 is_rejected = '1',
                                 is_pending = '0' 
-                                WHERE presences.id = ?";
+                                WHERE id = ?";
         //read all absen by user_id
-        public static $readByDivisionId = "SELECT users.first_name,
+        public static $readByDivisionId = "SELECT presences.id,
+                                                    users.first_name,
                                                     users.last_name,
-                                                    CAST(presences.date_of_presence as DATE) as date_of_presence
+                                                    CAST(presences.date_of_presence as DATE) as date_of_presence,
+                                                    CAST(presences.date_of_presence as TIME) as time_of_presence
                                             FROM presences
                                             INNER JOIN users ON presences.user_id = users.id
                                             INNER JOIN divisions ON users.division_id = divisions.id

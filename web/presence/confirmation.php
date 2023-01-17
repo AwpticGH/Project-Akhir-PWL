@@ -9,10 +9,10 @@
 
    if ($_SERVER['REQUEST_METHOD'] == "GET") {
        if (isset($_GET['update'])) {
-           if ($_GET['update'] == "accept") 
-               $presence_controller -> updateAccept($_GET['presences_acc']);
-           if ($_GET['update'] == "reject")
-               $presence_controller -> updateReject($_GET['presences_rjc']);
+           if ($_GET['update'] == "accpt") 
+               $presence_controller -> updateAcc($_GET['presences_acc']);
+           if ($_GET['update'] == "rejct")
+               $presence_controller -> updateRej($_GET['presences_rjc']);
        }
    }
 
@@ -44,6 +44,7 @@
                                 <th>#</th>
                                 <th>Karyawan</th>
                                 <th>Tgl/Bln/Thn</th>
+                                <th>Jam</th>
                                 <th>Aksi</th>
                             </tr>
                             <?php
@@ -62,9 +63,10 @@
                                 <td><?= ($i+1) ?></td>
                                 <td><?= $data['first_name'] . " " . $data['last_name'] ?></td>
                                 <td><?= $data['date_of_presence'] ?></td>
+                                <td><?= $data['time_of_presence'] ?></td>
                                 <td>
-                                    <a href="<?= htmlspecialchars($_SERVER['PHP_SELF']) . "?update=accept&presences_acc=" . $data['id'] ?>" class="btn btn-success">Terima</a>
-                                    <a href="<?= htmlspecialchars($_SERVER['PHP_SELF']) . "?update=reject&presences_rjc=" . $data['id'] ?>" class="btn btn-danger">Tolak</a>
+                                    <a href="<?= htmlspecialchars($_SERVER['PHP_SELF']) . "?update=accpt&presences_acc= " .  $data['id'] ?>" class="btn btn-success">Terima</a>
+                                    <a href="<?= htmlspecialchars($_SERVER['PHP_SELF']) . "?update=rejct&presences_rjc= " .  $data['id'] ?>" class="btn btn-danger">Tolak</a>
                                 </td>
                             </tr>
                             <?php } ?>

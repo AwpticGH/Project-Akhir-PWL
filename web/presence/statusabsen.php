@@ -12,7 +12,7 @@
 <html lang="en">
     <head>
         <?php
-            $title = "Konfirmasi Presensi Karyawan";
+            $title = "status absen";
             $css_file = "presence/confirmation.css";
             include("../layout/header.php");
         ?>

@@ -8,7 +8,6 @@
 
     class PresencesController {
 
-        public $error = "";
         private $conn = null;        
         
         // function create
@@ -21,7 +20,7 @@
             return $stmt -> execute();
         }
         // function update
-        public function updateAccept($presences_acc) {
+        public function updateAcc($presences_acc) {
             $this -> conn = DBConfig::connect();
             $sql = PresencesQuery::$accabsen;
             $stmt = mysqli_prepare($this-> conn, $sql);
@@ -30,7 +29,7 @@
             return $stmt -> execute();
         }
 
-        public function updateReject($presences_rjc) {
+        public function updateRej($presences_rjc) {
             $this -> conn = DBConfig::connect();
             $sql = PresencesQuery::$rjcabsen;
             $stmt = mysqli_prepare($this-> conn, $sql);
