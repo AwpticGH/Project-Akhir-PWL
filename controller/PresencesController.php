@@ -8,14 +8,15 @@
 
     class PresencesController {
 
-        private $conn = null;        
+        private $conn = null;
+        public $message = "";        
         
         // function create
-        public function create($date_of_presence, $t ) {
+        public function create($date_of_presence, $user_id ) {
             $this -> conn = DBconfig::connect();
-            $sql = PresencesQuery::$createabsen;
+            $sql = PresencesQuery::$create;
             $stmt = mysqli_prepare($this -> conn, $sql);
-            $stmt -> bind_param("ss", $date_of_presence, $t);
+            $stmt -> bind_param("ss", $date_of_presence, $user_id);
 
             return $stmt -> execute();
         }
