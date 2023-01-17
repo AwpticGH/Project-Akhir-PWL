@@ -28,7 +28,7 @@
     <head>
         <?php 
             $title = "Profile";
-            $css_file = "auth/profile.css";
+            $css_file = "auth/show.css";
             include("../layout/header.php");
         ?>
     </head>
