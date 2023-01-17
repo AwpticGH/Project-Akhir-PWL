@@ -30,14 +30,18 @@
                             <div class="card2">
                                 Presensi kehadiran
                             </div>
+                            <?php
+                                $time = date("H:i:s");
+                                $date = date("Y-m-d");
+                            ?>
                             <div class="col-3">
                                 <div style="font-weight: bold;: ">Time</div>
                                 <div style="margin-top: 20px; font-weight: bold;: ">Date </div>
                                 <div style="margin-top: 30px; font-weight: bold;">Action </div>
                             </div>
                             <div class="col-6">
-                                <div style="font-weight: bold;: ">08:13</div>
-                                <div style="margin-top: 20px;font-weight: bold;"> 5 Jan 2023 </div>
+                                <div style="font-weight: bold;: "><?= $time ?></div>
+                                <div style="margin-top: 20px;font-weight: bold;"> <?= $date ?> </div>
                                 <div style="margin-top: 20px;">
                                     <ul>
                                         <li> <a style="background: #038700; width: 100px; color: #F5F5F5; border-radius: 25px; font-size: 20px;font-weight: bold;"

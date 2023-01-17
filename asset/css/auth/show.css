@@ -43,15 +43,43 @@ nav img{
 }
 
 .boton{
-    margin-top: 23px; 
+    margin-top: 50px; 
     font-size: 20px; 
     color: #2C3639; 
     background: #ADEFD1;
     margin-left: 50px;
-    width: 90%; 
+    width: 80%; 
     border-radius: 15px;
+    border: #212529 solid;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 
 .fonku{
     color: var(--fonts);
+}
+
+.card3{
+    max-width: 80rem;
+    height: 45rem;
+    padding: 50px;
+    font-size: 20px;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, .3);
+    margin-top: 2.5rem;
+    border-radius: 11px;
+    text-align: left;
+    display: flex;
+    background-color: whitesmoke;
+}
+
+.photocard{
+    max-width: 300px;
+    height: fit-content;
+    padding: 10px;
+    width: 300px;
+    font-size: 20px;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, .3);
+    border-radius: 11px;
+    margin-top: 7rem;
+    text-align: left;
+    background-color: whitesmoke;
 }

@@ -1,28 +1,18 @@
 <?php
-   $page_for = "admin";
+   $page_for = "employee";
    include("../layout/starter.php");
 
    require_once("../../controller/PresencesController.php");
    use controller\PresencesController;
 
-   $presence_controller = new PresencesController();
-
-   if ($_SERVER['REQUEST_METHOD'] == "GET") {
-       if (isset($_GET['update'])) {
-           if ($_GET['update'] == "accpt") 
-               $presence_controller -> updateAcc($_GET['presences_acc']);
-           if ($_GET['update'] == "rejct")
-               $presence_controller -> updateRej($_GET['presences_rjc']);
-       }
-   }
-
-   $pstResult = $presence_controller -> readByDivisionId($user['division_id']);
+   $presences_controller = new PresencesController();
+   $pstResult = $presences_controller -> readByUserId($user['id']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <?php
-            $title = "Konfirmasi Presensi Karyawan";
+            $title = "status absen";
             $css_file = "presence/confirmation.css";
             include("../layout/header.php");
         ?>
@@ -42,10 +32,9 @@
                         <table>
                             <tr class="table-header bg-table-header">
                                 <th>#</th>
-                                <th>Karyawan</th>
-                                <th>Tgl/Bln/Thn</th>
+                                <th>Tanggal</th>
                                 <th>Jam</th>
-                                <th>Aksi</th>
+                                <th>Status</th>
                             </tr>
                             <?php
                                 $page = (isset($_GET['page'])) 
@@ -55,24 +44,38 @@
                                             ? 5 
                                             : mysqli_num_rows($pstResult);
                                 $index = $pagination * ($page - 1);
-
+                                
                                 for ($i = $index; $i < $pagination * $page; $i++) {
                                     $data = $pstResult -> fetch_array(MYSQLI_BOTH);
                             ?>
                             <tr class="table-body bg-table-body-odd">
                                 <td><?= ($i+1) ?></td>
-                                <td><?= $data['first_name'] . " " . $data['last_name'] ?></td>
                                 <td><?= $data['date_of_presence'] ?></td>
                                 <td><?= $data['time_of_presence'] ?></td>
-                                <td>
-                                    <a href="<?= htmlspecialchars($_SERVER['PHP_SELF']) . "?update=accpt&presences_acc= " .  $data['id'] ?>" class="btn btn-success">Terima</a>
-                                    <a href="<?= htmlspecialchars($_SERVER['PHP_SELF']) . "?update=rejct&presences_rjc= " .  $data['id'] ?>" class="btn btn-danger">Tolak</a>
-                                </td>
+                                <td>diterima</td>
                             </tr>
                             <?php } ?>
                         </table>
                     </div>
-                    <?php include("../layout/pagination.php") ?>
+                    <div class="container-page-nav">
+                        <nav aria-label="Page-navigation ">
+                            <ul class="pagination  ">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
             </div>
         </div>

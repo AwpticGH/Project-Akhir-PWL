@@ -1,6 +1,32 @@
 <?php
     $page_for = "admin";
     include("../layout/starter.php");
+
+    require_once("../../controller/DivisionsController.php");
+    use controller\DivisionsController;
+    require_once("../../controller/PositionsController.php");
+    use controller\PositionsController;
+    require_once("../../controller/PresencesController.php");
+    use controller\PresencesController;
+    require_once("../../controller/ReportsController.php");
+    use controller\ReportsController;
+
+    $pstResult_employee = $user_controller -> readEmployeeByUserId($_GET['user_id']);
+    $employee = $pstResult_employee -> fetch_array();
+    
+    $divisions_controller = new DivisionsController();
+    $division = $divisions_controller -> readById($employee['division_id']);
+    
+    $positions_controller = new PositionsController();
+    $position = $positions_controller -> readById($employee['position_id']);
+
+    $presences_controller = new PresencesController();
+    $pstResult_presence = $presences_controller -> countScoreByUserId($employee['id']);
+    $presence = $pstResult_presence -> fetch_array();
+    
+    $reports_controller = new ReportsController();
+    $pstResult_report = $reports_controller -> countScoreByUserId($employee['id']);
+    $report = $pstResult_report -> fetch_array();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +51,7 @@
                 <div class="card2">
                     <div class="photocard">
                         <center>
-                            <img src="https://i.kym-cdn.com/entries/icons/original/000/018/350/Foto-Asli-Dion-Meme-Sudah-Kuduga_1_.png"
+                            <img src="<?= (empty($employee['picture']) || $employee['picture'] == "" || $employee['picture'] == null) ? "https://i.kym-cdn.com/entries/icons/original/000/018/350/Foto-Asli-Dion-Meme-Sudah-Kuduga_1_.png" : $employee['picture'] ?>"
                                 class="img-fluid" alt="Responsive image">
                         </center>
                     </div>
@@ -51,37 +77,37 @@
                             <tr>
                                 <th scope="col" style="border: black">Nama :</th>
                         <tbody>
-                            <td>Dion Cecep Supriadi </td>
+                            <td><?= $employee['first_name'] . " " . $employee['last_name'] ?></td>
                         </tbody>
                         </tr>
                         <tr>
                             <th scope="col" style="border: black">Username :</th>
                             <tbody>
-                                <td>DionGanteng</td>
+                                <td><?= $employee['username'] ?></td>
                             </tbody>
                         </tr>
                         <tr>
                             <th scope="col" style="border:black">Divisi :</th>
                             <tbody>
-                                <td>Frontend</td>
+                                <td><?= $division['name'] ?></td>
                             </tbody>
                         </tr>
                         <tr>
                             <th scope="col" style="border:black">Jabatan : </th>
                             <tbody>
-                                <td>Manager Frontend</td>
+                                <td><?= $position['name'] ?></td>
                             </tbody>
                         </tr>
                         <tr>
                             <th scope="col" style="border:black">Alamat Rumah :</th>
                             <tbody>
-                                <td>Jalan Sudirman No 69</td>
+                                <td><?= $employee['address'] ?></td>
                             </tbody>
                         </tr>
                         <tr>
                             <th scope="col" style="border:black">Tanggal Lahir :</th>
                             <tbody>
-                                <td>12/12/2023</td>
+                                <td><?= $employee['date_of_birth'] ?></td>
                             </tbody>
                         </tr>
                         </thead>
@@ -95,7 +121,7 @@
                 fill: {
                     colors: ['#2dd789']
                 },
-                series: [50],
+                series: [<?= $presence['total_score'] ?>],
                 chart: {
                     height: 350,
                     type: 'radialBar',
@@ -119,7 +145,7 @@
                 fill: {
                     colors: ['#2dd789']
                 },
-                series: [70],
+                series: [<?= $report['total_score'] ?>],
                 chart: {
                     height: 350,
                     type: 'radialBar',
@@ -143,7 +169,7 @@
                     fill: {
                         colors: ['#2dd789']
                     },
-                    series: [90],
+                    series: [<?= ($presence['total_score'] + $report['total_score']) / 2 ?>],
                     chart: {
                         height: 350,
                         type: 'radialBar',

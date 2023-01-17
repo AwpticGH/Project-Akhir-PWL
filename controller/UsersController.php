@@ -73,7 +73,7 @@
 
             if ($success) {
                 $this -> reloadData($user);
-                header("location:show.php?id=" . $user['id']);
+                header($_SERVER['PHP_SELF']);
             }
             else {
                 $this -> error = "Failed updating account";
@@ -89,7 +89,7 @@
 
             if ($success) {
                 $this -> reloadData($user);
-                header("location:show.php?id=" . $user['id']);
+                header($_SERVER['PHP_SELF']);
             }
             else {
                 $this -> error = "Failed Updating Account";
@@ -104,6 +104,26 @@
             $user = $stmt -> get_result() -> fetch_array();
 
             $_SESSION['user'] = $user;
+        }
+
+        public function readEmployeesByDivisionId($division_id) {
+            $this -> conn = DBConfig::connect();
+            $sql = UsersQuery::$readEmployeesByDivisionId;
+            $stmt = mysqli_prepare($this->conn, $sql);
+            $stmt -> bind_param("s", $division_id);
+            $stmt -> execute();
+
+            return $stmt -> get_result();
+        }
+        
+        public function readEmployeeByUserId($user_id) {
+            $this -> conn = DBConfig::connect();
+            $sql = UsersQuery::$readEmployeeByUserId;
+            $stmt = mysqli_prepare($this->conn, $sql);
+            $stmt -> bind_param("s", $user_id);
+            $stmt -> execute();
+    
+            return $stmt -> get_result();
         }
 
     }

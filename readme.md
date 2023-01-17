@@ -42,7 +42,7 @@
 - [] NotificationsController -> create, update, readAllByUserId
 - [] PresencesController -> create, updateAcc, updateDecline, readAllByUserId
 - [] EvaluationsController -> readByEvaluationForId, create
-- [] ReportsController -> create, updateAccept, updateDecline, readAll
+- [x] ReportsController -> create, updateAccept, updateDecline, readAll
 - [x] WebsMiddleware -> dashboard
 - [x] GuardsMiddleware -> auth, head, employee
 - [x] database creation

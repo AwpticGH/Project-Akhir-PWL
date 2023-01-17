@@ -15,7 +15,7 @@
                             <span> <box-icon size="15px" name='user-circle'></box-icon> Profile </span>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="../auth/show.php?id=<?= $user['id'] ?>">Edit Profile</a></li>
+                            <li><a class="dropdown-item" href="../auth/show.php">Edit Profile</a></li>
                             <hr>
                             <li><a class="dropdown-item" style="color: red; font-size: 18px;" href="../auth/index.php?logout=true"><i class='bx bx-log-out-circle'></i>Logout</a></li>
                         </ul>
