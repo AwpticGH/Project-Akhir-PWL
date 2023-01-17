@@ -40,5 +40,14 @@
         public static $readEmployeeByUserId = "SELECT *
                                                 FROM users
                                                 WHERE id = ?";
+
+        // read registered employee
+        public static $readRegisteredEmployee = "SELECT id FROM users WHERE first_name = ? AND last_name = ? AND username = ?";
+
+        // read head by division id
+        public static $readHeadsByDivisionId = "SELECT id
+                                                FROM users
+                                                WHERE division_id = ?
+                                                AND position_id = '1'";
     }
 ?>

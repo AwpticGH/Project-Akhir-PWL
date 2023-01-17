@@ -122,10 +122,29 @@
             $stmt = mysqli_prepare($this->conn, $sql);
             $stmt -> bind_param("s", $user_id);
             $stmt -> execute();
-    
+            
             return $stmt -> get_result();
         }
 
+        public function readRegisteredEmployee($first_name, $last_name, $username) {
+            $this -> conn = DBConfig::connect();
+            $sql = UsersQuery::$readRegisteredEmployee;
+            $stmt = mysqli_prepare($this->conn, $sql);
+            $stmt -> bind_param("sss", $first_name, $last_name, $username);
+            $stmt -> execute();
+
+            return $stmt -> get_result();
+        }
+        
+        public function readHeadsByDivisionId($division_id) {
+            $this -> conn = DBConfig::connect();
+            $sql = UsersQuery::$readHeadsByDivisionId;
+            $stmt = mysqli_prepare($this->conn, $sql);
+            $stmt -> bind_param("s", $division_id);
+            $stmt -> execute();
+
+            return $stmt -> get_result();
+        }
     }
 
 ?>

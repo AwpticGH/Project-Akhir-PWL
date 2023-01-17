@@ -11,11 +11,21 @@
          private $conn = null;
         
         // function create($notifTitle, $notifText, $forUserId, $byUserId)
-        public function createnotif($title, $notification_text, $notification_for, $notification_by) {
+        public function createnotifreport($title, $notification_text, $notification_for, $notification_by) {
             $this -> conn = DBConfig::connect();
-            $sql = NotificationsQuery::$createnotification;
+            $sql = NotificationsQuery::$createnotificationreport;
             $stmt = mysqli_prepare($this-> conn, $sql);
-            $stmt -> bind_param("ssss", $title, $notification_text, $notification_for, $notification_by);
+            $stmt -> bind_param("ssss", $title, $notification_text, $notification_by, $notification_for);
+            
+            return $stmt -> execute();
+        }
+
+        // function create for user
+        public function createNotifUser($title, $notification_text, $notification_for, $notification_by) {
+            $this -> conn = DBConfig::connect();
+            $sql = NotificationsQuery::$createNotificationUser;
+            $stmt = mysqli_prepare($this-> conn, $sql);
+            $stmt -> bind_param("ssss", $title, $notification_text, $notification_by, $notification_for);
             
             return $stmt -> execute();
         }

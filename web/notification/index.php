@@ -32,8 +32,8 @@
 
                         <table>
                             <tr class="table-header bg-table-header">
-                                <th>No</th>
                                 <th>Tanggal</th>
+                                <th>Tipe</th>
                                 <th>Judul</th>
                                 <th>Pesan</th>
                                 <th>Aksi</th>
@@ -52,13 +52,13 @@
                                 
                             ?>
                             <tr class="table-body bg-table-body-odd">
-                                <td><?= ($i+1) ?></td>
-                                <td><?= $data['datetime'] ?>
+                                <td><?= $data['datetime'] ?></td>
+                                <td><?= $data['type'] ?></td>
                                 <td><?= $data['title'] ?></td>
                                 <td><?= $data['notification_text']?></td>
                                 <td>
-                                    <a href="<?= htmlspecialchars($_SERVER['PHP_SELF']) . "?update=accept&report_id=" . $data['id'] ?>" class="btn btn-success">Terima</a>
-                                    <a href="<?= htmlspecialchars($_SERVER['PHP_SELF']) . "?update=reject&report_id=" . $data['id'] ?>" class="btn btn-danger">Tolak</a>
+                                    <a href="<?= htmlspecialchars($_SERVER['PHP_SELF']) . "?update=accept&notif_id=" . $data['notif_id'] . ($data['type'] == "Report") ? "&report_id=" . $data['report_id'] : "&user_id=" . $data['user_id'] ?>" class="btn btn-success">Terima</a>
+                                    <a href="<?= htmlspecialchars($_SERVER['PHP_SELF']) . "?update=reject&notif_id=" . $data['notif_id'] . ($data['type'] == "Report") ? "&report_id=" . $data['report_id'] : "&user_id=" . $data['user_id'] ?>" class="btn btn-danger">Tolak</a>
                                 </td>
                             </tr>
                              <?php } ?>

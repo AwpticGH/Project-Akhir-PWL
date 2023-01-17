@@ -1,6 +1,8 @@
 <?php
     require "../../controller/UsersController.php";
     use controller\UsersController;
+    require "../../controller/NotificationsController.php";
+    use controller\NotificationsController;
 
     $controller = new UsersController();
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -17,6 +19,21 @@
             $registered = $controller -> register($user);
 
             if ($registered) {
+                $pstResult_heads = $controller -> readHeadsByDivisionId($user['division_id']);
+
+                while ($head = $pstResult_heads -> fetch_array()) {
+                    $notif_title = "Penerimaan Karyawan Baru";
+                    $notif_text = $user['first_name'] . " " . $user['last_name'] . " telah mendaftar sebagai karyawan di divisi anda. Terima atau Tolak?";
+    
+                    $newEmployee = $controller -> readRegisteredEmployee($user['first_name'], $user['last_name'], $user['username']) -> fetch_array();
+                    $notif_by = $newEmployee['id'];
+    
+                    $notif_for = $head['id'];
+                    
+                    $notif_controller = new NotificationsController();
+                    $notifResultSent = $notif_controller -> createNotifUser($notif_title, $notif_text, $notif_for, $notif_by);
+                }
+                
                 $message = "Register Success, Please Contact Your Head Division For Approval";
                 echo "<script>";
                 echo "alert('$message')";
