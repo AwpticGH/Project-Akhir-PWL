@@ -29,7 +29,7 @@
                         return $user;
                     }
                     else {
-                        $this -> error = "Username atau Password Salah";
+                        $this -> error = "Username atau Password salah";
                     }
                 }
                 else {
@@ -37,7 +37,7 @@
                 }
             }
             else {
-                $this -> error = "Username atau Password Salah";
+                $this -> error = "Username atau Password salah";
             }
             
             return null;
