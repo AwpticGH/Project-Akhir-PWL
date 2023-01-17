@@ -4,7 +4,9 @@
     class ReportsQuery {
 
         //create reports
-        public static $create = "INSERT INTO reports SET 
+        public static $create = "INSERT INTO reports SET
+                                            title = ?,
+                                            description = ?,
                                             file = ?,
                                             user_id = ?";
 

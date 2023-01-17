@@ -9,12 +9,13 @@
     class ReportsController {
 
         private $conn = null;
+        public $message = "";
 
-        public function create($file, $user_id) {
+        public function create($title, $description, $file, $user_id) {
             $this -> conn = DBConfig::connect();
             $sql = ReportsQuery::$create;
             $stmt = mysqli_prepare($this->conn, $sql);
-            $stmt -> bind_param("ss", $file, $user_id);
+            $stmt -> bind_param("ssss", $title, $description, $file, $user_id);
             
             return $stmt -> execute();
         }
