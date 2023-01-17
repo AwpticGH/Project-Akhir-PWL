@@ -1,3 +1,11 @@
+<?php
+require_once("../../controller/NotificationsController.php");
+use controller\NotificationsController;
+
+$bell_controller = new NotificationsController();
+$pstResult_bell = $bell_controller -> readAtBell($user['id']);
+
+?>
 <nav class="navbar navbar-expand-lg navbar-dark border-bottom">
     <div class="container-fluid">
         <button class="btn" id="sidebarToggle"><span class="navbar-toggler-icon"></span></button>
@@ -8,20 +16,21 @@
                 <img src="../../asset/img/moon.png" alt="iconcoy" id="icon">
                 <li class="nav-link"> 
                     <a href="../notification/index.php"><box-icon name='bell' color="white" size="30px"></box-icon></a>
-                </li>
-                <li class="dropdown nav-link">
-                    <div class="dropdown">
-                        <a class="btn dropdown-toggle" style="background-color: #ADEFD1; color: black; border-radius: 12px;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <span> <box-icon size="15px" name='user-circle'></box-icon> Profile </span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="../auth/show.php">Edit Profile</a></li>
-                            <hr>
-                            <li><a class="dropdown-item" style="color: red; font-size: 18px;" href="../auth/index.php?logout=true"><i class='bx bx-log-out-circle'></i>Logout</a></li>
-                        </ul>
-                    </div>
-                </li>
-            </ul>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" style="margin-left: -150px; margin-top: 20px;"><? = $data ['id']?></span>
+                    </li>
+                    <li class="dropdown nav-link">
+                        <div class="dropdown">
+                            <a class="btn dropdown-toggle" style="background-color: #ADEFD1; color: black; border-radius: 12px;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span> <box-icon size="15px" name='user-circle'></box-icon> Profile </span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="../auth/show.php">Edit Profile</a></li>
+                                <hr>
+                                <li><a class="dropdown-item" style="color: red; font-size: 18px;" href="../auth/index.php?logout=true"><i class='bx bx-log-out-circle'></i>Logout</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>

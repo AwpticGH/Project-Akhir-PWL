@@ -15,7 +15,7 @@
             $this -> conn = DBConfig::connect();
             $sql = ReportsQuery::$create;
             $stmt = mysqli_prepare($this->conn, $sql);
-            $stmt -> bind_param("ssss", $title, $description, $user_id);
+            $stmt -> bind_param("sss", $title, $description, $user_id);
             
             return $stmt -> execute();
         }

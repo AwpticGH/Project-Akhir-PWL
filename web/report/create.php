@@ -8,7 +8,7 @@
 
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
         $created = $reports_controller -> create($_POST['title'], $_POST['description'], $user['id']);
-        $reports_controller -> message = ($created) ? "Berhasil Upload : $file_uploaded" : "Gagal Upload : $file_uploaded";
+        $reports_controller -> message = ($created) ? "Berhasil Upload" : "Gagal Upload";
     }
 ?>
 <!DOCTYPE html>
