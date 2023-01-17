@@ -5,6 +5,24 @@
     require_once("../../controller/ReportsController.php");
     use controller\ReportsController;
     $reports_controller = new ReportsController();
+
+    if ($_SERVER['REQUEST_METHOD'] == "POST") {
+        $file_tmp = $_FILES['report']['tmp_name'];
+        $file_uploaded = $_FILES['report']['name'];
+        $ext = pathinfo($file_uploaded, PATHINFO_EXTENSION);
+        $content = file_get_contents($file_tmp);
+        $file = 'data:application/' . $ext . ';base64,' . base64_encode($content);
+        $created = false;
+
+        if (!in_array($ext, ['pdf', 'docx', 'xlsx', 'csv'])) {
+            $reports_controller -> message = "File must be of type PDF, DOCX, XLSX, or CSV";
+        }
+        else {
+            $created = $reports_controller -> create($_POST['title'], $_POST['description'], $file, $user['id']);
+        }
+
+        $reports_controller -> message = ($created) ? "Berhasil Upload : $file" : "Gagal Upload : $file";
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,6 +65,8 @@
                 <?php include("../layout/navbar.php")?>
                 
                 <!-- Page content-->
+                <?php print_r($_FILES) ?>
+
                 <?php if ($reports_controller->message != "") { ?>
                     <script>
                         alert('<?= $reports_controller->message ?>')
@@ -56,23 +76,6 @@
                     <div class="row">
                         <div class="col-12">
                             <?php
-                                if ($_SERVER['REQUEST_METHOD'] == "POST") {
-                                    $file_tmp = $_FILES['report']['tmp_name'];
-                                    $ext = pathinfo($file_tmp, PATHINFO_EXTENSION);
-                                    $content = file_get_contents($file_tmp);
-                                    $file = 'data:image/' . $ext . ';base64/' . base64_encode($content);
-                                    $created = false;
-
-                                    if (!in_array($ext, ['pdf', 'docx', 'xlsx', 'csv'])) {
-                                        $reports_controller -> message = "File must be of type PDF, DOCX, XLSX, or CSV";
-                                    }
-                                    else {
-                                        $created = $reports_controller -> create($_POST['title'], $_POST['description'], $file, $user['id']);
-                                    }
-
-                                    $reports_controller -> message = ($created) ? "Berhasil Upload" : "Gagal Upload";
-                                }
-
                                 $time = date("H:i:s");
                                 $date = date("Y-m-d");
                             ?>
