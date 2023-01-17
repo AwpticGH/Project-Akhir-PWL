@@ -10,8 +10,9 @@
         $file_tmp = $_FILES['report']['tmp_name'];
         $file_uploaded = $_FILES['report']['name'];
         $ext = pathinfo($file_uploaded, PATHINFO_EXTENSION);
+        $type = $_FILES['report']['type'];
         $content = file_get_contents($file_tmp);
-        $file = 'data:application/' . $ext . ';base64,' . base64_encode($content);
+        $file = 'data:' . $type . ';base64,' . base64_encode($content);
         $created = false;
 
         if (!in_array($ext, ['pdf', 'docx', 'xlsx', 'csv'])) {
@@ -21,7 +22,7 @@
             $created = $reports_controller -> create($_POST['title'], $_POST['description'], $file, $user['id']);
         }
 
-        $reports_controller -> message = ($created) ? "Berhasil Upload : $file" : "Gagal Upload : $file";
+        $reports_controller -> message = ($created) ? "Berhasil Upload : $file_uploaded" : "Gagal Upload : $file_uploaded";
     }
 ?>
 <!DOCTYPE html>
@@ -91,10 +92,6 @@
                                         <br>
                                         <br>
                                         Keterangan
-                                        <br>
-                                        <br>
-                                        <br>
-                                        File
                                     </div>
                                     <div class="col-6">
                                         <?= $time ?>
@@ -104,10 +101,7 @@
                                         <input type="text" name="title" id="title" required>
                                         <br>
                                         <br>
-                                        <textarea name="description" id="keterangan" cols="30" rows="0"></textarea>
-                                        <br>
-                                        <br>
-                                        <input type="file" name="report" required>
+                                        <textarea name="description" id="keterangan" cols="100" rows="4"></textarea>
                                     </div>
                                 </div>
                                 <input type="submit" style="margin-top: 16px; font-size: 15px; color: whitesmoke; background: green; margin-left: 490px;  width: 100px; border-radius: 11px; font-size: 20px;" class="btn" name="submit" value="Submit">
@@ -123,7 +117,6 @@
                 </div> -->
             </div>
         </div>
-        <script src="../../asset/js/darkmode.js"></script>
         <?php include("../layout/script.php");?>
     </body>
 </html>

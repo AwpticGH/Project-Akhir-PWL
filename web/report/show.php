@@ -62,7 +62,7 @@
                             <tr class="table-body bg-table-body-odd">
                                 <td><?= ($i+1) ?></td>
                                 <td><?= $data['first_name'] . " " . $data['last_name'] ?></td>
-                                <td><?= $data['file'] ?></td>
+                                <td><?= $data['title'] ?></td>
                                 <td><?= $data['date_of_submission'] ?></td>
                                 <td>
                                     <a href="#" class="btn btn-secondary">Lihat</a>

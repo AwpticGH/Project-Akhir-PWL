@@ -83,7 +83,7 @@
                                                     $row++;
                                                     echo "<tr>";
                                                     echo "<th scope='row'>$row</th>";
-                                                    echo "<td>" . $data['file'] . "</td>";
+                                                    echo "<td>" . $data['title'] . "</td>";
                                                     echo "<td>" . $data['first_name'] . " " . $data['last_name'] . "</td>";
                                                     echo "</tr>";
                                                 }
