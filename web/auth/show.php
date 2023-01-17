@@ -50,11 +50,16 @@
                         alert('<?= $user_controller -> error ?>')
                     </script>
                 <?php } ?>
+               <center>
+                <div class="card3">
+                    <div class="photocard">
+                        <img src="<?= (empty($employee['picture']) || $employee['picture'] == "" || $employee['picture'] == null) ? "https://i.kym-cdn.com/entries/icons/original/000/018/350/Foto-Asli-Dion-Meme-Sudah-Kuduga_1_.png" : $employee['picture'] ?>"
+                            class="img-fluid" alt="Responsive image" />
+                    </div>
                 <div class="container">
                     <div class="row">
                         <div class="col-11">
-                            <img src="<?= $user['picture'] ?>" alt="gambar">
-                            <h1 class="mt-4 fonku">Edit Profile</h1>
+                            <center><h1 class="mt-4 fonku">Edit Profile</h1></center>
                             <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']) ?>" enctype="multipart/form-data" method="post" class="porum">
                                 <div class="form-group" style="color:whitesmoke;">
                                     <label class="form-title">Username</label>
@@ -74,6 +79,7 @@
                         <!-- <div class="col-1"> -->
                     </div>
                 </div>
+               </center>
                 <!-- <div class="container">
                     <h1>halo</h1>
                 </div> -->
