@@ -48,6 +48,7 @@
                                     <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">Laporan</th>
+                                        <th scope="col">Deskripsi</th>
                                         <th scope="col">Karyawan</th>
                                     </tr>
                                 </thead>
@@ -84,6 +85,7 @@
                                                     echo "<tr>";
                                                     echo "<th scope='row'>$row</th>";
                                                     echo "<td>" . $data['title'] . "</td>";
+                                                    echo "<td>" . $data['desc'] . "</td>";
                                                     echo "<td>" . $data['first_name'] . " " . $data['last_name'] . "</td>";
                                                     echo "</tr>";
                                                 }
@@ -100,9 +102,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <center>
                             <?php include("../layout/pagination.php") ?>
-                        </center>
                     </div>
                     <div class="card2">
                         <?php

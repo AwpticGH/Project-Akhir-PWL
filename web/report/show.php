@@ -44,6 +44,7 @@
                                 <th>#</th>
                                 <th>Karyawan</th>
                                 <th>Laporan</th>
+                                <th>Deskripsi</th>
                                 <th>Tgl/Bln/Thn</th>
                                 <th>Aksi</th>
                             </tr>
@@ -63,6 +64,7 @@
                                 <td><?= ($i+1) ?></td>
                                 <td><?= $data['first_name'] . " " . $data['last_name'] ?></td>
                                 <td><?= $data['title'] ?></td>
+                                <td><?= $data['desc'] ?></td>
                                 <td><?= $data['date_of_submission'] ?></td>
                                 <td>
                                     <a href="#" class="btn btn-secondary">Lihat</a>
