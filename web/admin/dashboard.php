@@ -7,10 +7,10 @@
 
 <head>
     <?php 
-            $title = "Dashboard";
-            $css_file = "dashboard.css";
-            include("../layout/header.php");
-            ?>
+        $title = "Dashboard";
+        $css_file = "dashboard.css";
+        include("../layout/header.php");
+    ?>
 </head>
 
 <body>
