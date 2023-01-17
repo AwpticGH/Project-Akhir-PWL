@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 17, 2023 at 02:10 PM
+-- Generation Time: Jan 17, 2023 at 05:46 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
@@ -80,6 +80,7 @@ INSERT INTO `evaluations` (`id`, `evaluation`, `date_of_evaluation`, `evaluation
 
 CREATE TABLE `notifications` (
   `id` bigint(20) NOT NULL,
+  `type` varchar(7) NOT NULL,
   `title` varchar(64) NOT NULL,
   `notification_text` text DEFAULT NULL,
   `datetime` timestamp NOT NULL DEFAULT current_timestamp(),
@@ -92,18 +93,21 @@ CREATE TABLE `notifications` (
 -- Dumping data for table `notifications`
 --
 
-INSERT INTO `notifications` (`id`, `title`, `notification_text`, `datetime`, `is_read`, `notification_by`, `notification_for`) VALUES
-(1, 'Evaluasi oleh Ambon', 'Anda telah menerima notifikasi dari Ambon!!', '2023-01-13 12:17:34', 0, 1, 1),
-(2, 'Evaluasi Laporan Selesai', 'Laporan Anda Telah Dinilai', '2023-01-14 06:45:31', 1, 2, 6),
-(3, 'Feedback Laporan', '\"Laporan Belum Selesai\"', '2023-01-14 06:51:26', 0, 4, 10),
-(4, 'Laporan Diterima', 'Laporan Anda Diterima olhe Ardiyono', '2023-01-14 06:52:07', 0, 5, 3),
-(5, 'Laporan Diterima', 'Laporan telah selesai', '2023-01-14 07:18:38', 1, 3, 10),
-(6, 'Laporan Diterima', 'Laporan telah Selesai', '2023-01-14 07:26:39', 0, 3, 5),
-(7, 'Laporan Belum diterima', 'Audit Diperlukan', '2023-01-14 07:31:29', 1, 6, 8),
-(8, 'Laporan Diterima', 'Laporan Sangat Baik', '2023-01-14 07:32:20', 0, 7, 5),
-(9, 'Laporan Diterima', 'Laporan Baik', '2023-01-14 07:32:52', 1, 9, 3),
-(10, 'Laporan Belum Diterima', 'Laporan Belum Selesai', '2023-01-14 07:33:27', 1, 8, 6),
-(11, 'test', 'test', '2023-01-15 11:16:56', 0, 15, 16);
+INSERT INTO `notifications` (`id`, `type`, `title`, `notification_text`, `datetime`, `is_read`, `notification_by`, `notification_for`) VALUES
+(1, 'Report', 'Evaluasi oleh Ambon', 'Anda telah menerima notifikasi dari Ambon!!', '2023-01-13 12:17:34', 0, 1, 1),
+(2, 'Report', 'Evaluasi Laporan Selesai', 'Laporan Anda Telah Dinilai', '2023-01-14 06:45:31', 1, 2, 6),
+(3, 'Report', 'Feedback Laporan', '\"Laporan Belum Selesai\"', '2023-01-14 06:51:26', 0, 4, 10),
+(4, 'Report', 'Laporan Diterima', 'Laporan Anda Diterima olhe Ardiyono', '2023-01-14 06:52:07', 0, 5, 3),
+(5, 'Report', 'Laporan Diterima', 'Laporan telah selesai', '2023-01-14 07:18:38', 1, 3, 10),
+(6, 'Report', 'Laporan Diterima', 'Laporan telah Selesai', '2023-01-14 07:26:39', 0, 3, 5),
+(7, 'Report', 'Laporan Belum diterima', 'Audit Diperlukan', '2023-01-14 07:31:29', 1, 6, 8),
+(8, 'Report', 'Laporan Diterima', 'Laporan Sangat Baik', '2023-01-14 07:32:20', 0, 7, 5),
+(9, 'Report', 'Laporan Diterima', 'Laporan Baik', '2023-01-14 07:32:52', 1, 9, 3),
+(10, 'Report', 'Laporan Belum Diterima', 'Laporan Belum Selesai', '2023-01-14 07:33:27', 1, 8, 6),
+(11, 'Report', 'test', 'test', '2023-01-15 11:16:56', 0, 15, 16),
+(12, 'User', 'Penerimaan Karyawan Baru', 'Aku Tester Notif telah mendaftar sebagai karyawan di divisi anda. Terima atau Tolak?', '2023-01-17 15:20:27', 0, 19, 16),
+(13, 'User', 'Penerimaan Karyawan Baru', 'Aku Tester Notif telah mendaftar sebagai karyawan di divisi anda. Terima atau Tolak?', '2023-01-17 15:20:27', 0, 19, 19),
+(14, 'User', 'Penerimaan Karyawan Baru', 'Aku Tester Notif telah mendaftar sebagai karyawan di divisi anda. Terima atau Tolak?', '2023-01-17 15:20:27', 0, 19, 20);
 
 -- --------------------------------------------------------
 
@@ -187,16 +191,16 @@ CREATE TABLE `reports` (
 
 INSERT INTO `reports` (`id`, `title`, `description`, `date_of_submission`, `is_approved`, `is_rejected`, `is_pending`, `user_id`) VALUES
 (1, '', '', '2023-01-15 09:40:39', 1, 0, 0, 1),
-(2, '', '', '2023-01-15 09:42:46', 1, 0, 1, 3),
+(2, '', '', '2023-01-17 13:55:35', 0, 1, 0, 3),
 (3, '', '', '2023-01-15 08:26:05', 0, 0, 1, 6),
 (4, '', '', '2023-01-15 08:26:06', 0, 0, 1, 5),
 (5, '', '', '2023-01-15 08:26:08', 0, 0, 1, 12),
 (6, '', '', '2023-01-15 08:26:12', 0, 0, 1, 14),
-(7, '', '', '2023-01-15 08:26:14', 0, 0, 1, 11),
-(8, '', '', '2023-01-15 08:26:16', 0, 0, 1, 10),
+(7, '', '', '2023-01-17 13:55:31', 0, 1, 0, 11),
+(8, '', '', '2023-01-17 13:55:38', 0, 1, 0, 10),
 (9, '', '', '2023-01-15 08:26:18', 0, 0, 1, 7),
 (10, '', '', '2023-01-15 08:26:20', 0, 0, 1, 9),
-(11, '', '', '2023-01-15 08:26:23', 0, 0, 1, 2),
+(11, '', '', '2023-01-17 13:55:33', 0, 1, 0, 2),
 (12, '', '', '2023-01-15 08:26:26', 0, 0, 1, 7),
 (13, '', '', '2023-01-15 08:26:29', 0, 0, 1, 13),
 (14, '', '', '2023-01-15 09:31:38', 0, 0, 1, 6),
@@ -245,7 +249,9 @@ INSERT INTO `users` (`id`, `username`, `password`, `first_name`, `last_name`, `p
 (15, 'galuhodo', 'galuhorang145', 'Galuh ', 'Widodo', 'user15.png', 'Dk. Moch. Toha No. 978, Depok 42403, Jogjakarta, Indonesia', '1988-10-14', '2023-01-09 15:22:05', 2, 3),
 (16, 'Ardi', 'ahmadardiyono', 'Ardi', 'Yono', 'user16.png', 'Jl Tawangmangu, Dki Jakarta, Indonesia', '1984-10-10', '2023-01-01 11:09:53', 1, 2),
 (17, 'Rafi', 'refresh', 'Rafi', 'Sulaiman', NULL, 'Vila Dago Blok H3/19 RT 002/RW 022 Benda Baru, Pamulang', '2001-01-01', NULL, 1, 3),
-(18, 'dava', 'asdfgh', 'dava', 'alif', NULL, 'asdsadsad', '2004-09-20', '2023-01-11 07:00:00', 1, 1);
+(18, 'dava', 'asdfgh', 'dava', 'alif', NULL, 'asdsadsad', '2004-09-20', '2023-01-11 07:00:00', 1, 1),
+(19, 'Aku Tester', '1234', 'Aku Tester', 'Notif', NULL, 'Test Address', '2001-01-01', NULL, 1, 2),
+(20, 'Aku Tester', '1234', 'Aku Tester', 'Notif', NULL, 'Test Address', '2001-01-01', NULL, 1, 2);
 
 --
 -- Indexes for dumped tables
@@ -321,7 +327,7 @@ ALTER TABLE `evaluations`
 -- AUTO_INCREMENT for table `notifications`
 --
 ALTER TABLE `notifications`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `positions`
@@ -345,7 +351,7 @@ ALTER TABLE `reports`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Constraints for dumped tables
