@@ -26,6 +26,8 @@
 
         // read all reports by division_id for report/show.php
         public static $readByDivisionId = "SELECT reports.id,
+                                                    reports.title,
+                                                    reports.description,
                                                     users.first_name,
                                                     users.last_name,
                                                     reports.file,
@@ -37,6 +39,8 @@
 
         // read all approved reports for admin/dashboard.php
         public static $readApprovedReportsByDivisionId = "SELECT reports.file,
+                                                                    reports.title,
+                                                                    reports.description,
                                                                     users.first_name,
                                                                     users.last_name
                                                             FROM reports
@@ -48,6 +52,8 @@
 
         // search approved reports for admin/dashboard.php
         public static $searchApprovedReportsByDivisionId = "SELECT reports.file,
+                                                                    reports.title,
+                                                                    reports.description,
                                                                     users.first_name,
                                                                     users.last_name
                                                             FROM reports
@@ -79,6 +85,8 @@
 
         // read all reports by user_id to show statuses for employee/dashboard.php report status
         public static $readAllByUserId = "SELECT file,
+                                                    title,
+                                                    description,
                                                     is_approved,
                                                     is_rejected,
                                                     is_pending 

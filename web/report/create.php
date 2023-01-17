@@ -65,8 +65,6 @@
                 <?php include("../layout/navbar.php")?>
                 
                 <!-- Page content-->
-                <?php print_r($_FILES) ?>
-
                 <?php if ($reports_controller->message != "") { ?>
                     <script>
                         alert('<?= $reports_controller->message ?>')

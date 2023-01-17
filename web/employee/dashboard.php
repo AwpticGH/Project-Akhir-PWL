@@ -139,7 +139,7 @@
                                     ?>
                                     <tr>
                                         <th scope="row"><?= $counter ?></th>
-                                        <td><?= $report['file'] ?></td>
+                                        <td><a href="<?= $report['file'] ?>"><?= $report['title'] ?></a></td>
                                         <td>
                                             <?= 
                                                 (($report['is_approved'] == "1") 

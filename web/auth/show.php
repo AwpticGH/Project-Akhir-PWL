@@ -4,13 +4,15 @@
     
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
-        if (isset($_POST['picture']) || !empty($_POST['picture']) || $_POST['picture'] != null || $_POST['picture'] != "") {
+        if (isset($_FILES['picture'])) {
             $file_tmp = $_FILES['picture']['tmp_name'];
+            $file_uploaded = $_FILES['picture']['name'];
             $ext = pathinfo($file_tmp, PATHINFO_EXTENSION);
+            $type = $_FILES['picture']['type'];
             $content = file_get_contents($file_tmp);
-            $picture = 'data:image/' . $ext . ';base64' . base64_encode($content);
+            $picture = 'data:image/' . $ext . ';base64,' . base64_encode($content);
 
-            if (!in_array($ext, ['png', 'jpg', 'jpeg'])) {
+            if (!in_array(pathinfo($file_uploaded, PATHINFO_EXTENSION), ['png', 'jpg', 'jpeg'])) {
                 $user_controller -> error = "File must be of type PNG, JPG or JPEG";
             }
             else {
@@ -51,8 +53,9 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-11">
+                            <img src="<?= $user['picture'] ?>" alt="gambar">
                             <h1 class="mt-4 fonku">Edit Profile</h1>
-                            <form method="POST" enctype="multipart/form-data" class="porum" action="<?= htmlspecialchars($_SERVER['PHP_SELF']) ?>">
+                            <form action="<?= htmlspecialchars($_SERVER['PHP_SELF']) ?>" enctype="multipart/form-data" method="post" class="porum">
                                 <div class="form-group" style="color:whitesmoke;">
                                     <label class="form-title">Username</label>
                                     <input type="text" class="form-control" value="<?= $user['username'] ?>" name="username">
@@ -63,7 +66,7 @@
                                 </div>
                                 <div class="form-group"  style="color:whitesmoke;">
                                     <label class="form-title">Picture</label>
-                                    <input type="file" class="form-control form-control-lg" id="picture" name="picture">
+                                    <input type="file" class="form-control form-control-lg" name="picture">
                                 </div>
                                 <input type="submit" class="btn boton" name="Submit" value="Save Changes">
                             </form>
@@ -76,7 +79,6 @@
                 </div> -->
             </div>
         </div>
-        <script src="../../asset/js/darkmode.js"></script>
         <?php include("../layout/script.php");?>
     </body>
 </html>
