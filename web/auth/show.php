@@ -1,6 +1,7 @@
 <?php
     $page_for = "all";
     include("../layout/starter.php");
+    
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
         if (isset($_POST['picture']) || !empty($_POST['picture']) || $_POST['picture'] != null || $_POST['picture'] != "") {
