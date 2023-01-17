@@ -102,11 +102,9 @@
                         </label>
                     </div>
                 </div>
-                
                 <div class="button">
                     <input type="submit" name="submit" value="submit">
                 </div>
-                
                 <p class="sign-up" style="font-size:16px;">
                     Have already an account ?
                     <a href="index.php" style="color: #6c5ce7;">Login here</a>
