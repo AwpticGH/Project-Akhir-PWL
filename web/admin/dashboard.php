@@ -53,18 +53,14 @@
                                 <tbody>
                                     <?php
                                         if ($_SERVER['REQUEST_METHOD'] == "GET") {
+                                            $pstResult = $reports_controller -> readApprovedReportsByDivisionId($user['division_id']);
+                                            
                                             if (isset($_GET['search'])) {
                                                 if (!empty($_GET['search']) || $_GET['search'] != null) {
                                                     $search = $_GET['search'];
                                                     $search = "%$search%";
                                                     $pstResult = $reports_controller -> searchApprovedReportsByDivisionId($user['division_id'], $search);
                                                 }
-                                                else {
-                                                    $pstResult = $reports_controller -> readApprovedReportsByDivisionId($user['division_id']);
-                                                }
-                                            }
-                                            else {
-                                                $pstResult = $reports_controller -> readApprovedReportsByDivisionId($user['division_id']);
                                             }
 
                                             if ($pstResult != null) {
@@ -83,7 +79,7 @@
                                                     echo "<tr>";
                                                     echo "<th scope='row'>$row</th>";
                                                     echo "<td>" . $data['title'] . "</td>";
-                                                    echo "<td>" . $data['desc'] . "</td>";
+                                                    echo "<td>" . $data['description'] . "</td>";
                                                     echo "<td>" . $data['first_name'] . " " . $data['last_name'] . "</td>";
                                                     echo "</tr>";
                                                 }

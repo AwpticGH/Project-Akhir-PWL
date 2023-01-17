@@ -86,7 +86,7 @@
                     <input type="radio" name="division" value="1" id="dot-1">
                     <input type="radio" name="division" value="2" id="dot-2">
                     <input type="radio" name="division" value="3" id="dot-3">
-                    <span class="gender-title">Gender</span>
+                    <span class="gender-title">Division</span>
                     <div class="category">
                         <label for="dot-1">
                             <span class="dot one"></span>

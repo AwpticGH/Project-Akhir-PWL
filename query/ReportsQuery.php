@@ -17,7 +17,7 @@
                                        WHERE reports.id = ?";
 
         //update reject reports
-        public static $updateDecline =  "UPDATE reports SET 
+        public static $updateReject =  "UPDATE reports SET 
                                        is_approved = '0', 
                                        is_rejected = '1',
                                        is_pending = '0' 
@@ -63,6 +63,7 @@
         // read all pending reports for notification/index.php OR report/show.php
         public static $readPendingReportsByDivisionId = "SELECT reports.id,
                                                                 reports.title,
+                                                                reports.description,
                                                                 users.first_name,
                                                                 users.last_name,
                                                                 CAST(reports.date_of_submission as DATE) as date_of_submission
@@ -75,7 +76,9 @@
         // read all approved reports by user_id for employee/dashboard.php table
         public static $readApprovedReportsByUserId = "SELECT is_approved,
                                                                 is_rejected,
-                                                                is_pending 
+                                                                is_pending,
+                                                                title,
+                                                                description
                                                         FROM reports
                                                         AND user_id = ?";
 

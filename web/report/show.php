@@ -64,7 +64,7 @@
                                 <td><?= ($i+1) ?></td>
                                 <td><?= $data['first_name'] . " " . $data['last_name'] ?></td>
                                 <td><?= $data['title'] ?></td>
-                                <td><?= $data['desc'] ?></td>
+                                <td><?= $data['description'] ?></td>
                                 <td><?= $data['date_of_submission'] ?></td>
                                 <td>
                                     <a href="#" class="btn btn-secondary">Lihat</a>
