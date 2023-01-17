@@ -1,0 +1,25 @@
+body{
+    background-color: white !important;
+}
+.cssimg{
+    width: 900px;
+    height: 700px;
+}
+.btn{
+    width: 350px;
+    height: 45px;
+    text-align: center;
+    border: none;
+    background: #415A80;
+    outline: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    color: #FFF;
+    cursor: pointer;
+    transition: .3s;
+}
+.btn:hover{
+    transform: translateY(-6px);
+    background: #61876E;
+    color: white;
+}

@@ -71,7 +71,6 @@
                         </center>
                     </div>
                 </div>
-
                 <div class="card-details">
                     <table class="table">
                         <thead class="table">
@@ -112,8 +111,6 @@
                             </tbody>
                         </tr>
                         </thead>
-
-
                     </table>
                 </div>
             </center>
@@ -138,7 +135,7 @@
                 },
                 labels: ['Absen'],
             };
-
+            
             var chart = new ApexCharts(document.querySelector("#chart-absen"), options);
             chart.render();
         </script>

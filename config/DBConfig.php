@@ -1,7 +1,5 @@
 <?php
     namespace config;
-
-
     class DBConfig {
         
         static function connect() {
@@ -9,7 +7,7 @@
             $user = "root";
             $pass = "";
             $db = "project_pwl";
-
+            
             $conn = mysqli_connect($host, $user, $pass, $db);
             if (!$conn) {
                 die("Connection Failed : " . mysqli_connect_error());
