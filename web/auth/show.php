@@ -10,7 +10,7 @@
             $ext = pathinfo($file_tmp, PATHINFO_EXTENSION);
             $type = $_FILES['picture']['type'];
             $content = file_get_contents($file_tmp);
-            $picture = 'data:image/' . $ext . ';base64,' . base64_encode($content);
+            $picture = 'data:' . $type . ';base64,' . base64_encode($content);
 
             if (!in_array(pathinfo($file_uploaded, PATHINFO_EXTENSION), ['png', 'jpg', 'jpeg'])) {
                 $user_controller -> error = "File must be of type PNG, JPG or JPEG";
@@ -53,7 +53,7 @@
                <center>
                 <div class="card3">
                     <div class="photocard">
-                        <img src="<?= (empty($employee['picture']) || $employee['picture'] == "" || $employee['picture'] == null) ? "https://i.kym-cdn.com/entries/icons/original/000/018/350/Foto-Asli-Dion-Meme-Sudah-Kuduga_1_.png" : $employee['picture'] ?>"
+                        <img src="<?= (empty($user['picture']) || $user['picture'] == "" || $user['picture'] == null) ? "https://i.kym-cdn.com/entries/icons/original/000/018/350/Foto-Asli-Dion-Meme-Sudah-Kuduga_1_.png" : $user['picture'] ?>"
                             class="img-fluid" alt="Responsive image" />
                     </div>
                 <div class="container">

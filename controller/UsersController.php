@@ -73,6 +73,7 @@
 
             if ($success) {
                 $this -> reloadData($user);
+                header($_SERVER['PHP_SELF']);
             }
             else {
                 $this -> error = "Failed updating account";
@@ -88,6 +89,7 @@
 
             if ($success) {
                 $this -> reloadData($user);
+                header($_SERVER['PHP_SELF']);
             }
             else {
                 $this -> error = "Failed Updating Account";
