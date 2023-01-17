@@ -101,7 +101,7 @@
                                         <input type="text" name="title" id="title" required>
                                         <br>
                                         <br>
-                                        <textarea name="description" id="keterangan" cols="100" rows="4"></textarea>
+                                        <textarea name="description" id="keterangan" cols="100" rows="4" style="max-width: 50rem;"></textarea>
                                     </div>
                                 </div>
                                 <input type="submit" style="margin-top: 16px; font-size: 15px; color: whitesmoke; background: green; margin-left: 490px;  width: 100px; border-radius: 11px; font-size: 20px;" class="btn" name="submit" value="Submit">

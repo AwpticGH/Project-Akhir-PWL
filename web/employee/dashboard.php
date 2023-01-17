@@ -128,6 +128,7 @@
                                     <tr>
                                         <th scope="col">#</th>
                                         <th scope="col">Laporan</th>
+                                        <th scope="col">Deskripsi</th>
                                         <th scope="col">Status</th>
                                     </tr>
                                 </thead>
@@ -140,6 +141,7 @@
                                     <tr>
                                         <th scope="row"><?= $counter ?></th>
                                         <td><?= $report['title'] ?></td>
+                                        <td><?= $report['desc'] ?></td>
                                         <td>
                                             <?= 
                                                 (($report['is_approved'] == "1") 
