@@ -5,7 +5,7 @@
 
         public function auth($user) {
             if ($user == null) {
-                header("location:../auth/index.php");
+                header("location:../index.php");
                 exit;
             }
         }
