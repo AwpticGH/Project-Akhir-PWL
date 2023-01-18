@@ -121,7 +121,7 @@
                 fill: {
                     colors: ['#2dd789']
                 },
-                series: [<?= $presence['total_score'] ?>],
+                series: [<?= ($presence['total_score'] == null || $presence['total_score'] == 0 || $presence['total_score'] == "" ) ? 0 : $presence['total_score'] ?>],
                 chart: {
                     height: 350,
                     type: 'radialBar',
@@ -145,7 +145,7 @@
                 fill: {
                     colors: ['#2dd789']
                 },
-                series: [<?= $report['total_score'] ?>],
+                series: [<?= ($report['total_score'] == null || $report['total_score'] == 0 || $report['total_score'] == "" ) ? 0 : $report['total_score'] ?>],
                 chart: {
                     height: 350,
                     type: 'radialBar',
@@ -169,7 +169,7 @@
                     fill: {
                         colors: ['#2dd789']
                     },
-                    series: [<?= ($presence['total_score'] + $report['total_score']) / 2 ?>],
+                    series: [<?= (($presence['total_score'] && $report['total_score'] == 0) || ($presence['total_score'] && $report['total_score'] == null) || ($presence['total_score'] && $report['total_score'] == "")) ? (($presence['total_score'] == null || $presence['total_score'] == 0 || $presence['total_score'] == "" ) ? $report['total_score'] / 2 : $presence['total_score'] / 2 ) : ($presence['total_score'] + $report['total_score']) / 2 ?>],
                     chart: {
                         height: 350,
                         type: 'radialBar',
