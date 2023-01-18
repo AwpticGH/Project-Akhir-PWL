@@ -9,11 +9,16 @@
     $pstResult = $report_controller -> readPendingReportsByDivisionId($user['division_id']);
     
     if ($_SERVER['REQUEST_METHOD'] == "GET") {
-        if (isset($_GET['update'])) {
-            if ($_GET['update'] == "accept") 
+        if (isset($_GET['update'])) { {
+            if ($_GET['update'] == "accept") {
                 $report_controller -> updateAccept($_GET['report_id']);
-            if ($_GET['update'] == "reject")
+            }
+            if ($_GET['update'] == "reject"){
                 $report_controller -> updateReject($_GET['report_id']);
+            }
+            
+            $pstResult = $report_controller -> readPendingReportsByDivisionId($user['division_id']);
+        }
         }
         if (isset($_GET['search'])) {
             $pstResult = $report_controller -> readPendingReportByTitle($_GET['search']);

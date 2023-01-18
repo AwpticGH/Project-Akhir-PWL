@@ -144,11 +144,11 @@
                                         <td><?= $report['description'] ?></td>
                                         <td>
                                             <?= 
-                                                (($report['is_approved'] == "1") 
+                                                ($report['is_approved'] == "1") 
                                                 ? "Approved" 
-                                                : ($report['is_rejected'] == "1")) 
+                                                : (($report['is_rejected'] == "1") 
                                                 ? "Rejected"
-                                                : "Pending"
+                                                : "Pending")
                                             ?>
                                         </td>
                                     </tr>
