@@ -4,6 +4,7 @@
     class PresencesQuery {
         //create absen
         public static $create="INSERT INTO presences SET
+                                    keterangan = ?,
                                     date_of_presence = ?,
                                     user_id =  ?";
         //update acc
@@ -20,6 +21,7 @@
                                 WHERE id = ?";
         //read all absen by user_id
         public static $readByDivisionId = "SELECT presences.id,
+                                                    presences.keterangan,	
                                                     users.first_name,
                                                     users.last_name,
                                                     CAST(presences.date_of_presence as DATE) as date_of_presence,
@@ -30,7 +32,8 @@
                                             WHERE is_pending = 1
                                             AND divisions.id = ?";
         //read all absen by user_id
-        public static $readByUserId = "SELECT CAST(presences.date_of_presence as DATE) as date_of_presence,
+        public static $readByUserId = "SELECT presences.keterangan,
+                                            CAST(presences.date_of_presence as DATE) as date_of_presence,
                                             CAST(presences.date_of_presence as TIME) as time_of_presence
                                             FROM presences
                                             WHERE is_approved = 1

@@ -8,7 +8,7 @@
     $presence_controller = new PresencesController();
 
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
-        $createabsen = $presence_controller -> create($_POST['date_of_presence'], $user['id']);
+        $createabsen = $presence_controller -> create($_POST['keterangan'],$_POST['date_of_presence'], $user['id']);
         $presence_controller -> message = ($createabsen) ? "Berhasil Meminta absen" : "Gagal Absen";
     }
 ?>
@@ -51,10 +51,15 @@
                                     $date = date("Y-m-d");
                                 ?>
                                 <div class="col-2">
+                                    <div style="font-weight: bold;: ">Keterangan</div>
+                                    <br>
                                     <div style="font-weight: bold;: ">Date-Time</div>
                                     <div style="margin-top: 30px; font-weight: bold;">Action </div>
                                 </div>
                                 <div class="col-6">
+                                        <input type="text" name="keterangan" id="keterangan" required>
+                                        <br>
+                                        <br>
                                         <input type="datetime-local" name="date_of_presence" id="date_of_presence" required>
                                         <br>
                                         <br>
