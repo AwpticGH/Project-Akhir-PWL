@@ -8,7 +8,7 @@
 
     class NotificationsController {
 
-         private $conn = null;
+        private $conn = null;
         
         // function create($notifTitle, $notifText, $forUserId, $byUserId)
         public function createnotif($title, $notification_text, $notification_for, $notification_by) {
@@ -22,7 +22,7 @@
 
         // function update($userId, $notificationId)
 
-         public function updateRejectNotif($id) {
+        public function updateRejectNotif($id) {
             $this -> conn = DBConfig::connect();
             $sql = NotificationsQuery::$notif_is_read;
             $stmt = mysqli_prepare($this-> conn, $sql);
