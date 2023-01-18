@@ -39,9 +39,9 @@
 ### backend :
 - [x] DBConfig -> connect
 - [x] UsersController -> create, update, readById, login/readByUsername
-- [] NotificationsController -> create, update, readAllByUserId
-- [] PresencesController -> create, updateAcc, updateDecline, readAllByUserId
-- [] EvaluationsController -> readByEvaluationForId, create
+- [x] NotificationsController -> create, update, readAllByUserId
+- [x] PresencesController -> create, updateAcc, updateDecline, readAllByUserId
+- [x] EvaluationsController -> readByEvaluationForId, create
 - [x] ReportsController -> create, updateAccept, updateDecline, readAll
 - [x] WebsMiddleware -> dashboard
 - [x] GuardsMiddleware -> auth, head, employee
