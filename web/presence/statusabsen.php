@@ -32,6 +32,7 @@
                         <table>
                             <tr class="table-header bg-table-header">
                                 <th>#</th>
+                                <th>keterangan</th>
                                 <th>Tanggal</th>
                                 <th>Jam</th>
                                 <th>Status</th>
@@ -50,6 +51,7 @@
                             ?>
                             <tr class="table-body bg-table-body-odd">
                                 <td><?= ($i+1) ?></td>
+                                <td><?= $data['keterangan'] ?></td>
                                 <td><?= $data['date_of_presence'] ?></td>
                                 <td><?= $data['time_of_presence'] ?></td>
                                 <td>diterima</td>

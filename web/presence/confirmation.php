@@ -43,6 +43,7 @@
                             <tr class="table-header bg-table-header">
                                 <th>#</th>
                                 <th>Karyawan</th>
+                                <th>Keterangan</th>
                                 <th>Tgl/Bln/Thn</th>
                                 <th>Jam</th>
                                 <th>Aksi</th>
@@ -62,6 +63,7 @@
                             <tr class="table-body bg-table-body-odd">
                                 <td><?= ($i+1) ?></td>
                                 <td><?= $data['first_name'] . " " . $data['last_name'] ?></td>
+                                <td><?= $data['keterangan'] ?></td>
                                 <td><?= $data['date_of_presence'] ?></td>
                                 <td><?= $data['time_of_presence'] ?></td>
                                 <td>
