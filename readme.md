@@ -9,6 +9,9 @@
 - Muhammad Fauzan M (Frontend)
 - Rafi Fajar S (Backend)
 
+### Tampilan :
+![image](https://github.com/AwpticGH/Project-Akhir-PWL/assets/85886441/59648e2c-2057-4b5a-87be-935ab0e23530)
+
 ## Task List
 ### ui :
 - [x] layout/sidebar.php
